@@ -8,3 +8,4 @@ class State(TypedDict):
     prd_content: str
     plan: str
     ask_allowed: bool
+    output_dir: str

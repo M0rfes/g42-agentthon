@@ -1,7 +1,7 @@
 import argparse
 from langgraph.graph import StateGraph, END
 from state import State
-from nodes import read_prd_node, planner_node, write_plan_node
+from nodes import read_prd_node, planner_node, write_plan_node, scaffolder_node
 
 
 def create_harness(ask_allowed: bool):
@@ -10,11 +10,13 @@ def create_harness(ask_allowed: bool):
     workflow.add_node("read_prd", read_prd_node)
     workflow.add_node("planner", planner_node)
     workflow.add_node("write_plan", write_plan_node)
+    workflow.add_node("scaffolder", scaffolder_node)
 
     workflow.set_entry_point("read_prd")
     workflow.add_edge("read_prd", "planner")
     workflow.add_edge("planner", "write_plan")
-    workflow.add_edge("write_plan", END)
+    workflow.add_edge("write_plan", "scaffolder")
+    workflow.add_edge("scaffolder", END)
 
     return workflow.compile()
 
@@ -35,5 +37,6 @@ if __name__ == "__main__":
             "prd_content": "",
             "plan": "",
             "ask_allowed": args.ask,
+            "output_dir": "",
         }
     )

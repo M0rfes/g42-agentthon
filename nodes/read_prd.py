@@ -1,4 +1,5 @@
 import os
+import json
 from state import State
 
 
@@ -10,4 +11,10 @@ def read_prd_node(state: State):
     with open(prd_path, "r") as f:
         content = f.read()
 
-    return {"prd_content": content}
+    with open("metadata.json", "r") as f:
+        metadata = json.load(f)
+
+    return {
+        "prd_content": content,
+        "output_dir": metadata.get("output_dir", "./output"),
+    }
