@@ -1,0 +1,171 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="eyg02ejWSa4oF1IPOETH">
+    <mxGraphModel dx="3213" dy="3282" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-7" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="470" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-2" parent="u5hwWNJZQtQhvhjYngw9-7" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="120" width="470" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-3" parent="u5hwWNJZQtQhvhjYngw9-7" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Tools" vertex="1">
+          <mxGeometry height="64.82758620689654" width="64.82758620689654" x="22.92682926829268" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-5" parent="u5hwWNJZQtQhvhjYngw9-7" style="rounded=1;whiteSpace=wrap;html=1;" value="Agents" vertex="1">
+          <mxGeometry height="60" width="137.5609756097561" x="149.02439024390245" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-6" parent="u5hwWNJZQtQhvhjYngw9-7" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" value="output" vertex="1">
+          <mxGeometry height="100" width="91.70731707317071" x="332.4390243902439" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep Reseach" vertex="1">
+          <mxGeometry height="60" width="600" x="190" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-13" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="u5hwWNJZQtQhvhjYngw9-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-15" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="u5hwWNJZQtQhvhjYngw9-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Enrich and Decompose" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-12" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Enrich and Decompose&lt;/h1&gt;&lt;p&gt;Takes user input and enriches it by elobrating the query.&lt;br&gt;asking for point in favour and againt i,e point and counter point.&lt;/p&gt;&lt;p&gt;Decomposes the Enriches query into points that can be used for data gathering though web searches.&lt;br&gt;&lt;br&gt;Implenets generate and createq pattern we do one pass of createqing and ask for any gaps and mssing topics that shuold be incuded&lt;/p&gt;" vertex="1">
+          <mxGeometry height="336.25" width="180" x="647" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-18" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="u5hwWNJZQtQhvhjYngw9-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-20" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-31" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" target="u5hwWNJZQtQhvhjYngw9-30" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-14" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Data Gathering" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-17" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Data Gathering&lt;/h1&gt;&lt;p&gt;Multiple instances of Data Gathering nodes are launched to do we search and gather Sources based use google scholer and other resouces. take webpages pdfs etc&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="140" width="180" x="630" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-26" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="u5hwWNJZQtQhvhjYngw9-25" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-21" parent="1" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=offPageConnector;rounded=0;size=0.5;" value="" vertex="1">
+          <mxGeometry height="90" width="90" x="435" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Merge all resposes" vertex="1">
+          <mxGeometry height="30" width="60" x="450" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-28" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="u5hwWNJZQtQhvhjYngw9-27" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-41" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" target="u5hwWNJZQtQhvhjYngw9-32" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-43" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="u5hwWNJZQtQhvhjYngw9-42" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Synthses" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-27" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Synthese&lt;/h1&gt;&lt;p&gt;Takes all the content generated from Data Gathering. And put them in llamaIndex and MemGraph for GrapRag&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="630" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-30" parent="1" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" value="Playwright" vertex="1">
+          <mxGeometry height="80" width="80" x="240" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-40" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="220" width="268" x="60" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-32" parent="u5hwWNJZQtQhvhjYngw9-40" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="llamaindex" vertex="1">
+          <mxGeometry height="120" width="78" x="190" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-34" parent="u5hwWNJZQtQhvhjYngw9-40" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="memgraph" vertex="1">
+          <mxGeometry height="80" width="60" x="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-35" parent="u5hwWNJZQtQhvhjYngw9-40" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;rotation=-180;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="140" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-36" parent="u5hwWNJZQtQhvhjYngw9-40" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="List" vertex="1">
+          <mxGeometry height="120" width="140" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-37" parent="u5hwWNJZQtQhvhjYngw9-36" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="PDFS" vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-38" parent="u5hwWNJZQtQhvhjYngw9-36" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="CSVs" vertex="1">
+          <mxGeometry height="30" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-39" parent="u5hwWNJZQtQhvhjYngw9-36" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="other info" vertex="1">
+          <mxGeometry height="30" width="140" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-45" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="u5hwWNJZQtQhvhjYngw9-44" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-53" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="u5hwWNJZQtQhvhjYngw9-52" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-42" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Report writer&lt;br&gt;&lt;br&gt;Generate and Createq pattern" vertex="1">
+          <mxGeometry height="130" width="120" x="420" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-64" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="u5hwWNJZQtQhvhjYngw9-63" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-44" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" value="output" vertex="1">
+          <mxGeometry height="100" width="80" x="440" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="find more sources" vertex="1">
+          <mxGeometry height="80" width="80" x="220" y="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-49" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="clerify/ remove contradiction" vertex="1">
+          <mxGeometry height="80" width="80" x="90" y="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-51" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="u5hwWNJZQtQhvhjYngw9-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-52" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Report writter&lt;/h1&gt;&lt;p&gt;We will implement a Generate and we will generate a report and createq it for points that should be fact cehcked. points that demand more sources or are missnig source. resolves points that contradict eachother&lt;/p&gt;" vertex="1">
+          <mxGeometry height="160" width="180" x="620" y="915" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="uses playwright to find more sources if cant the point is dropped&amp;nbsp;" vertex="1">
+          <mxGeometry height="110" width="170" x="220" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-57" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="can do wesearch or lookinto the exsusitng llamaindex to clerify which point to keep" vertex="1">
+          <mxGeometry height="90" width="110" x="75" y="1155" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-58" edge="1" parent="1" source="u5hwWNJZQtQhvhjYngw9-49" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="u5hwWNJZQtQhvhjYngw9-42" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="995" />
+            </Array>
+            <mxPoint x="350" y="930" as="sourcePoint" />
+            <mxPoint x="400" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-59" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="u5hwWNJZQtQhvhjYngw9-47" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="290" y="990" as="sourcePoint" />
+            <mxPoint x="400" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-60" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="new info is passed llamaindex. which may or maynot be included into the rag" vertex="1">
+          <mxGeometry height="70" width="140" x="140" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="replay to report wetiter" vertex="1">
+          <mxGeometry height="30" width="60" x="320" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-62" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="350" width="350" x="20" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;### Expected Outputs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Research plan&lt;/div&gt;&lt;div&gt;- Paper shortlist&lt;/div&gt;&lt;div&gt;- Individual paper summaries&lt;/div&gt;&lt;div&gt;- Insight synthesis&lt;/div&gt;&lt;div&gt;- Research report&lt;/div&gt;&lt;div&gt;- Citation or source list&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;### Evaluation Focus&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Judges will assess:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Research plan quality&lt;/div&gt;&lt;div&gt;- Retrieval precision&lt;/div&gt;&lt;div&gt;- Summary accuracy&lt;/div&gt;&lt;div&gt;- Insight novelty&lt;/div&gt;&lt;div&gt;- Report structure and usefulness&lt;/div&gt;" vertex="1">
+          <mxGeometry height="276" width="207" x="376.5" y="1310" as="geometry" />
+        </mxCell>
+        <mxCell id="u5hwWNJZQtQhvhjYngw9-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;### Overview&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Build an agent that autonomously plans research questions, retrieves papers, summarises findings, extracts insights, and writes structured research reports.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The solution should help researchers, analysts, and knowledge workers accelerate literature review and synthesis.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;### Core Challenge&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Research planning quality, retrieval relevance, citation-awareisation, and coherent synthesis across sources.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="690" x="69" y="-150" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

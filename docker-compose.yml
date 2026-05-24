@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  memgraph:
+    image: memgraph/memgraph-mage:latest
+    container_name: memgraph
+    ports:
+      - "7687:7687"
+      - "9091:9091"
+    volumes:
+      - memgraph_data:/var/lib/memgraph
+      - memgraph_log:/var/log/memgraph
+
+  flask-app:
+    build: .
+    container_name: flask-app
+    command: ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=development
+      - MEMGRAPH_URI=bolt://memgraph:7687
+    env_file:
+      - .env
+    depends_on:
+      - memgraph
+
+
+volumes:
+  memgraph_data:
+  memgraph_log:
