@@ -11,8 +11,9 @@ def get_llama_index_llm() -> LlamaIndexOpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
     base_url = os.getenv("OPENAI_BASE_URL")
     model_name = os.getenv("OPENAI_MODEL", "gpt-4o")
+    backend = os.getenv("BACKEND")
 
-    logger.info("llm_construction_llama_index", backend="github_models", model=model_name)
+    logger.info("llm_construction_llama_index", backend=backend, model=model_name)
     return LlamaIndexOpenAI(
         model=model_name,
         api_key=api_key,
@@ -28,8 +29,9 @@ def get_langchain_llm() -> LangChainChatOpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
     base_url = os.getenv("OPENAI_BASE_URL")
     model_name = os.getenv("OPENAI_MODEL", "gpt-4o")
+    backend = os.getenv("BACKEND")
     
-    logger.info("llm_construction_langchain", backend="github_models", model=model_name)
+    logger.info("llm_construction_langchain", backend=backend, model=model_name)
     return LangChainChatOpenAI(
         model=model_name,
         api_key=api_key,
@@ -44,9 +46,10 @@ def get_llama_index_embed_model() -> OpenAIEmbedding:
     """
     api_key = os.getenv("OPENAI_API_KEY")
     base_url = os.getenv("OPENAI_BASE_URL")
-    model_name = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+    model_name = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
+    backend = os.getenv("BACKEND")
     
-    logger.info("embed_construction_llama_index", backend="github_models", model=model_name)
+    logger.info("embed_construction_llama_index", backend=backend, model=model_name)
     return OpenAIEmbedding(
         model=model_name,
         api_key=api_key,
