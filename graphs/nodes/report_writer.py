@@ -1,12 +1,89 @@
 import os
 import json
+import urllib.parse
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from models.llm import get_langchain_llm
 from graphs.state import ResearchState
 from tools.llamaindex_tools import fact_checker
 from tools.contradiction_tools import resolve_contradiction
 from utils.logging import logger, track_step, count_tokens
+
+# ── Citation URL Validation ───────────────────────────────────────────────────
+
+_FAKE_URL_PATTERNS = [
+    "example.com",
+    "example.org",
+    "example.net",
+    "localhost",
+    "127.0.0.1",
+    "placeholder",
+    "your-url",
+    "insert-url",
+    "graphrag-context",
+    "no-url",
+    "N/A",
+]
+
+def _is_valid_citation_url(url: str) -> bool:
+    """Returns False if the URL is a known placeholder or fake URL."""
+    if not url or not url.startswith("http"):
+        return False
+    url_lower = url.lower()
+    return not any(pattern in url_lower for pattern in _FAKE_URL_PATTERNS)
+
+def _fix_citation_urls(
+    citations: List[Dict],
+    paper_summaries: List[Dict],
+    scraped_data: List[Dict]
+) -> List[Dict]:
+    """
+    Validates citation URLs and attempts to substitute real source URLs
+    from paper_summaries or scraped_data when a placeholder/fake URL is detected.
+    Citations with unfixable URLs are dropped.
+    """
+    # Build lookup: title -> url from real scraped sources
+    title_to_url: Dict[str, str] = {}
+    for source in (paper_summaries or []) + (scraped_data or []):
+        title = source.get("title", "").lower().strip()
+        url = source.get("url", "")
+        if title and _is_valid_citation_url(url):
+            title_to_url[title] = url
+
+    fixed: List[Dict] = []
+    for c in citations:
+        url = c.get("url", "")
+        title = c.get("title", "")
+
+        if _is_valid_citation_url(url):
+            fixed.append(c)
+            continue
+
+        # Attempt title-based substitution
+        matched_url = title_to_url.get(title.lower().strip())
+        if not matched_url:
+            # Fuzzy: check if any known title is a substring of the citation title
+            for known_title, known_url in title_to_url.items():
+                if known_title in title.lower() or title.lower() in known_title:
+                    matched_url = known_url
+                    break
+
+        if matched_url:
+            logger.warning(
+                "report_writer_citation_url_fixed",
+                original_url=url,
+                substituted_url=matched_url,
+                title=title
+            )
+            fixed.append({**c, "url": matched_url})
+        else:
+            logger.warning(
+                "report_writer_citation_url_dropped",
+                url=url,
+                title=title,
+                reason="Placeholder/fake URL and no matching real source found"
+            )
+    return fixed
 
 # ── Pydantic Output Schemas ──────────────────────────────────────────────────
 
@@ -36,8 +113,9 @@ def report_writer(state: ResearchState) -> ResearchState:
     """
     query = state["query"]
     paper_summaries = state.get("paper_summaries", [])
+    scraped_data = state.get("scraped_data", [])
     insight_synthesis = state.get("insight_synthesis", {})
-    
+
     with track_step("report_writer", query=query) as metrics:
         logger.info("report_writer_node_start", query=query, papers_count=len(paper_summaries))
         
@@ -237,29 +315,37 @@ def report_writer(state: ResearchState) -> ResearchState:
             logger.info("report_writer_refinement_success")
             
             # Map Pydantic Citation list to standard dictionary list for State
-            citation_list = []
-            for c in final_report.citation_source_list:
-                citation_list.append({
-                    "id": c.id,
-                    "title": c.title,
-                    "url": c.url
-                })
-                
-            # If the model returned an empty list, apply fallback to ensure citation_source_list is never empty
+            citation_list = [
+                {"id": c.id, "title": c.title, "url": c.url}
+                for c in final_report.citation_source_list
+            ]
+
+            # Fix or drop any placeholder/fake URLs produced by the LLM
+            citation_list = _fix_citation_urls(citation_list, paper_summaries, scraped_data)
+
+            # If the model returned an empty list (or all were dropped), apply fallback
             if not citation_list:
                 logger.warning("report_writer_empty_citation_list_applying_fallback")
-                if initial_draft.citations:
-                    citation_list = [{"id": c.id, "title": c.title, "url": c.url} for c in initial_draft.citations]
+                candidate_citations = [
+                    {"id": c.id, "title": c.title, "url": c.url}
+                    for c in initial_draft.citations
+                ]
+                candidate_citations = _fix_citation_urls(candidate_citations, paper_summaries, scraped_data)
+                if candidate_citations:
+                    citation_list = candidate_citations
                 else:
+                    # Last resort: pull real URLs directly from scraped sources
                     for idx, p in enumerate(paper_summaries, 1):
-                        citation_list.append({
-                            "id": f"[{idx}]",
-                            "title": p.get("title", "Unknown Source"),
-                            "url": p.get("url", "")
-                        })
-                
+                        url = p.get("url", "")
+                        if _is_valid_citation_url(url):
+                            citation_list.append({
+                                "id": f"[{idx}]",
+                                "title": p.get("title", "Unknown Source"),
+                                "url": url
+                            })
+
             metrics["output_tokens"] += count_tokens(final_report.research_report + str(citation_list))
-            
+
             return {
                 **state,
                 "research_report": final_report.research_report,
@@ -267,8 +353,12 @@ def report_writer(state: ResearchState) -> ResearchState:
             }
         except Exception as e:
             logger.error("report_writer_refinement_failed", error=str(e))
-            # Fallback final report
-            citation_list = [{"id": c.id, "title": c.title, "url": c.url} for c in initial_draft.citations]
+            # Fallback: use initial draft citations, sanitized
+            citation_list = [
+                {"id": c.id, "title": c.title, "url": c.url}
+                for c in initial_draft.citations
+            ]
+            citation_list = _fix_citation_urls(citation_list, paper_summaries, scraped_data)
             return {
                 **state,
                 "research_report": initial_draft.draft_content,
