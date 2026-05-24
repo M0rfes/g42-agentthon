@@ -16,6 +16,156 @@ The system runs a **4-node linear LangGraph workflow**:
 
 ---
 
+## 🗺️ Architecture Flowchart
+
+### Full LangGraph Workflow
+
+```mermaid
+flowchart TD
+    USER(["👤 User\nPOST /research\n{query}"])
+    FLASK["🌐 Flask API\napp.py"]
+
+    USER -->|HTTP POST| FLASK
+    FLASK -->|Invoke graph| START
+
+    subgraph LANGGRAPH["LangGraph — Linear 4-Node Workflow"]
+        direction TB
+
+        START([▶ START])
+
+        %% ── Node 1 ───────────────────────────────────────────────
+        subgraph N1["Node 1 · enrich_decompose"]
+            direction TB
+            N1A["🔍 Initial Generation\nLLM → InitialPlan\nenriched_query + 3-5 search topics"]
+            N1B["🔎 Critique\nLLM → CritiquePlan\nidentify gaps & blind spots"]
+            N1C["✏️ Refinement\nLLM → FinalPlan\nbalanced query + 4-6 final topics"]
+            N1A --> N1B --> N1C
+        end
+
+        %% ── Node 2 ───────────────────────────────────────────────
+        subgraph N2["Node 2 · data_gathering"]
+            direction TB
+            N2A["🔬 Parallel Academic Search\n(per search_topic)"]
+            subgraph N2TOOLS["Academic Tools — run in parallel"]
+                N2OA["openalex_search\n250M+ works\nsorted by citation count"]
+                N2AX["arxiv_search\nCS/AI preprints\nsorted by relevance"]
+                N2BING["web_search (Bing)\nFallback only if both\nacademic sources empty"]
+            end
+            N2B["🚫 Junk-domain Blocklist\nfilter non-academic URLs"]
+            N2C["🌍 Parallel Scraping\nPlaywright Chromium\n(headless browser)"]
+            N2D["📄 LLM Summary per page\nLLM → PaperSummary\ntitle + url + summary + relevance_score"]
+            N2A --> N2TOOLS --> N2B --> N2C --> N2D
+        end
+
+        %% ── Node 3 ───────────────────────────────────────────────
+        subgraph N3["Node 3 · synthesis"]
+            direction TB
+            N3A["📥 Index scraped content\nindex_manager.index_scraped_content()"]
+            subgraph N3STORES["Dual-Store Indexing"]
+                N3VS["📊 VectorStoreIndex\nLlamaIndex + text-embedding-3-large\nPersisted to /app/data/storage"]
+                N3MG["🕸️ PropertyGraphIndex\nMemgraph (Bolt)\nLLM-extracted entity-relationship triplets\nembed_kg_nodes=False"]
+            end
+            N3B["🔍 Vector Retrieval\nSemantic similarity search\nover scraped summaries"]
+            N3C["🔗 GraphRAG Retrieval\nTriplet path traversal\nentities + relationships"]
+            N3D["🧠 LLM Compilation\nMerge Vector + GraphRAG context\n→ InsightSynthesis"]
+            N3A --> N3STORES
+            N3STORES --> N3B & N3C
+            N3B & N3C --> N3D
+        end
+
+        %% ── Node 4 ───────────────────────────────────────────────
+        subgraph N4["Node 4 · report_writer"]
+            direction TB
+            N4A["✍️ Draft\nLLM → initial markdown report"]
+            N4B["🔎 Critique\nLLM → identify unsupported claims"]
+            N4C["✅ Fact-Check\nLLM → verify each assertion\nagainst paper_summaries"]
+            N4D["⚡ Contradiction Detection\ncheck_for_contradictions tool\nfind conflicting claims"]
+            N4E["🔄 Reconcile\nLLM → resolve contradictions"]
+            N4F["📑 Refine\nLLM → polish & finalize\ncitation_source_list validated"]
+            N4A --> N4B --> N4C --> N4D --> N4E --> N4F
+        end
+
+        END(["⏹ END"])
+
+        START --> N1
+        N1 --> N2
+        N2 --> N3
+        N3 --> N4
+        N4 --> END
+    end
+
+    END -->|JSON Response| FLASK
+    FLASK -->|HTTP 200| USER
+
+    %% ── External Services ─────────────────────────────────────────
+    GPT["🤖 GPT-4.1\nOpenAI-compatible API\n(Core42 Compass)"]
+    EMB["📐 text-embedding-3-large\n3072-dim vectors"]
+    MGDB[("🕸️ Memgraph DB\nbolt://memgraph:7687\nProperty Graph Store")]
+    OA["📚 OpenAlex API\nhttps://api.openalex.org"]
+    ARX["📄 arXiv API\nhttps://export.arxiv.org"]
+    BING["🔍 Bing Web Search\nPlaywright tool"]
+
+    N1A & N1B & N1C -.->|structured_output| GPT
+    N2D -.->|summarize| GPT
+    N3MG -.->|entity extraction| GPT
+    N3D & N4A & N4B & N4C & N4E & N4F -.->|generate| GPT
+    N3VS -.->|embed| EMB
+    N3MG -.->|store graph| MGDB
+    N3C -.->|query graph| MGDB
+    N2OA -.->|REST| OA
+    N2AX -.->|Atom API| ARX
+    N2BING -.->|search| BING
+```
+
+---
+
+### Tool Interaction Map
+
+```mermaid
+flowchart LR
+    subgraph TOOLS["🛠️ Tools & Utilities"]
+        T1["openalex_search\ntools/academic_search_tools.py"]
+        T2["arxiv_search\ntools/academic_search_tools.py"]
+        T3["web_search\ntools/playwright_tools.py"]
+        T4["scrape_page\ntools/playwright_tools.py"]
+        T5["check_for_contradictions\ntools/contradiction_tools.py"]
+        T6["index_scraped_content\nmodels/index_manager.py"]
+    end
+
+    subgraph NODES["📦 LangGraph Nodes"]
+        ND1["enrich_decompose"]
+        ND2["data_gathering"]
+        ND3["synthesis"]
+        ND4["report_writer"]
+    end
+
+    subgraph STATE["🗂️ ResearchState"]
+        S1["query"]
+        S2["research_plan\n(elaborated_query, search_topics)"]
+        S3["paper_shortlist"]
+        S4["paper_summaries"]
+        S5["scraped_data"]
+        S6["insight_synthesis\n(vector_context, graphrag_context)"]
+        S7["research_report"]
+        S8["citation_source_list"]
+        S9["contradictions"]
+    end
+
+    ND1 -->|writes| S2
+    ND2 -->|uses| T1 & T2 & T3
+    ND2 -->|uses| T4
+    ND2 -->|writes| S3 & S4 & S5
+    ND3 -->|uses| T6
+    ND3 -->|writes| S6
+    ND4 -->|uses| T5
+    ND4 -->|writes| S7 & S8 & S9
+    S1 -->|reads| ND1
+    S2 -->|reads| ND2
+    S4 & S5 & S6 -->|reads| ND4
+```
+
+---
+
 ## ⚙️ Environment Setup
 
 Create a `.env` file in the root directory (based on `.env.example`). For standard production execution on Core42's Compass gateway, configure the following:
