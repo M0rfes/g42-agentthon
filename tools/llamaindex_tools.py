@@ -5,6 +5,7 @@ from langchain_core.tools import tool
 from models.llm import get_langchain_llm
 from models.index_manager import get_vector_index, get_property_graph_index
 from utils.logging import logger, track_step, count_tokens
+from utils.metadata import get_prompt
 
 class FactCheckResult(BaseModel):
     verification_status: str = Field(description="Must be SUPPORTED, REFUTED, or UNVERIFIED based on the retrieved context")
@@ -60,16 +61,7 @@ def fact_checker(claim: str) -> str:
             return json.dumps(result, indent=2)
             
         # 3. Compile context and prompt LLM using Pydantic structured output
-        system_prompt = (
-            "You are a scientific fact checker. Your job is to strictly evaluate the user's assertion/claim "
-            "against the provided Vector Store Context and GraphRAG (Knowledge Graph) Context.\n\n"
-            "Verdicts must follow these guidelines:\n"
-            "- SUPPORTED: If the context directly supports or confirms the claim.\n"
-            "- REFUTED: If the context directly contradicts or disproves the claim.\n"
-            "- UNVERIFIED: If the context does not contain enough information to prove or disprove the claim.\n\n"
-            "Do not use external knowledge beyond the provided contexts. If the contexts are empty or do not mention the claim, "
-            "it MUST be UNVERIFIED."
-        )
+        system_prompt = get_prompt("fact_checker")
         
         user_content = (
             f"Assertion to evaluate: '{claim}'\n\n"

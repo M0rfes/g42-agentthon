@@ -8,6 +8,7 @@ from graphs.state import ResearchState
 from tools.llamaindex_tools import fact_checker
 from tools.contradiction_tools import resolve_contradiction
 from utils.logging import logger, track_step, count_tokens
+from utils.metadata import get_prompt
 
 # ── Citation URL Validation ───────────────────────────────────────────────────
 
@@ -142,20 +143,7 @@ def report_writer(state: ResearchState) -> ResearchState:
         # 1. INITIAL GENERATION STEP
         logger.info("report_writer_initial_draft_start")
         
-        draft_system = (
-            "You are a Senior Principal Research Scientist. Your task is to write a highly detailed, professional, "
-            "and publication-ready research report on the given query. "
-            "Use standard Markdown formatting (with headers, lists, and tables where appropriate) to present the findings.\n\n"
-            "You must structure the report as follows:\n"
-            "1. Introduction: Contextualizing the problem.\n"
-            "2. Methodology: Overview of data sources and synthesis.\n"
-            "3. Key Findings & Empirical Data: Integrate specific statistics, numbers, and themes from the papers.\n"
-            "4. Discussion: Analyze opposing viewpoints (favor vs against, point vs counter-point).\n"
-            "5. Conclusion: Synthesize final remarks.\n\n"
-            "Strict Citations Rule: Integrate in-text citations (e.g., [1], [2]) directly within sentences for any factual claim "
-            "using the available papers in the context. Do not invent citations or URLs. "
-            "All citations must be listed in the `citations` list in the structured output."
-        )
+        draft_system = get_prompt("report_writer_draft")
         
         draft_user = (
             f"Research Subject: '{query}'\n\n"
@@ -184,12 +172,7 @@ def report_writer(state: ResearchState) -> ResearchState:
         # 2. CRITIQUE STEP
         logger.info("report_writer_critique_start")
         
-        critique_system = (
-            "You are an independent peer reviewer. Analyze the initial draft of the research report. "
-            "Identify 3-4 specific factual assertions, metrics, or claims made in the report that need strict "
-            "verification or fact-checking against the gathered database. "
-            "Also provide a detailed structural critique pointing out any stylistic improvements, flow issues, or missing perspectives."
-        )
+        critique_system = get_prompt("report_writer_critique")
         
         critique_user = (
             f"Draft Report:\n{initial_draft.draft_content}\n\n"
@@ -260,17 +243,7 @@ def report_writer(state: ResearchState) -> ResearchState:
         # 4. REFINEMENT & FINALIZATION STEP
         logger.info("report_writer_refinement_start")
         
-        refine_system = (
-            "You are a Senior Principal Research Scientist editing and polishing the final research report.\n\n"
-            "Your task is to take the Initial Draft Report, apply the Structural Critique feedback, "
-            "and rigorously update the draft based on the empirical Fact-Checking results:\n"
-            "- If a claim was REFUTED, correct or delete it in the text. Cite only supported facts.\n"
-            "- If a claim was UNVERIFIED, tone down the assertion, adding qualifiers like 'suggests' or 'may indicates'.\n"
-            "- Incorporate any Reconciled Facts from contradiction resolutions.\n"
-            "- Ensure all in-text citations (e.g., [1], [2]) are correctly matched and aligned with the papers in the bibliography.\n\n"
-            "Make sure the final report reads like a premium, peer-reviewed scientific survey. "
-            "Do not include placeholders, editor notes, or critique comments in the final output."
-        )
+        refine_system = get_prompt("report_writer_refine")
         
         fact_check_text = "--- Fact Checking Results ---\n"
         if fact_check_feedback:
