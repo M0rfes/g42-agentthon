@@ -8,6 +8,7 @@ from graphs.state import ResearchState
 from tools.playwright_tools import web_search, scrape_page
 from tools.academic_search_tools import openalex_search, arxiv_search
 from utils.logging import logger, track_step, count_tokens
+from utils.metadata import get_prompt
 
 # ── Junk-domain blocklist ──────────────────────────────────────────────────────
 # Domains that consistently return irrelevant results for academic queries.
@@ -200,12 +201,7 @@ def data_gathering(state: ResearchState) -> ResearchState:
             title = scraped["title"]
             text = scraped["text"]
             
-            system_prompt = (
-                "You are an expert scientific research summarizer. Your job is to inspect the scraped content "
-                "of a webpage/resource and produce a structured, high-fidelity summary detailing key arguments, "
-                "empirical findings, points in favor or against, and assign a precise relevance score (0.0 to 1.0) "
-                "assessing how useful this resource is to our core query."
-            )
+            system_prompt = get_prompt("data_gathering_summarizer")
             user_prompt = (
                 f"Core Research Query: '{query}'\n\n"
                 f"Resource Title: {title}\n"

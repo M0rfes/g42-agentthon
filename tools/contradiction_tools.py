@@ -6,6 +6,7 @@ from models.llm import get_langchain_llm
 from models.index_manager import get_vector_index, get_property_graph_index
 from tools.playwright_tools import web_search, scrape_page
 from utils.logging import logger, track_step, count_tokens
+from utils.metadata import get_prompt
 
 class ContradictionResolution(BaseModel):
     verdict: str = Field(description="Must be CLAIM_A (Claim A is correct), CLAIM_B (Claim B is correct), RECONCILED (both claims are synthesized/reconciled), or UNRESOLVED")
@@ -68,16 +69,7 @@ def resolve_contradiction(claim_a: str, claim_b: str) -> str:
             logger.warning("resolve_contradiction_external_search_failed", error=str(e))
             
         # 3. Feed unified evidence into GPT-4o with structured output
-        system_prompt = (
-            "You are a scientific adjudicator and fact investigator. Your role is to examine two mutually contradictory "
-            "assertions/claims (Claim A and Claim B) and resolve the contradiction using the provided Internal Indexed Facts "
-            "and Web Search Evidence.\n\n"
-            "Your output must follow these rules:\n"
-            "1. Verdict must be CLAIM_A, CLAIM_B, RECONCILED (if both are partially correct or a synthesized fact is true), or UNRESOLVED.\n"
-            "2. Reconciled Fact should be a stand-alone, clear statement of factual truth.\n"
-            "3. Provide a highly robust, detailed explanation analyzing why one claim is correct or how they reconcile.\n"
-            "4. List specific source citations verifying this resolution."
-        )
+        system_prompt = get_prompt("contradiction_resolution")
         
         user_content = (
             f"Assertion A (Claim A): '{claim_a}'\n"

@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 from models.llm import get_langchain_llm
 from graphs.state import ResearchState
 from utils.logging import logger, track_step, count_tokens
+from utils.metadata import get_prompt
 
 # ── Pydantic Output Schemas ──────────────────────────────────────────────────
 
@@ -47,11 +48,7 @@ def enrich_decompose(state: ResearchState) -> ResearchState:
         llm = get_langchain_llm()
         
         # 1. INITIAL GENERATION STEP
-        init_system = (
-            "You are a research director. Your task is to analyze the user's research query, "
-            "elaborate on it by detailing points in favor and points against (points and counter-points), "
-            "and decompose it into a list of specific, distinct sub-queries for web search engines."
-        )
+        init_system = get_prompt("enrich_decompose_init")
         init_user = f"Original user research query: '{query}'"
         
         logger.info("enrich_decompose_generate_initial")
@@ -70,12 +67,7 @@ def enrich_decompose(state: ResearchState) -> ResearchState:
         metrics["output_tokens"] += count_tokens(init_plan.enriched_query + str(init_plan.initial_search_topics))
         
         # 2. CRITIQUE STEP
-        critique_system = (
-            "You are a critical research auditor. Your job is to inspect an initial research plan "
-            "(enriched query and proposed search topics) for the user's target query. "
-            "Identify blind spots, missing viewpoints, standard counter-arguments that were omitted, "
-            "or adjacent search domains that should be investigated to guarantee a balanced, comprehensive report."
-        )
+        critique_system = get_prompt("enrich_decompose_critique")
         critique_user = (
             f"Target Query: '{query}'\n\n"
             f"Initial Enriched Query (Points/Counter-Points):\n{init_plan.enriched_query}\n\n"
@@ -98,13 +90,7 @@ def enrich_decompose(state: ResearchState) -> ResearchState:
         metrics["output_tokens"] += count_tokens(critique.critique_rationale + str(critique.gaps))
         
         # 3. REFINEMENT & FINALIZATION STEP
-        refine_system = (
-            "You are a senior research editor. Your job is to finalize a research plan. "
-            "You are given the user's target query, the initial plan, and a critical audit (critique) "
-            "listing gaps and missing topics. Refine the enriched query to make it fully balanced and complete "
-            "(incorporating points in favor and against, addressing the gaps). "
-            "Produce the final, finalized list of precise search topics."
-        )
+        refine_system = get_prompt("enrich_decompose_refine")
         refine_user = (
             f"Target Query: '{query}'\n\n"
             f"Initial Enriched Query:\n{init_plan.enriched_query}\n"

@@ -6,6 +6,7 @@ from models.llm import get_langchain_llm
 from graphs.state import ResearchState
 from models.index_manager import index_scraped_content, get_vector_index, get_property_graph_index
 from utils.logging import logger, track_step, count_tokens
+from utils.metadata import get_prompt
 
 # ── Pydantic Output Schemas ──────────────────────────────────────────────────
 
@@ -95,16 +96,7 @@ def synthesis(state: ResearchState) -> ResearchState:
         # 4. STRUCTURED LLM SYNTHESIS
         logger.info("synthesis_llm_compilation_start")
         
-        system_prompt = (
-            "You are an expert research synthesis director. Your role is to consolidate deep semantic facts "
-            "and structured GraphRAG relationships into a high-fidelity, published-grade insight overview.\n\n"
-            "Combine the Vector Context (factual arguments) and the GraphRAG Context (knowledge graph connections) "
-            "to compile: \n"
-            "- An executive summary\n"
-            "- Core themes identified across the papers\n"
-            "- Exact empirical statistics, metrics, or experimental data\n"
-            "- Crucial entity relationships mapped in the graph"
-        )
+        system_prompt = get_prompt("synthesis")
         
         user_prompt = (
             f"Research Subject: '{query}'\n\n"
