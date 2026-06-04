@@ -146,7 +146,7 @@ flowchart TD
     %% ── External Services ─────────────────────────────────────────
     GPT["🤖 GPT-4.1\nOpenAI-compatible API\n(Core42 Compass)"]
     EMB["📐 text-embedding-3-large\n3072-dim vectors"]
-    MGDB[("🕸️ Memgraph DB\nbolt://memgraph:7687\nProperty Graph Store")]
+    MGDB[("🕸️ Memgraph DB\nbolt://127.0.0.1:7687\nProperty Graph Store")]
     OA["📚 OpenAlex API\nhttps://api.openalex.org"]
     ARX["📄 arXiv API\nhttps://export.arxiv.org"]
     BING["🔍 Bing Web Search\nPlaywright tool"]
@@ -227,16 +227,14 @@ EMBEDDING_MODEL="text-embedding-3-large"
 
 ## 🐳 Building and Running the System
 
-### 1. Build and Start Containers
-To build the Docker images and launch the cluster (Flask web server + Memgraph Database) in the background:
+### 1. Build the Single Runtime Image
 ```bash
-docker compose up -d --build
+docker build -t g42-agentthon .
 ```
 
-### 2. Stop Containers
-To stop and clean up all active containers, networks, and volumes:
+### 2. Run the API + Memgraph in One Container
 ```bash
-docker compose down
+docker run --rm -p 8000:8000 -p 7687:7687 --env-file .env g42-agentthon
 ```
 
 ---
@@ -245,25 +243,19 @@ docker compose down
 
 The application uses **structured JSON logging** inside Docker and pretty logs locally. The custom logger instruments token counters (input, output, and total tokens) and execution durations for every step.
 
-### View All Logs (Flask + Memgraph)
+### View Container Logs
 ```bash
-docker compose logs
+docker logs <container-id>
 ```
 
 ### Stream Live Logs in Real-time
 ```bash
-docker compose logs -f
+docker logs -f <container-id>
 ```
 
-### Stream Flask App Logs Only
-```bash
-docker compose logs -f flask-app
-```
-
-### Stream Memgraph Database Logs Only
-```bash
-docker compose logs -f memgraph
-```
+Inside the container, the entrypoint writes:
+- API logs to `/app/logs/app.log`
+- Memgraph logs to `/app/logs/memgraph.log`
 
 ---
 
@@ -320,22 +312,22 @@ curl -s http://localhost:8000/
 
 ## 🧪 Verification and Test Suite
 
-You can execute node-specific and end-to-end integration tests directly inside the running `flask-app` container:
+You can execute node-specific and end-to-end integration tests directly inside the running single container:
 
 ### 1. Run Synthesis Verification (Node 3)
 ```bash
-docker compose exec flask-app python tests/test_synthesis.py
+docker exec -it <container-id> python tests/test_synthesis.py
 ```
 
 ### 2. Run Report Writer Verification (Node 4)
 ```bash
-docker compose exec flask-app python tests/test_report_writer.py
+docker exec -it <container-id> python tests/test_report_writer.py
 ```
 
 ### 3. Run End-to-End Integration Verification
 Runs the entire LangGraph workflow from search to the final fact-checked report:
 ```bash
-docker compose exec flask-app python tests/test_end_to_end.py
+docker exec -it <container-id> python tests/test_end_to_end.py
 ```
 
 ---
