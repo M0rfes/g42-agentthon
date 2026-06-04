@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "use_case_id": "16",
+  "result": {
+    "summary": "Autonomous coding assistants can improve delivery speed, but require guardrails, human review, and secure deployment controls.",
+    "recommendations": [
+      "Require pull-request based approvals",
+      "Enable static analysis and policy checks",
+      "Use scoped credentials and audit logs"
+    ],
+    "artifacts": [
+      "https://example.org/reference-1",
+      "https://example.org/reference-2"
+    ]
+  },
+  "agents_used": ["Planner", "Researcher", "Evaluator"],
+  "trace_id": "run-example-001",
+  "runtime_seconds": 38.2
+}

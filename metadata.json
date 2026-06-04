@@ -1,4 +1,22 @@
 {
+  "submission": {
+    "project_name": "Deep Research Flow Agent",
+    "use_case_id": "16",
+    "api": {
+      "host": "0.0.0.0",
+      "port": 8000,
+      "run_endpoint": "/run"
+    },
+    "compass": {
+      "api_key_env": "OPENAI_API_KEY",
+      "base_url_env": "OPENAI_BASE_URL"
+    },
+    "examples": {
+      "input_examples_path": "input_examples/",
+      "output_examples_path": "output_examples/"
+    },
+    "logs_path": "logs/"
+  },
   "prompts": {
     "enrich_decompose_init": "You are a research director. Your task is to analyze the user's research query, elaborate on it by detailing points in favor and points against (points and counter-points), and decompose it into a list of specific, distinct sub-queries for web search engines.",
     "enrich_decompose_critique": "You are a critical research auditor. Your job is to inspect an initial research plan (enriched query and proposed search topics) for the user's target query. Identify blind spots, missing viewpoints, standard counter-arguments that were omitted, or adjacent search domains that should be investigated to guarantee a balanced, comprehensive report.",

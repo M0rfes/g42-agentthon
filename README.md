@@ -68,8 +68,8 @@ START
 
 ```mermaid
 flowchart TD
-    USER(["👤 User\nPOST /research\n{query}"])
-    FLASK["🌐 Flask API\napp.py"]
+    USER(["👤 User\nPOST /run\n{query}"])
+    FLASK["🌐 Flask API\nrun.py"]
 
     USER -->|HTTP POST| FLASK
     FLASK -->|Invoke graph| START
@@ -271,8 +271,8 @@ docker compose logs -f memgraph
 
 The Flask web server is hosted on port **`8000`** inside the container and mapped directly to your localhost.
 
-### 1. Deep Research Query Endpoint
-*   **URL:** `http://localhost:8000/research`
+### 1. Standard Submission Endpoint
+*   **URL:** `http://localhost:8000/run`
 *   **Method:** `POST`
 *   **Headers:** `Content-Type: application/json`
 *   **Request Body:**
@@ -286,22 +286,28 @@ The Flask web server is hosted on port **`8000`** inside the container and mappe
 ```bash
 curl -X POST -H "Content-Type: application/json" \
      -d '{"query": "Should artificial intelligence coding assistants write code autonomously?"}' \
-     http://localhost:8000/research
+     http://localhost:8000/run
 ```
 
 **Expected Response Layout:**
-Returns the **6 expected outputs** required by judges:
-*   `query`: The original query.
-*   `research_plan`: Decomposed sub-queries and elaborated points.
-*   `paper_shortlist`: Promising papers/resources discovered.
-*   `paper_summaries`: Factual summaries of scraped pages with relevance ratings.
-*   `insight_synthesis`: High-fidelity semantic findings and GraphRAG path connections.
-*   `research_report`: Polished, citation-grounded markdown research report.
-*   `citation_source_list`: Ordered list of cited bibliography sources.
+Returns the standardized Agentathon response:
+*   `status`: success/error.
+*   `use_case_id`: selected challenge ID.
+*   `result.summary`: user-facing summary output.
+*   `result.recommendations`: actionable recommendations.
+*   `result.artifacts`: references/citation artifacts.
+*   `agents_used`: workflow roles.
+*   `trace_id`: execution trace identifier.
+*   `runtime_seconds`: end-to-end runtime.
+
+### 2. Legacy Compatibility Endpoint
+*   **URL:** `http://localhost:8000/research`
+*   **Method:** `POST`
+*   Backward-compatible endpoint kept for local legacy scripts.
 
 ---
 
-### 2. Service Health Status Endpoint
+### 3. Service Health Status Endpoint
 *   **URL:** `http://localhost:8000/`
 *   **Method:** `GET`
 
@@ -326,8 +332,18 @@ docker compose exec flask-app python tests/test_synthesis.py
 docker compose exec flask-app python tests/test_report_writer.py
 ```
 
-### 3. Run End-to-End Integration Verification (POST /research)
+### 3. Run End-to-End Integration Verification
 Runs the entire LangGraph workflow from search to the final fact-checked report:
 ```bash
 docker compose exec flask-app python tests/test_end_to_end.py
 ```
+
+---
+
+## 📁 Submission Artifacts
+
+The repository includes the mandatory submission assets:
+- `app/` for submission-facing orchestration helpers.
+- `input_examples/` with at least 3 reproducible request payloads.
+- `output_examples/` with at least 3 matching structured outputs.
+- `logs/` with sample agent interaction traces.
