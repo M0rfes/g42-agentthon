@@ -25,6 +25,11 @@ COPY . .
 
 RUN mkdir -p /app/logs
 
+RUN useradd --no-create-home --shell /bin/bash appuser \
+    && chown -R appuser:appuser /app
+
+USER appuser
+
 EXPOSE 8000
 
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
