@@ -43,8 +43,3 @@ def build_submission_response(final_state: dict, trace_id: str, runtime_seconds:
         "trace_id": trace_id,
         "runtime_seconds": runtime_seconds,
     }
-
-
-def run_query(query: str, trace_id: str, runtime_seconds: float) -> dict:
-    final_state = execute_workflow(query)
-    return build_submission_response(final_state, trace_id, runtime_seconds)

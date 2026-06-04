@@ -287,14 +287,7 @@ Returns the standardized Agentathon response:
 *   `trace_id`: execution trace identifier.
 *   `runtime_seconds`: end-to-end runtime.
 
-### 2. Legacy Compatibility Endpoint
-*   **URL:** `http://localhost:8000/research`
-*   **Method:** `POST`
-*   Backward-compatible endpoint kept for local legacy scripts.
-
----
-
-### 3. Service Health Status Endpoint
+### 2. Service Health Status Endpoint
 *   **URL:** `http://localhost:8000/`
 *   **Method:** `GET`
 

@@ -58,29 +58,17 @@ def run_submission():
             error_type = "WORKFLOW_EXECUTION_ERROR"
 
         logger.error("run_execution_failed", trace_id=trace_id, query=query, error=message)
+        public_messages = {
+            "COMPASS_QUOTA_ERROR": "Upstream model quota exceeded.",
+            "COMPASS_AUTH_ERROR": "Upstream model authentication failed.",
+            "WORKFLOW_EXECUTION_ERROR": "Workflow execution failed. Please retry later.",
+        }
         return jsonify({
             "status": "error",
             "error_type": error_type,
-            "message": message,
+            "message": public_messages[error_type],
             "trace_id": trace_id
         }), 500
-
-@app.route("/research", methods=["POST"])
-def execute_research_legacy():
-    data = request.get_json(silent=True) or {}
-    query = data.get("query")
-    if not query:
-        return jsonify({"error": "Missing parameter 'query'."}), 400
-    final_state = execute_workflow(query)
-    return jsonify({
-        "query": final_state.get("query"),
-        "research_plan": final_state.get("research_plan"),
-        "paper_shortlist": final_state.get("paper_shortlist"),
-        "paper_summaries": final_state.get("paper_summaries"),
-        "insight_synthesis": final_state.get("insight_synthesis"),
-        "research_report": final_state.get("research_report"),
-        "citation_source_list": final_state.get("citation_source_list")
-    })
 
 if __name__ == "__main__":
     logger.info("server_starting", host="0.0.0.0", port=8000)
