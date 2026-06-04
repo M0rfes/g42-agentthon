@@ -1,13 +1,21 @@
 version: '3.8'
 
 services:
+  memgraph:
+    image: memgraph/memgraph-mage:latest
+    ports:
+      - "7687:7687"
+
   app:
     build: .
     container_name: g42-agentthon
     ports:
       - "8000:8000"
-      - "7687:7687"
     env_file:
       - .env
+    environment:
+      - MEMGRAPH_URI=bolt://memgraph:7687
     volumes:
       - ./logs:/app/logs
+    depends_on:
+      - memgraph
