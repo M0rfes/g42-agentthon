@@ -227,14 +227,9 @@ EMBEDDING_MODEL="text-embedding-3-large"
 
 ## 🐳 Building and Running the System
 
-### 1. Build the Single Runtime Image
+### 1. Build and Run with the Entrypoint Script
 ```bash
-docker build -t g42-agentthon .
-```
-
-### 2. Run the API + Memgraph in One Container
-```bash
-docker run --rm -p 8000:8000 -p 7687:7687 --env-file .env g42-agentthon
+./entrypoint.sh
 ```
 
 ---
@@ -253,7 +248,7 @@ docker logs <container-id>
 docker logs -f <container-id>
 ```
 
-Inside the container, the entrypoint writes:
+Inside the container, the supervisor script writes:
 - API logs to `/app/logs/app.log`
 - Memgraph logs to `/app/logs/memgraph.log`
 

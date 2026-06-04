@@ -34,12 +34,12 @@ RUN playwright install --with-deps chromium
 COPY . .
 
 RUN mkdir -p /app/logs /var/lib/memgraph /var/log/memgraph \
-    && chmod +x /app/entrypoint.sh \
+    && chmod +x /app/supervisor.sh \
     && chown -R memgraph:memgraph /app /var/lib/memgraph /var/log/memgraph /opt/venv
 
 USER memgraph
 
 EXPOSE 8000 7687
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/supervisor.sh"]
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
