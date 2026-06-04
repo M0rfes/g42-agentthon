@@ -5,6 +5,11 @@ services:
     image: memgraph/memgraph-mage:latest
     ports:
       - "7687:7687"
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/7687'"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
 
   app:
     build: .
@@ -18,4 +23,5 @@ services:
     volumes:
       - ./logs:/app/logs
     depends_on:
-      - memgraph
+      memgraph:
+        condition: service_healthy

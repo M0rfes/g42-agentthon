@@ -23,10 +23,8 @@ RUN playwright install --with-deps chromium
 
 COPY . .
 
-RUN mkdir -p /app/logs \
-    && chmod +x /app/supervisor.sh
+RUN mkdir -p /app/logs
 
 EXPOSE 8000
 
-ENTRYPOINT ["/app/supervisor.sh"]
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
