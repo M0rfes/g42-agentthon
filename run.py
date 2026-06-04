@@ -1,18 +1,17 @@
 import os
+import time
+import uuid
 from flask import Flask, jsonify, request
 from dotenv import load_dotenv
 from utils.logging import setup_logging
 import structlog
-from graphs.orchestrator import create_research_graph
+from app.workflow import build_submission_response, execute_workflow
 
 load_dotenv()
 setup_logging()
 logger = structlog.get_logger("server")
 
 app = Flask(__name__)
-
-# Compile the research graph globally at server startup
-research_graph = create_research_graph()
 
 @app.route("/", methods=["GET"])
 def index():
@@ -26,63 +25,49 @@ def index():
         }
     })
 
-@app.route("/research", methods=["POST", "GET"])
-def execute_research():
-    logger.info("research_request_received", method=request.method)
-    
-    # 1. Retrieve the query from JSON body or URL parameters
-    query = None
-    if request.method == "POST":
-        data = request.get_json(silent=True) or {}
-        query = data.get("query")
-    else:
-        query = request.args.get("query")
-        
+@app.route("/run", methods=["POST"])
+def run_submission():
+    trace_id = f"run-{time.strftime('%Y%m%d-%H%M%S')}-{uuid.uuid4().hex[:8]}"
+    logger.info("run_request_received", trace_id=trace_id, method=request.method)
+
+    data = request.get_json(silent=True) or {}
+    query = data.get("query")
     if not query:
-        logger.warning("research_request_missing_query")
+        logger.warning("run_request_missing_query", trace_id=trace_id)
         return jsonify({
-            "error": "Missing parameter 'query'. Please provide a search query to execute research."
+            "status": "error",
+            "error_type": "VALIDATION_ERROR",
+            "message": "Missing required field 'query' in JSON body.",
+            "trace_id": trace_id
         }), 400
-        
-    logger.info("research_execution_started", query=query)
-    
-    # 2. Initialize the ResearchState
-    initial_state = {
-        "query": query,
-        "research_plan": {},
-        "paper_shortlist": [],
-        "paper_summaries": [],
-        "insight_synthesis": {},
-        "research_report": "",
-        "citation_source_list": [],
-        "enriched_query": "",
-        "search_topics": [],
-        "scraped_data": [],
-        "contradictions": []
-    }
-    
+
     try:
-        # 3. Run the compiled LangGraph workflow
-        final_state = research_graph.invoke(initial_state)
-        
-        logger.info("research_execution_completed_successfully", query=query)
-        
-        # 4. Map and return the 6 expected outputs required by judges
-        return jsonify({
-            "query": final_state.get("query"),
-            "research_plan": final_state.get("research_plan"),
-            "paper_shortlist": final_state.get("paper_shortlist"),
-            "paper_summaries": final_state.get("paper_summaries"),
-            "insight_synthesis": final_state.get("insight_synthesis"),
-            "research_report": final_state.get("research_report"),
-            "citation_source_list": final_state.get("citation_source_list")
-        })
-        
+        started_at = time.time()
+        final_state = execute_workflow(query)
+        runtime_seconds = round(time.time() - started_at, 3)
+        response_payload = build_submission_response(final_state, trace_id, runtime_seconds)
+        logger.info("run_execution_completed_successfully", trace_id=trace_id, query=query)
+        return jsonify(response_payload)
     except Exception as e:
-        logger.error("research_execution_failed", query=query, error=str(e))
+        message = str(e)
+        if "quota" in message.lower():
+            error_type = "COMPASS_QUOTA_ERROR"
+        elif "api_key" in message.lower() or "credentials" in message.lower():
+            error_type = "COMPASS_AUTH_ERROR"
+        else:
+            error_type = "WORKFLOW_EXECUTION_ERROR"
+
+        logger.error("run_execution_failed", trace_id=trace_id, query=query, error=message)
+        public_messages = {
+            "COMPASS_QUOTA_ERROR": "Upstream model quota exceeded.",
+            "COMPASS_AUTH_ERROR": "Upstream model authentication failed.",
+            "WORKFLOW_EXECUTION_ERROR": "Workflow execution failed. Please retry later.",
+        }
         return jsonify({
-            "error": "An internal error occurred during graph execution.",
-            "details": str(e)
+            "status": "error",
+            "error_type": error_type,
+            "message": public_messages[error_type],
+            "trace_id": trace_id
         }), 500
 
 if __name__ == "__main__":

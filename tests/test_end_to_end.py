@@ -17,7 +17,7 @@ def run_end_to_end_test():
     print("RUNNING END-TO-END DEEP RESEARCH FLOW VERIFICATION")
     print("==================================================")
     
-    url = "http://localhost:8000/research"
+    url = "http://localhost:8000/run"
     payload = {
         "query": "Should artificial intelligence coding assistants write code autonomously?"
     }
@@ -41,44 +41,31 @@ def run_end_to_end_test():
         print("\nAPI Response successfully received!")
         print(f"Keys returned in response: {list(data.keys())}")
         
-        # We assert the 6 expected judge outputs are populated
-        print("\nVerifying the 6 expected outputs required by judges:")
-        
-        # 1. Research Plan
-        research_plan = data.get("research_plan")
-        print(f"1. Research Plan: {'[OK]' if research_plan else '[FAILED]'}")
-        assert research_plan, "Research plan is missing or empty."
-        
-        # 2. Paper Shortlist
-        paper_shortlist = data.get("paper_shortlist")
-        print(f"2. Paper Shortlist: {'[OK]' if paper_shortlist else '[FAILED]'} (Count: {len(paper_shortlist)})")
-        assert len(paper_shortlist) > 0, "Paper shortlist is empty."
-        
-        # 3. Individual Paper Summaries
-        paper_summaries = data.get("paper_summaries")
-        print(f"3. Paper Summaries: {'[OK]' if paper_summaries else '[FAILED]'} (Count: {len(paper_summaries)})")
-        assert len(paper_summaries) > 0, "Paper summaries is empty."
-        
-        # 4. Insight Synthesis
-        insight_synthesis = data.get("insight_synthesis")
-        print(f"4. Insight Synthesis: {'[OK]' if insight_synthesis else '[FAILED]'}")
-        assert insight_synthesis, "Insight synthesis is missing or empty."
-        
-        # 5. Research Report
-        research_report = data.get("research_report")
-        print(f"5. Research Report: {'[OK]' if research_report else '[FAILED]'} (Length: {len(research_report)} chars)")
-        assert len(research_report) > 100, "Research report is empty or too short."
-        
-        # 6. Citation or Source List
-        citation_source_list = data.get("citation_source_list")
-        print(f"6. Citation/Source List: {'[OK]' if citation_source_list else '[FAILED]'} (Count: {len(citation_source_list)})")
-        assert len(citation_source_list) > 0, "Citation source list is empty."
-        
-        print("\n--- SAMPLE OF RESEARCH REPORT ---")
-        print(research_report[:1000])
+        print("\nVerifying standardized /run response fields:")
+        assert data.get("status") == "success", "Status is not success."
+        assert data.get("use_case_id"), "use_case_id is missing."
+        assert data.get("trace_id"), "trace_id is missing."
+        assert "runtime_seconds" in data, "runtime_seconds is missing."
+        assert isinstance(data.get("agents_used"), list) and data.get("agents_used"), "agents_used is missing or empty."
+
+        result = data.get("result") or {}
+        assert isinstance(result, dict), "result is missing."
+        summary = result.get("summary")
+        recommendations = result.get("recommendations")
+        artifacts = result.get("artifacts")
+
+        print(f"1. Summary: {'[OK]' if summary else '[FAILED]'}")
+        assert summary, "result.summary is missing or empty."
+        print(f"2. Recommendations: {'[OK]' if recommendations is not None else '[FAILED]'}")
+        assert recommendations is not None, "result.recommendations is missing."
+        print(f"3. Artifacts: {'[OK]' if artifacts is not None else '[FAILED]'}")
+        assert artifacts is not None, "result.artifacts is missing."
+
+        print("\n--- SAMPLE OF SUMMARY ---")
+        print(summary[:1000])
         print("\n... [Truncated for readability] ...")
         
-        print("\n[SUCCESS] All 6 expected judge outputs verified and present!")
+        print("\n[SUCCESS] Standardized /run response verified!")
         
     except requests.exceptions.RequestException as re:
         print(f"\n[CONNECTION ERROR] Server could not be reached: {str(re)}")

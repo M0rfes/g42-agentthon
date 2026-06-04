@@ -1,27 +1,45 @@
-FROM python:3.11-slim
+FROM memgraph/memgraph-mage:latest
 
-# Install system dependencies for Playwright
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    VIRTUAL_ENV=/opt/venv \
+    PATH=/opt/venv/bin:$PATH \
+    MEMGRAPH_URI=bolt://127.0.0.1:7687
+
+USER root
+
+# Install Python tooling and build dependencies for the API container.
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-pip \
+    python3-venv \
+    python3-dev \
+    build-essential \
     curl \
     git \
-    build-essential \
+    bash \
+    procps \
+    && python3 -m venv "$VIRTUAL_ENV" \
+    && "$VIRTUAL_ENV/bin/pip" install --upgrade pip \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Copy requirements and install
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Install Playwright Chromium browser and its system dependencies
+# Install Playwright Chromium browser and its system dependencies.
 RUN playwright install --with-deps chromium
 
-# Copy application files
 COPY . .
 
-# Expose Flask port
-EXPOSE 8000
+RUN mkdir -p /app/logs /var/lib/memgraph /var/log/memgraph \
+    && chmod +x /app/supervisor.sh \
+    && chown -R memgraph:memgraph /app /var/lib/memgraph /var/log/memgraph /opt/venv
 
-# Start server using Gunicorn with a generous 10-minute timeout for long agentic flows
+USER memgraph
+
+EXPOSE 8000 7687
+
+ENTRYPOINT ["/app/supervisor.sh"]
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "600", "run:app"]
-
