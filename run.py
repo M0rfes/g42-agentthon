@@ -1,39 +1,75 @@
-import argparse
-from langgraph.graph import StateGraph, END
-from state import State
-from nodes import read_prd_node, planner_node, write_plan_node
+import os
+import time
+import uuid
+from flask import Flask, jsonify, request
+from dotenv import load_dotenv
+from utils.logging import setup_logging
+import structlog
+from app.workflow import build_submission_response, execute_workflow
 
+load_dotenv()
+setup_logging()
+logger = structlog.get_logger("server")
 
-def create_harness(ask_allowed: bool):
-    workflow = StateGraph(State)
+app = Flask(__name__)
 
-    workflow.add_node("read_prd", read_prd_node)
-    workflow.add_node("planner", planner_node)
-    workflow.add_node("write_plan", write_plan_node)
+@app.route("/", methods=["GET"])
+def index():
+    logger.info("request_received", route="/", method="GET")
+    return jsonify({
+        "status": "online",
+        "message": "Deep Research server is running.",
+        "config": {
+            "memgraph_uri": os.getenv("MEMGRAPH_URI", "bolt://localhost:7687"),
+            "openai_model": os.getenv("OPENAI_MODEL", "gpt-4o")
+        }
+    })
 
-    workflow.set_entry_point("read_prd")
-    workflow.add_edge("read_prd", "planner")
-    workflow.add_edge("planner", "write_plan")
-    workflow.add_edge("write_plan", END)
+@app.route("/run", methods=["POST"])
+def run_submission():
+    trace_id = f"run-{time.strftime('%Y%m%d-%H%M%S')}-{uuid.uuid4().hex[:8]}"
+    logger.info("run_request_received", trace_id=trace_id, method=request.method)
 
-    return workflow.compile()
+    data = request.get_json(silent=True) or {}
+    query = data.get("query")
+    if not query:
+        logger.warning("run_request_missing_query", trace_id=trace_id)
+        return jsonify({
+            "status": "error",
+            "error_type": "VALIDATION_ERROR",
+            "message": "Missing required field 'query' in JSON body.",
+            "trace_id": trace_id
+        }), 400
 
+    try:
+        started_at = time.time()
+        final_state = execute_workflow(query)
+        runtime_seconds = round(time.time() - started_at, 3)
+        response_payload = build_submission_response(final_state, trace_id, runtime_seconds)
+        logger.info("run_execution_completed_successfully", trace_id=trace_id, query=query)
+        return jsonify(response_payload)
+    except Exception as e:
+        message = str(e)
+        if "quota" in message.lower():
+            error_type = "COMPASS_QUOTA_ERROR"
+        elif "api_key" in message.lower() or "credentials" in message.lower():
+            error_type = "COMPASS_AUTH_ERROR"
+        else:
+            error_type = "WORKFLOW_EXECUTION_ERROR"
+
+        logger.error("run_execution_failed", trace_id=trace_id, query=query, error=message)
+        public_messages = {
+            "COMPASS_QUOTA_ERROR": "Upstream model quota exceeded.",
+            "COMPASS_AUTH_ERROR": "Upstream model authentication failed.",
+            "WORKFLOW_EXECUTION_ERROR": "Workflow execution failed. Please retry later.",
+        }
+        return jsonify({
+            "status": "error",
+            "error_type": error_type,
+            "message": public_messages[error_type],
+            "trace_id": trace_id
+        }), 500
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="PRD to Plan Harness")
-    parser.add_argument("prd_path", help="Path to the PRD markdown file")
-    parser.add_argument(
-        "--ask", action="store_true", help="Allow the agent to ask for clarification"
-    )
-    args = parser.parse_args()
-
-    app = create_harness(args.ask)
-    app.invoke(
-        {
-            "messages": [],
-            "prd_path": args.prd_path,
-            "prd_content": "",
-            "plan": "",
-            "ask_allowed": args.ask,
-        }
-    )
+    logger.info("server_starting", host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=8000)

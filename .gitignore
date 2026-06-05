@@ -1,3 +1,12 @@
 .env
-PRD.md
-README.md
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+data/docs/

@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "use_case_id": "16",
+  "result": {
+    "summary": "AI triage can improve throughput if models are supervised with clinician override, escalation logic, and continuous quality monitoring.",
+    "recommendations": [
+      "Define high-risk override paths",
+      "Monitor false negatives",
+      "Run monthly safety audits"
+    ],
+    "artifacts": [
+      "https://example.org/clinical-1"
+    ]
+  },
+  "agents_used": ["Planner", "Researcher", "Evaluator"],
+  "trace_id": "run-example-002",
+  "runtime_seconds": 41.7
+}
