@@ -91,12 +91,12 @@ def _patched_verify_vector_support(self) -> None:
         "index_manager_vector_index_recreating", old_dim=stored_dim, new_dim=dim
     )
 
-    # Clear stale entities that have wrong-dimension embeddings
+    # Clear stale embeddings that have wrong-dimension vectors (keep the graph structure)
     try:
         self.structured_query(
-            "MATCH (n:__Entity__) WHERE n.embedding IS NOT NULL DETACH DELETE n;"
+            "MATCH (n:__Entity__) WHERE n.embedding IS NOT NULL REMOVE n.embedding;"
         )
-        logger.info("index_manager_stale_entities_cleared")
+        logger.info("index_manager_stale_entity_embeddings_cleared")
     except Exception:
         pass
 
