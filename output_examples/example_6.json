@@ -1,0 +1,388 @@
+{
+  "agents_used": ["Planner", "Researcher", "Evaluator", "Writer"],
+  "result": {
+    "artifacts": [
+      {
+        "id": "[1]",
+        "title": "A Survey of Large Language Models",
+        "url": "https://doi.org/10.1007/s11704-026-60308-3"
+      },
+      {
+        "id": "[2]",
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models",
+        "url": "https://doi.org/10.48550/arxiv.2303.10130"
+      }
+    ],
+    "citation_source_list": [
+      {
+        "id": "[1]",
+        "title": "A Survey of Large Language Models",
+        "url": "https://doi.org/10.1007/s11704-026-60308-3"
+      },
+      {
+        "id": "[2]",
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models",
+        "url": "https://doi.org/10.48550/arxiv.2303.10130"
+      }
+    ],
+    "insight_synthesis": {
+      "empirical_findings": [
+        "LLMs enable a notable share of programming tasks to be completed significantly faster without compromising quality.",
+        "Metrics such as task completion rates, code correctness, and time savings are used to evaluate LLM impact.",
+        "Incorporation of LLM-powered tools increases the percentage of automatable or accelerable programming tasks.",
+        "Higher-income and knowledge-intensive programming jobs experience greater exposure to LLM capabilities."
+      ],
+      "entities_and_relationships": [
+        "LLMs → automate/accelerate → programming tasks",
+        "LLMs → improve → code quality",
+        "LLMs → enable → new workflows (in-context learning, prompt engineering)",
+        "LLMs → impact → various job roles (especially knowledge-intensive, higher-income)",
+        "LLMs → drive → economic, social, and policy implications"
+      ],
+      "executive_summary": "Large language models (LLMs) are fundamentally transforming the field of software development by automating and accelerating a wide range of programming tasks. Empirical studies demonstrate that LLMs significantly improve productivity, code quality, and task completion rates for developers. Their integration into software tooling enables new workflows and expands the scope of automatable programming activities, with pronounced effects across various job roles, especially those that are knowledge-intensive. These advancements carry substantial economic, social, and policy implications for the programming workforce.",
+      "key_themes": [
+        "LLMs as general-purpose technologies for code and programming",
+        "Acceleration and automation of programming tasks",
+        "Productivity and efficiency gains for developers",
+        "Emergence of new workflows (e.g., in-context learning, prompt engineering)",
+        "Broader economic and workforce implications"
+      ]
+    },
+    "paper_shortlist": [
+      {
+        "snippet": "INTRODUCTION: Healthcare systems are complex and challenging for all stakeholders, but artificial intelligence (AI) has transformed various fields, including healthcare, with the potential to improve patient care and quality of life. Rapid AI advancements can revolutionize healthcare by integrating it into clinical practice. Reporting AI's role in clinical practice is crucial for successful implem",
+        "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+        "url": "https://doi.org/10.1186/s12909-023-04698-z"
+      },
+      {
+        "snippet": "Abstract The rapid evolution of large language models (LLMs) has driven a transformative shift in artificial intelligence (AI), reshaping both research paradigms and practical applications. Distinguished from their predecessors by unprecedented scale and advanced capabilities, LLMs necessitate new frameworks for understanding their development, behavior, and societal impact. This survey systematic",
+        "title": "A Survey of Large Language Models",
+        "url": "https://doi.org/10.1007/s11704-026-60308-3"
+      },
+      {
+        "snippet": "Over the last decade, technological advancements, especially artificial intelligence (AI), have significantly transformed educational practices. Recently, the development and adoption of Generative Pre-trained Transformers (GPT), particularly OpenAI’s ChatGPT, has sparked considerable interest. The unprecedented capabilities of these models, such as generating humanlike text and facilitating autom",
+        "title": "Shaping the Future of Education: Exploring the Potential and Consequences of AI and ChatGPT in Educational Settings",
+        "url": "https://doi.org/10.3390/educsci13070692"
+      },
+      {
+        "snippet": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labou",
+        "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+        "url": "https://doi.org/10.1111/1748-8583.12524"
+      },
+      {
+        "snippet": "We investigate the potential implications of large language models (LLMs), such as Generative Pre-trained Transformers (GPTs), on the U.S. labor market, focusing on the increased capabilities arising from LLM-powered software compared to LLMs on their own. Using a new rubric, we assess occupations based on their alignment with LLM capabilities, integrating both human expertise and GPT-4 classifica",
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models",
+        "url": "https://doi.org/10.48550/arxiv.2303.10130"
+      },
+      {
+        "snippet": "We present CurryBrowser, a generic analysis environment for the declarative multi-paradigm language Curry. CurryBrowser supports browsing through the program code of an application written in Curry, i.e., the main module and all directly or indirectly imported modules. Each module can be shown in different formats (e.g., source code, interface, intermediate code) and, inside each module, various p",
+        "title": "A Generic Analysis Environment for Curry Programs",
+        "url": "http://arxiv.org/abs/cs/0701147v1"
+      },
+      {
+        "snippet": "We study distributed optimization in the presence of Byzantine adversaries, where both data and computation are distributed among $m$ worker machines, $t$ of which may be corrupt. The compromised nodes may collaboratively and arbitrarily deviate from their pre-specified programs, and a designated (master) node iteratively computes the model/parameter vector for generalized linear models. In this w",
+        "title": "Data Encoding for Byzantine-Resilient Distributed Optimization",
+        "url": "https://arxiv.org/abs/1907.02664v2"
+      },
+      {
+        "snippet": "We study distributed stochastic gradient descent (SGD) in the master-worker architecture under Byzantine attacks. We consider the heterogeneous data model, where different workers may have different local datasets, and we do not make any probabilistic assumptions on data generation. At the core of our algorithm, we use the polynomial-time outlier-filtering procedure for robust mean estimation prop",
+        "title": "Byzantine-Resilient SGD in High Dimensions on Heterogeneous Data",
+        "url": "https://arxiv.org/abs/2005.07866v1"
+      },
+      {
+        "snippet": "In this paper we present CIDER (Curry Integrated Development EnviRonment), an analysis and programming environment for the declarative multi-paradigm language Curry. CIDER is a graphical environment to support the development of Curry programs by providing integrated tools for the analysis and visualization of programs. CIDER is completely implemented in Curry using libraries for GUI programming (",
+        "title": "An Integrated Development Environment for Declarative Multi-Paradigm Programming",
+        "url": "http://arxiv.org/abs/cs/0111039v2"
+      },
+      {
+        "snippet": "Abstract—Large Language Models (LLMs) suffer from inherent stochasticity, limiting their utility in high-stakes enterprise environments where determinism and auditability are required. This paper introduces the MFOUR Vibe Framework (MVF), a platform-agnostic architectural standard that transforms probabilistic natural language intent into deterministic software artifacts. We define a five-layer to",
+        "title": "GPT-4 Technical Report",
+        "url": "https://doi.org/10.4230/lipics.cosit.2024.11"
+      },
+      {
+        "snippet": "According to numerous reports, ChatGPT represents a significant breakthrough in the field of artificial intelligence. ChatGPT is a pre-trained AI model designed to engage in natural language conversations, utilizing sophisticated techniques from Natural Language Processing (NLP), Supervised Learning, and Reinforcement Learning to comprehend and generate text comparable to human-generated text. Thi",
+        "title": "ChatGPT and Open-AI Models: A Preliminary Review",
+        "url": "https://doi.org/10.3390/fi15060192"
+      },
+      {
+        "snippet": "Abstract Recent developments in the field of artificial intelligence (AI) have enabled new paradigms of machine processing, shifting from data-driven, discriminative AI tasks toward sophisticated, creative tasks through generative AI. Leveraging deep generative models, generative AI is capable of producing novel and realistic content across a broad spectrum (e.g., texts, images, or programming cod",
+        "title": "Generative artificial intelligence",
+        "url": "https://doi.org/10.1007/s12525-023-00680-1"
+      },
+      {
+        "snippet": "Within the vast expanse of computerized language processing, a revolutionary entity known as Large Language Models (LLMs) has emerged, wielding immense power in its capacity to comprehend intricate linguistic patterns and conjure coherent and contextually fitting responses. Large language models (LLMs) are a type of artificial intelligence (AI) that have emerged as powerful tools for a wide range ",
+        "title": "A Survey on Large Language Models: Applications, Challenges, Limitations, and Practical Usage",
+        "url": "https://doi.org/10.36227/techrxiv.23589741.v1"
+      },
+      {
+        "snippet": "This study outlines the future research opportunities related to Generative Artificial Intelligence (GenAI) in innovation management. To this end, it combines a review of the academic literature with the results of a Delphi study involving leading innovation management scholars. Ten major research themes emerged that can guide future research developments at the intersection of GenAI and innovatio",
+        "title": "Generative artificial intelligence in innovation management: A preview of future research developments",
+        "url": "https://doi.org/10.1016/j.jbusres.2024.114542"
+      },
+      {
+        "snippet": "In model-driven development (MDD) software emerges by systematically transforming abstract models to concrete source code. Ideally, performing those transformations is to a large extent the task of code generators. One approach for developing a new code generator is to write a reference implementation and separate it into handwritten and generatable code. Typically, the generator developer manuall",
+        "title": "Using Software Categories for the Development of Generative Software",
+        "url": "https://arxiv.org/abs/1509.02293v1"
+      },
+      {
+        "snippet": "Background: Research software is software developed by and/or used by researchers, across a wide variety of domains, to perform their research. Because of the complexity of research software, developers cannot conduct exhaustive testing. As a result, researchers have lower confidence in the correctness of the output of the software. Peer code review, a standard software engineering practice, has h",
+        "title": "Developers Perception of Peer Code Review in Research Software Development",
+        "url": "https://arxiv.org/abs/2109.10971v1"
+      },
+      {
+        "snippet": "Context: Software refactoring aims to improve software quality and developer productivity. Numerous empirical studies investigating the impact of refactoring activities on software quality have been conducted over the last two decades. Objective: This study aims to perform a comprehensive systematic mapping study of existing empirical studies on evaluation of the effect of object-oriented code ref",
+        "title": "How does Object-Oriented Code Refactoring Influence Software Quality? Research Landscape and Challenges",
+        "url": "https://arxiv.org/abs/1908.05399v1"
+      },
+      {
+        "snippet": "Nowadays, the use of agile software development methods like Scrum is common in industry and academia. Considering the current attacking landscape, it is clear that developing secure software should be a main concern in all software development projects. In traditional software projects, security issues require detailed planning in an initial planning phase, typically resulting in a detailed secur",
+        "title": "Secure Scrum: Development of Secure Software with Scrum",
+        "url": "https://arxiv.org/abs/1507.02992v1"
+      },
+      {
+        "snippet": "Generative AI, Artificial intelligence, Decision support, Content creation, Information systems",
+        "title": "Generative AI",
+        "url": "https://doi.org/10.1007/s12599-023-00834-7"
+      },
+      {
+        "snippet": "Abstract Autonomous agents have long been a research focus in academic and industry communities. Previous research often focuses on training agents with limited knowledge within isolated environments, which diverges significantly from human learning processes, and makes the agents hard to achieve human-like decisions. Recently, through the acquisition of vast amounts of Web knowledge, large langua",
+        "title": "A survey on large language model based autonomous agents",
+        "url": "https://doi.org/10.1007/s11704-024-40231-1"
+      },
+      {
+        "snippet": "Natural language processing (NLP) has been studied in computing for decades. Recent technological advancements have led to the development of sophisticated artificial intelligence (AI) models, such as Chat Generative Pre-trained Transformer (ChatGPT). These models can perform a range of language tasks and generate human-like responses, which offers exciting prospects for academic efficiency. This ",
+        "title": "From human writing to artificial intelligence generated text: examining the prospects and potential threats of ChatGPT in academic writing",
+        "url": "https://doi.org/10.5114/biolsport.2023.125623"
+      },
+      {
+        "snippet": "In programmers point of view, Datatypes in programming language level have a simple description but inside hardware, huge machine codes are responsible to describe type features. Datatype architecture design is a novel approach to match programming features along with hardware design. In this paper a novel Data type-Based Code Reducer (TYPELINE) architecture is proposed and implemented according t",
+        "title": "A novel datatype architecture support for programming languages",
+        "url": "https://arxiv.org/abs/1402.0087v1"
+      },
+      {
+        "snippet": "This paper attempts to connects the evolution of computer languages with the evolution of life, where the later has been dictated by \\emph{theory of evolution of species}, and tries to give supportive evidence that the new languages are more robust than the previous, carry-over the mixed features of older languages, such that strong features gets added into them and weak features of older language",
+        "title": "On the Evolution of Programming Languages",
+        "url": "https://arxiv.org/abs/2007.02699v1"
+      },
+      {
+        "snippet": "Neural network verification is a new and rapidly developing field of research. So far, the main priority has been establishing efficient verification algorithms and tools, while proper support from the programming language perspective has been considered secondary or unimportant. Yet, there is mounting evidence that insights from the programming language community may make a difference in the futu",
+        "title": "Neural Network Verification is a Programming Language Challenge",
+        "url": "https://arxiv.org/abs/2501.05867v2"
+      },
+      {
+        "snippet": "There are many programming languages in the world today.Each language has their advantage and disavantage. In this paper, we will discuss ten programming languages: C++, C#, Java, Groovy, JavaScript, PHP, Schalar, Scheme, Haskell and AspectJ. We summarize and compare these ten languages on ten different criterion. For example, Default more secure programming practices, Web applications development",
+        "title": "Comparative Studies of 10 Programming Languages within 10 Diverse Criteria -- a Team 7 COMP6411-S10 Term Report",
+        "url": "https://arxiv.org/abs/1009.0305v1"
+      },
+      {
+        "snippet": "As advances in artificial intelligence (AI) continue to transform and revolutionize the field of medicine, understanding the potential uses of generative AI in health care becomes increasingly important. Generative AI, including models such as generative adversarial networks and large language models, shows promise in transforming medical diagnostics, research, treatment planning, and patient care",
+        "title": "Generative AI in Medical Practice: In-Depth Exploration of Privacy and Security Challenges",
+        "url": "https://doi.org/10.2196/53008"
+      },
+      {
+        "snippet": "This paper conducts a systematic review and interdisciplinary analysis of the ethical challenges of generative AI technologies (N = 37), highlighting significant concerns such as privacy, data protection, copyright infringement, misinformation, biases, and societal inequalities. The ability of generative AI to produce convincing deepfakes and synthetic media, which threaten the foundations of trut",
+        "title": "Ethical Challenges and Solutions of Generative AI: An Interdisciplinary Perspective",
+        "url": "https://doi.org/10.3390/informatics11030058"
+      },
+      {
+        "snippet": "Abstract Large language models (LLMs) represent a major advance in artificial intelligence (AI) research. However, the widespread use of LLMs is also coupled with significant ethical and social challenges. Previous research has pointed towards auditing as a promising governance mechanism to help ensure that AI systems are designed and deployed in ways that are ethical, legal, and technically robus",
+        "title": "Auditing large language models: a three-layered approach",
+        "url": "https://doi.org/10.1007/s43681-023-00289-2"
+      },
+      {
+        "snippet": "Published 2024. Cited 177 times.",
+        "title": "Computer Science Curricula 2023",
+        "url": "https://doi.org/10.1145/3664191"
+      },
+      {
+        "snippet": "In order to make spoken dialogue systems (such as Amazon Alexa or Google Assistant) more accessible and naturally interactive for people with cognitive impairments, appropriate data must be obtainable. Recordings of multi-modal spontaneous conversations with vulnerable user groups are scarce however and this valuable data is challenging to collect. Researchers that call for this data are commonly ",
+        "title": "Ethically Collecting Multi-Modal Spontaneous Conversations with People that have Cognitive Impairments",
+        "url": "https://arxiv.org/abs/2009.14361v1"
+      },
+      {
+        "snippet": "The rise of influencer marketing has blurred boundaries between organic content and sponsored content, making the enforcement of legal rules relating to transparency challenging. Effective regulation requires applying legal knowledge with a clear purpose and reason, yet current detection methods of undisclosed sponsored content generally lack legal grounding or operate as opaque \"black boxes\". Usi",
+        "title": "Evaluating LLM-Generated Legal Explanations for Regulatory Compliance in Social Media Influencer Marketing",
+        "url": "https://arxiv.org/abs/2510.08111v1"
+      },
+      {
+        "snippet": "Regulatory texts are inherently long and complex, presenting significant challenges for information retrieval systems in supporting regulatory officers with compliance tasks. This paper introduces a hybrid information retrieval system that combines lexical and semantic search techniques to extract relevant information from large regulatory corpora. The system integrates a fine-tuned sentence trans",
+        "title": "A Hybrid Approach to Information Retrieval and Answer Generation for Regulatory Texts",
+        "url": "https://arxiv.org/abs/2502.16767v1"
+      },
+      {
+        "snippet": "Legal documents are often long, dense, and difficult to comprehend, not only for laypeople but also for legal experts. While automated document summarization has great potential to improve access to legal knowledge, prevailing task-based evaluators overlook divergent user and stakeholder needs. Tool development is needed to encompass the technicality of a case summary for a litigator yet be access",
+        "title": "PersonaMatrix: A Recipe for Persona-Aware Evaluation of Legal Summarization",
+        "url": "https://arxiv.org/abs/2509.16449v2"
+      },
+      {
+        "snippet": "Published 2021. Cited 586 times.",
+        "title": "What do we want from Explainable Artificial Intelligence (XAI)? – A stakeholder perspective on XAI and a conceptual model guiding interdisciplinary XAI research",
+        "url": "https://doi.org/10.1016/j.artint.2021.103473"
+      },
+      {
+        "snippet": "As individuals and communities interact in and with an environment that is increasingly virtual they are often vulnerable to the commodification of their digital exhaust. Concepts and behavior that are ambiguous in nature are captured in this environment, quantified, and used to categorize, sort, recommend, or make decisions about people's lives. While many organizations seek to utilize this infor",
+        "title": "Towards a standard for identifying and managing bias in artificial intelligence",
+        "url": "https://doi.org/10.6028/nist.sp.1270"
+      },
+      {
+        "snippet": "Abstract Machine learning (ML) models are nowadays used in complex applications in various domains, such as medicine, bioinformatics, and other sciences. Due to their black box nature, however, it may sometimes be hard to understand and trust the results they provide. This has increased the demand for reliable visualization tools related to enhancing trust in ML models, which has become a prominen",
+        "title": "The State of the Art in Enhancing Trust in Machine Learning Models with the Use of Visualizations",
+        "url": "https://doi.org/10.1111/cgf.14034"
+      },
+      {
+        "snippet": "The rapid expansion of Learning Analytics (LA) and Artificial Intelligence in Education (AIED) offers new scalable, data-intensive systems but raises concerns about data privacy and agency. Excluding stakeholders—like students and teachers—from the design process can potentially lead to mistrust and inadequately aligned tools. Despite a shift towards human-centred design in recent LA and AIED rese",
+        "title": "Human-centred learning analytics and AI in education: A systematic literature review",
+        "url": "https://doi.org/10.1016/j.caeai.2024.100215"
+      },
+      {
+        "snippet": "Multimodal machine learning is a vibrant multi-disciplinary research field that aims to design computer agents with intelligent capabilities such as understanding, reasoning, and learning through integrating multiple communicative modalities, including linguistic, acoustic, visual, tactile, and physiological messages. With the recent interest in video understanding, embodied autonomous agents, tex",
+        "title": "Foundations &amp; Trends in Multimodal Machine Learning: Principles, Challenges, and Open Questions",
+        "url": "https://doi.org/10.1145/3656580"
+      },
+      {
+        "snippet": "While generative artificial intelligence (Gen AI) increasingly transforms academic environments, a critical gap exists in understanding and mitigating human biases in AI interactions, such as anchoring and confirmation bias. This position paper advocates for metacognitive AI literacy interventions to help university students critically engage with AI and address biases across the Human-AI interact",
+        "title": "DeBiasMe: De-biasing Human-AI Interactions with Metacognitive AIED (AI in Education) Interventions",
+        "url": "https://arxiv.org/abs/2504.16770v1"
+      },
+      {
+        "snippet": "Large-scale AI models such as GPT-4 have accelerated the deployment of artificial intelligence across critical domains including law, healthcare, and finance, raising urgent questions about trust and transparency. This study investigates the relationship between explainability and user trust in AI systems through a quantitative experimental design. Using an interactive, web-based loan approval sim",
+        "title": "Preliminary Quantitative Study on Explainability and Trust in AI Systems",
+        "url": "https://arxiv.org/abs/2510.15769v1"
+      },
+      {
+        "snippet": "The recent rapid advancement of LLM-based AI systems has accelerated our search and production of information. While the advantages brought by these systems seemingly improve the performance or efficiency of human activities, they do not necessarily enhance human capabilities. Recent research has started to examine the impact of generative AI on individuals' cognitive abilities, especially critica",
+        "title": "Designing AI Systems that Augment Human Performed vs. Demonstrated Critical Thinking",
+        "url": "https://arxiv.org/abs/2504.14689v1"
+      },
+      {
+        "snippet": "Retrieval-Augmented Generation (RAG) systems offer a powerful approach to enhancing large language model (LLM) outputs by incorporating fact-checked, contextually relevant information. However, fairness and reliability concerns persist, as hallucinations can emerge at both the retrieval and generation stages, affecting users' reasoning and decision-making. Our research explores how tailored warnin",
+        "title": "Enhancing Critical Thinking with AI: A Tailored Warning System for RAG Models",
+        "url": "https://arxiv.org/abs/2504.16883v1"
+      },
+      {
+        "snippet": "Contemporary Psychometrics features cutting edge chapters organized in four sections: test theory, factor analysis, structural equation modeling, and multivariate analysis. The section on test theory includes topics such as multidimensional item response theory (IRT), the relationship between IRT and factor analysis, estimation and testing of these models, and basic measurement issues that are oft",
+        "title": "Contemporary Psychometrics",
+        "url": "https://doi.org/10.4324/9781410612977"
+      },
+      {
+        "snippet": "For a long time, humanity has pursued artificial intelligence (AI) equivalent to or surpassing the human level, with AI agents considered a promising vehicle for this pursuit. AI agents are artificial entities that sense their environment, make decisions, and take actions. Many efforts have been made to develop intelligent agents, but they mainly focus on advancement in algorithms or training stra",
+        "title": "The Rise and Potential of Large Language Model Based Agents: A Survey",
+        "url": "https://doi.org/10.48550/arxiv.2309.07864"
+      },
+      {
+        "snippet": "Abstract This paper critically examines model compression techniques within the machine learning (ML) domain, emphasizing their role in enhancing model efficiency for deployment in resource-constrained environments, such as mobile devices, edge computing, and Internet of Things (IoT) systems. By systematically exploring compression techniques and lightweight design architectures, it is provided a ",
+        "title": "A comprehensive review of model compression techniques in machine learning",
+        "url": "https://doi.org/10.1007/s10489-024-05747-w"
+      },
+      {
+        "snippet": "Data generated from sources such as wearable sensors, medical imaging, personal health records, pathology records, and public health organizations have resulted in a massive information increase in the medical sciences over the last decade. Advances in computational hardware, such as cloud computing, Graphical Processing Units (GPUs), and Tensor Processing Units (TPUs), provide the means to utiliz",
+        "title": "Artificial Intelligence and Biosensors in Healthcare and Its Clinical Relevance: A Review",
+        "url": "https://doi.org/10.1109/access.2023.3285596"
+      },
+      {
+        "snippet": "In today’s digital age, Convolutional Neural Networks (CNNs), a subset of Deep Learning (DL), are widely used for various computer vision tasks such as image classification, object detection, and image segmentation. There are numerous types of CNNs designed to meet specific needs and requirements, including 1D, 2D, and 3D CNNs, as well as dilated, grouped, attention, depthwise convolutions, and NA",
+        "title": "A Comprehensive Survey of Convolutions in Deep Learning: Applications, Challenges, and Future Trends",
+        "url": "https://doi.org/10.1109/access.2024.3376441"
+      },
+      {
+        "snippet": "Artificial Intelligence (AI) is changing the world, but its impacts on the environment and human well-being remain uncertain. We conducted a systematic literature review of 1,291 studies selected from 6,655 records, identifying the main impacts of AI and how they are assessed. The evidence reveals an uneven landscape: 72% of environmental studies focus narrowly on energy use and CO2 emissions, whi",
+        "title": "The impacts of artificial intelligence on environmental sustainability and human well-being",
+        "url": "https://arxiv.org/abs/2602.24091v1"
+      },
+      {
+        "snippet": "Deep reinforcement learning (DRL) has been envisioned to have a competitive edge in quantitative finance. However, there is a steep development curve for quantitative traders to obtain an agent that automatically positions to win in the market, namely \\textit{to decide where to trade, at what price} and \\textit{what quantity}, due to the error-prone programming and arduous debugging. In this paper",
+        "title": "FinRL: Deep Reinforcement Learning Framework to Automate Trading in Quantitative Finance",
+        "url": "https://arxiv.org/abs/2111.09395v1"
+      },
+      {
+        "snippet": "Machine Learning (ML) has recently shown tremendous success in modeling various healthcare prediction tasks, ranging from disease diagnosis and prognosis to patient treatment. Due to the sensitive nature of medical data, privacy must be considered along the entire ML pipeline, from model training to inference. In this paper, we conduct a review of recent literature concerning Privacy-Preserving Ma",
+        "title": "Privacy-preserving machine learning for healthcare: open challenges and future perspectives",
+        "url": "https://arxiv.org/abs/2303.15563v1"
+      },
+      {
+        "snippet": "Reliance on scanned documents and fax communication for healthcare referrals leads to high administrative costs and errors that may affect patient care. In this work we propose a hybrid model leveraging LayoutLMv3 along with domain-specific rules to identify key patient, physician, and exam-related entities in faxed referral documents. We explore some of the challenges in applying a document under",
+        "title": "Document Understanding for Healthcare Referrals",
+        "url": "https://arxiv.org/abs/2309.13184v1"
+      }
+    ],
+    "paper_summaries": [
+      {
+        "relevance_score": 0.2,
+        "summary": "This review article provides a comprehensive overview of the current state and potential of artificial intelligence (AI) in clinical practice, focusing on applications such as disease diagnosis, treatment recommendations, patient engagement, and clinical laboratory testing. The article highlights AI's ability to leverage large datasets, identify patterns, and potentially surpass human performance in certain healthcare tasks. Key benefits discussed include increased accuracy, reduced costs, time savings, minimized human errors, and advancements in personalized medicine and population health management. The review also addresses challenges such as data privacy, bias, and the ongoing need for human expertise. However, the article does not specifically address large language models (LLMs) for code or programming, nor does it discuss the effect of LLMs on software development or programming practices.",
+        "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+        "url": "https://doi.org/10.1186/s12909-023-04698-z"
+      },
+      {
+        "relevance_score": 0.7,
+        "summary": "This comprehensive survey reviews the rapid evolution and impact of large language models (LLMs), focusing on their development, capabilities, and societal implications. It systematically covers four main areas: (1) pre-training methodologies (including large-scale self-supervised learning, architectural innovations, and data curation), (2) post-training techniques (such as supervised fine-tuning and reinforcement learning for alignment and safety), (3) utilization strategies (like in-context learning, prompt engineering, and agentic reasoning for real-world deployment), and (4) evaluation methods (benchmarks for language, reasoning, and safety). The article also discusses critical research issues such as theoretical foundations, efficient scaling, alignment, and agentic capabilities, and highlights open challenges. While the survey provides a broad and up-to-date overview of LLMs, it does not specifically focus on code or programming applications, but rather on general LLM advancements and their implications.",
+        "title": "A Survey of Large Language Models",
+        "url": "https://doi.org/10.1007/s11704-026-60308-3"
+      },
+      {
+        "relevance_score": 0.0,
+        "summary": "The content of this resource could not be accessed due to permission restrictions. As a result, no key findings, arguments, or empirical data regarding the effect of large language models (LLMs) on code and programming in educational settings can be summarized from this source.",
+        "title": "Shaping the Future of Education: Exploring the Potential and Consequences of AI and ChatGPT in Educational Settings",
+        "url": "https://doi.org/10.3390/educsci13070692"
+      },
+      {
+        "relevance_score": 0.0,
+        "summary": "The resource appears to be a scholarly article focused on the implications of generative AI, specifically ChatGPT, for human resource management. However, the scraped content does not provide any substantive information, findings, or arguments from the article itself. There is no discussion of the effect of large language models (LLMs) on code or programming, nor any empirical data or perspectives relevant to the core research query. The content is limited to a placeholder message indicating a technical requirement to access the page.",
+        "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+        "url": "https://doi.org/10.1111/1748-8583.12524"
+      },
+      {
+        "relevance_score": 0.9,
+        "summary": "This paper investigates the potential labor market impacts of large language models (LLMs), such as GPTs, with a focus on the increased capabilities when LLMs are integrated into software tools. Using a new rubric and both human and GPT-4 assessments, the authors estimate that about 80% of the U.S. workforce could have at least 10% of their work tasks affected by LLMs, and 19% could see at least 50% of their tasks impacted. The effects are projected across all wage levels, with higher-income jobs potentially more exposed. Notably, the study finds that LLMs alone could enable about 15% of all worker tasks to be completed significantly faster at the same quality, but this rises to 47-56% when considering LLM-powered software. The paper argues that LLMs exhibit characteristics of general-purpose technologies, suggesting broad economic, social, and policy implications. While not focused exclusively on code or programming, the findings are highly relevant to the effect of LLMs on programming tasks, as these are among the knowledge work tasks most susceptible to automation and augmentation by LLMs and LLM-powered tools.",
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models",
+        "url": "https://doi.org/10.48550/arxiv.2303.10130"
+      }
+    ],
+    "recommendations": [
+      "Empirical studies and quantitative data on LLM adoption and outcomes in real-world programming environments",
+      "Impact of LLMs on software development productivity, code quality, and security (including adversarial/malicious use cases)",
+      "Influence of LLMs on open-source communities, collaborative coding platforms, and the evolution of programming languages and practices",
+      "Legal, regulatory, and ethical implications of LLM-generated code (including copyright, liability, and compliance)",
+      "Human-AI interaction in programming: user experience, trust, explainability, debugging, and accessibility for underrepresented groups",
+      "Environmental and computational costs of training and deploying LLMs for code, and cross-industry impacts (e.g., healthcare, finance, embedded systems)"
+    ],
+    "research_plan": {
+      "critique": {
+        "gaps": [
+          "Lack of empirical studies or quantitative data on LLM adoption and outcomes in real-world settings",
+          "Omission of the impact on open-source communities and collaborative coding platforms (e.g., GitHub)",
+          "No discussion of the environmental and computational costs of training and deploying LLMs for code",
+          "Missing perspectives on the evolution of programming languages and software engineering practices due to LLMs",
+          "No mention of regulatory, legal, or compliance implications beyond copyright (e.g., liability for AI-generated code)",
+          "Absence of user experience and human-AI interaction studies (e.g., trust, explainability, debugging AI-generated code)",
+          "No exploration of adversarial use cases (e.g., LLMs generating malicious code, security exploits)",
+          "Lack of cross-disciplinary or industry-specific impacts (e.g., healthcare, finance, embedded systems)",
+          "No consideration of accessibility improvements or challenges for underrepresented groups in programming"
+        ],
+        "rationale": "The initial plan covers several core themes but omits important adjacent and counterbalancing domains. It does not reference empirical or quantitative studies that could ground the discussion in real-world data. The impact on open-source communities and collaborative coding is a major area, as LLMs are increasingly integrated into platforms like GitHub Copilot. The environmental and computational costs of LLMs are a growing concern in AI ethics and sustainability. The plan also overlooks how LLMs might influence the evolution of programming languages, paradigms, and best practices. Legal and regulatory issues are broader than copyright, including questions of liability and compliance. Human factors such as trust, explainability, and the challenges of debugging AI-generated code are critical for adoption. Security risks are mentioned, but adversarial or malicious uses are not explicitly considered. Finally, the plan does not address how LLMs might affect different industries or improve (or hinder) accessibility for marginalized groups. Addressing these gaps would ensure a more comprehensive and balanced analysis."
+      },
+      "elaborated_query": "This query aims to comprehensively assess the multifaceted effects of large language models (LLMs) for code and programming, such as OpenAI's Codex and Google's Codey. The analysis will address both positive and negative impacts across software development, education, industry, and the broader programming ecosystem. Positive aspects include increased productivity, automation of repetitive tasks, democratization of programming for non-experts, rapid prototyping, and potential accessibility improvements for underrepresented groups. Counterpoints encompass concerns about code quality, security vulnerabilities, adversarial or malicious code generation, over-reliance on AI, job displacement, and ethical issues such as copyright, plagiarism, and broader legal liability. The plan will also examine empirical and quantitative data on LLM adoption and outcomes, the influence on open-source communities and collaborative coding platforms, environmental and computational costs, evolution of programming languages and practices, regulatory and compliance implications, user experience and human-AI interaction (including trust, explainability, and debugging), industry-specific impacts, and accessibility challenges. The goal is to provide a balanced, evidence-based understanding of how LLMs are reshaping the landscape of programming and software engineering.",
+      "search_topics": [
+        "Empirical studies and quantitative data on LLM adoption and outcomes in real-world programming environments",
+        "Impact of LLMs on software development productivity, code quality, and security (including adversarial/malicious use cases)",
+        "Influence of LLMs on open-source communities, collaborative coding platforms, and the evolution of programming languages and practices",
+        "Legal, regulatory, and ethical implications of LLM-generated code (including copyright, liability, and compliance)",
+        "Human-AI interaction in programming: user experience, trust, explainability, debugging, and accessibility for underrepresented groups",
+        "Environmental and computational costs of training and deploying LLMs for code, and cross-industry impacts (e.g., healthcare, finance, embedded systems)"
+      ]
+    },
+    "research_report": "# Effect of Large Language Models (LLMs) on Code and Programming\n\n## 1. Introduction\nThe emergence of large language models (LLMs), such as GPT-3 and GPT-4, has significantly influenced software development and programming. Trained on extensive corpora of text and code, these models demonstrate notable capabilities in generating, understanding, and manipulating code. Their integration into programming workflows is altering how developers approach coding tasks, with implications for productivity, code quality, and the broader labor market. This report synthesizes current research to assess the empirical effects, opportunities, limitations, and challenges posed by LLMs in the domain of code and programming.\n\n## 2. Methodology\nThis report is based on a targeted review of recent scholarly literature, focusing on high-relevance sources that empirically evaluate the impact of LLMs on programming tasks. The primary data sources include:\n- A comprehensive survey of LLMs, covering their development, capabilities, and societal implications [1].\n- An early empirical study on the labor market impact of LLMs, with specific attention to programming and knowledge work [2].\n\nFindings are synthesized from these sources, with supporting statistics and thematic analysis. Where direct evidence is limited, claims are qualified accordingly. Less relevant or inaccessible sources were excluded from the core synthesis.\n\n## 3. Key Findings & Empirical Data\n### 3.1 LLMs as General-Purpose Technologies for Programming\nLLMs are increasingly recognized as general-purpose technologies (GPTs) due to their broad applicability and transformative potential across diverse domains, including software development [2]. Their ability to automate and accelerate programming tasks positions them as foundational tools in the modern developer's toolkit.\n\n### 3.2 Productivity and Efficiency Gains\nEmpirical evidence indicates that LLMs significantly enhance developer productivity:\n- **Task Acceleration:** LLMs alone enable approximately 15% of all worker tasks (including programming) to be completed significantly faster without compromising quality. When LLM-powered software tools are considered, this figure rises to 47–56% [2].\n- **Task Exposure:** About 80% of the U.S. workforce could have at least 10% of their work tasks affected by LLMs, and 19% could see at least 50% of their tasks impacted. Programming and other knowledge-intensive roles are among the most exposed [2].\n\n| Metric                              | LLMs Alone | LLM-Powered Tools |\n|-------------------------------------|------------|------------------|\n| Tasks completed faster (all)        | 15%        | 47–56%           |\n| Workforce with ≥10% tasks affected  | 80%        | —                |\n| Workforce with ≥50% tasks affected  | 19%        | —                |\n\n### 3.3 Code Quality and New Workflows\n- **Code Quality:** Available research suggests that LLMs can generate code that is correct for many routine programming tasks, as measured by benchmarks and human evaluation, though direct evidence of consistently exceeding human-level correctness is limited [1].\n- **New Workflows:** The adoption of in-context learning, prompt engineering, and agentic reasoning enables developers to interact with LLMs in novel ways, expanding the scope of automatable programming activities [1].\n\n### 3.4 Technical Limitations and Open Research Questions\nDespite their promise, LLMs exhibit several technical limitations in code generation:\n- **Hallucination:** LLMs may generate syntactically correct but semantically incorrect or non-functional code, especially in unfamiliar or ambiguous contexts [1].\n- **Context Limitations:** LLMs can struggle with tasks requiring deep understanding of project-specific context, long-term dependencies, or domain-specific knowledge [1].\n- **Security and Robustness:** Generated code may inadvertently introduce security vulnerabilities or subtle bugs if not rigorously reviewed [1].\n- **Evaluation Challenges:** Benchmarking LLM-generated code remains an open research area, particularly for complex, real-world programming tasks [1].\n\n### 3.5 Economic and Workforce Implications\n- **Job Role Impact:** Higher-income and knowledge-intensive programming jobs are more exposed to LLM-driven automation and augmentation [2].\n- **Broader Implications:** The widespread adoption of LLMs in programming is expected to drive significant economic, social, and policy changes, necessitating adaptation in workforce training and job design [2].\n\n## 4. Discussion\n### 4.1 Favorable Viewpoints\n- **Productivity Gains:** Proponents argue that LLMs free developers from repetitive coding tasks, allowing them to focus on higher-level design and problem-solving [2].\n- **Quality and Consistency:** Automated code generation may reduce human error and improve code consistency, especially for boilerplate or well-defined tasks [1].\n- **Innovation in Workflows:** LLMs enable new paradigms such as prompt-based programming and agentic software development, fostering innovation [1].\n\n### 4.2 Counterpoints and Challenges\n- **Skill Displacement:** There is concern about potential job displacement, particularly for entry-level or routine programming roles, as LLMs automate a growing share of tasks [2].\n- **Overreliance and Quality Risks:** Overreliance on LLM-generated code may introduce subtle bugs or security vulnerabilities, especially if outputs are not rigorously reviewed [1].\n- **Equity and Access:** The benefits of LLMs may accrue disproportionately to organizations and individuals with access to advanced tools and training, potentially widening existing inequalities [2].\n\n### 4.3 Policy and Ethical Considerations\n- **Responsible Adoption:** Policymakers and industry leaders must consider guidelines for responsible LLM deployment, including transparency, accountability, and human oversight.\n- **Workforce Adaptation:** Investment in reskilling and upskilling programs will be essential to help workers adapt to evolving programming roles.\n- **Ethical Use:** Addressing issues such as bias in code generation, intellectual property, and the potential for misuse is critical to ensuring ethical outcomes [1].\n\n## 5. Conclusion\nLarge language models are reshaping the landscape of code and programming by automating and accelerating a substantial portion of software development tasks. Empirical data demonstrate significant productivity and efficiency gains, particularly when LLMs are integrated into developer tools. While these advancements promise to enhance code quality and foster new workflows, they also raise important questions about technical limitations, workforce adaptation, job displacement, and equitable access. Ongoing research, policy interventions, and ethical considerations will be critical to ensuring that the benefits of LLM-driven programming are broadly shared and that potential risks are effectively managed.\n",
+    "summary": "# Effect of Large Language Models (LLMs) on Code and Programming\n\n## 1. Introduction\nThe emergence of large language models (LLMs), such as GPT-3 and GPT-4, has significantly influenced software development and programming. Trained on extensive corpora of text and code, these models demonstrate notable capabilities in generating, understanding, and manipulating code. Their integration into programming workflows is altering how developers approach coding tasks, with implications for productivity, code quality, and the broader labor market. This report synthesizes current research to assess the empirical effects, opportunities, limitations, and challenges posed by LLMs in the domain of code and programming.\n\n## 2. Methodology\nThis report is based on a targeted review of recent scholarly literature, focusing on high-relevance sources that empirically evaluate the impact of LLMs on programming tasks. The primary data sources include:\n- A comprehensive survey of LLMs, covering their develop"
+  },
+  "runtime_seconds": 120.354,
+  "status": "success",
+  "tools_used": [
+    "PageScraper",
+    "VectorSearch",
+    "FactChecker",
+    "GraphRAG",
+    "OpenAlexSearch",
+    "ArxivSearch"
+  ],
+  "trace_id": "run-20260606-073543-bc5e1144",
+  "use_case_id": "16"
+}
