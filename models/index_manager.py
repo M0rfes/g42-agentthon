@@ -108,6 +108,7 @@ def _patched_verify_vector_support(self) -> None:
         pass
 
     # Create correct-dimension index
+    # Create correct-dimension index
     try:
         self.structured_query(
             f"CREATE VECTOR INDEX {VECTOR_INDEX_NAME} ON :{BASE_ENTITY_LABEL}(embedding) "
@@ -116,11 +117,18 @@ def _patched_verify_vector_support(self) -> None:
         self._supports_vector_index = True
         logger.info("index_manager_vector_index_created", dimension=dim)
     except neo4j.exceptions.Neo4jError as e:
-        self._supports_vector_index = True
-        logger.info(
-            "index_manager_vector_index_already_exists", dimension=dim, detail=str(e)
-        )
-
+        msg = str(e).lower()
+        if "already exists" in msg:
+            self._supports_vector_index = True
+            logger.info(
+                "index_manager_vector_index_already_exists", dimension=dim, detail=str(e)
+            )
+        else:
+            self._supports_vector_index = False
+            logger.error(
+                "index_manager_vector_index_create_failed", dimension=dim, detail=str(e)
+            )
+            return
     # Store dimension marker for future checks
     try:
         self.structured_query(
