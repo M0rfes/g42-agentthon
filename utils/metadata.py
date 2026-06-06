@@ -11,4 +11,7 @@ _metadata = _load_metadata()
 
 def get_prompt(key: str) -> str:
     """Return a system prompt by key from metadata.json."""
-    return _metadata["prompts"][key]
+    try:
+        return _metadata["prompts"][key]
+    except KeyError as e:
+        raise KeyError(f"Prompt key '{key}' not found in metadata.json under 'prompts'.") from e
