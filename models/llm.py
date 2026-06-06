@@ -4,6 +4,7 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from langchain_openai import ChatOpenAI as LangChainChatOpenAI
 from utils.logging import logger
 
+
 def get_llama_index_llm() -> LlamaIndexOpenAI:
     """
     Constructs and returns the LlamaIndex LLM using GitHub Models as the inference backend.
@@ -19,26 +20,36 @@ def get_llama_index_llm() -> LlamaIndexOpenAI:
         api_key=api_key,
         api_base=base_url,
         temperature=0,
-        max_tokens=4096
+        max_tokens=4096,
     )
+
+
+_LANGCHAIN_LLM: LangChainChatOpenAI | None = None
+
 
 def get_langchain_llm() -> LangChainChatOpenAI:
     """
     Constructs and returns the LangChain ChatOpenAI LLM using GitHub Models as the inference backend.
     """
+    global _LANGCHAIN_LLM
+    if _LANGCHAIN_LLM is not None:
+        return _LANGCHAIN_LLM
+
     api_key = os.getenv("OPENAI_API_KEY")
     base_url = os.getenv("OPENAI_BASE_URL")
     model_name = os.getenv("OPENAI_MODEL", "gpt-4o")
     backend = os.getenv("BACKEND")
-    
+
     logger.info("llm_construction_langchain", backend=backend, model=model_name)
-    return LangChainChatOpenAI(
+    _LANGCHAIN_LLM = LangChainChatOpenAI(
         model=model_name,
         api_key=api_key,
         base_url=base_url,
         temperature=0,
-        max_tokens=4096
+        max_tokens=4096,
     )
+    return _LANGCHAIN_LLM
+
 
 def get_llama_index_embed_model() -> OpenAIEmbedding:
     """
@@ -48,7 +59,7 @@ def get_llama_index_embed_model() -> OpenAIEmbedding:
     base_url = os.getenv("OPENAI_BASE_URL")
     model_name = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
     backend = os.getenv("BACKEND")
-    
+
     logger.info("embed_construction_llama_index", backend=backend, model=model_name)
     return OpenAIEmbedding(
         model=model_name,

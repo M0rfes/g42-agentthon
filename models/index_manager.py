@@ -34,6 +34,7 @@ PERSIST_DIR = "/app/data/storage" if os.path.exists("/.dockerenv") else "./data/
 
 _EMBED_DIM: int | None = None
 
+
 def _get_embed_dim() -> int:
     """Detect and cache the actual embedding dimension (one API call ever)."""
     global _EMBED_DIM
@@ -63,8 +64,11 @@ def _patched_verify_vector_support(self) -> None:
 
     if current_version < required_version:
         self._supports_vector_index = False
-        logger.warning("index_manager_memgraph_version_too_old",
-                       current=current_version, required=required_version)
+        logger.warning(
+            "index_manager_memgraph_version_too_old",
+            current=current_version,
+            required=required_version,
+        )
         return
 
     # Check stored dimension marker
@@ -83,8 +87,9 @@ def _patched_verify_vector_support(self) -> None:
         return
 
     # Dimension mismatch or first run — drop old index and recreate
-    logger.warning("index_manager_vector_index_recreating",
-                   old_dim=stored_dim, new_dim=dim)
+    logger.warning(
+        "index_manager_vector_index_recreating", old_dim=stored_dim, new_dim=dim
+    )
 
     # Clear stale entities that have wrong-dimension embeddings
     try:
@@ -112,13 +117,15 @@ def _patched_verify_vector_support(self) -> None:
         logger.info("index_manager_vector_index_created", dimension=dim)
     except neo4j.exceptions.Neo4jError as e:
         self._supports_vector_index = True
-        logger.info("index_manager_vector_index_already_exists", dimension=dim, detail=str(e))
+        logger.info(
+            "index_manager_vector_index_already_exists", dimension=dim, detail=str(e)
+        )
 
     # Store dimension marker for future checks
     try:
         self.structured_query(
             "MERGE (n:__VectorIndexMeta__) SET n.dimension = $dim",
-            param_map={"dim": dim}
+            param_map={"dim": dim},
         )
     except Exception:
         pass
@@ -127,7 +134,6 @@ def _patched_verify_vector_support(self) -> None:
 # Apply the monkey-patch once at import time
 MemgraphPropertyGraphStore.verify_vector_support = _patched_verify_vector_support
 logger.info("index_manager_memgraph_patch_applied")
-
 
 
 def get_vector_index(documents=None) -> VectorStoreIndex:
@@ -150,6 +156,10 @@ def get_vector_index(documents=None) -> VectorStoreIndex:
             index = VectorStoreIndex.from_documents([])
     return index
 
+
+_GRAPH_STORE: MemgraphPropertyGraphStore | None = None
+
+
 def get_property_graph_index(documents=None) -> PropertyGraphIndex:
     """
     Retrieves or creates a LlamaIndex PropertyGraphIndex backed by Memgraph.
@@ -159,17 +169,18 @@ def get_property_graph_index(documents=None) -> PropertyGraphIndex:
       conflicts with LlamaIndex's hardcoded 1536-dim default vs our 3072-dim model.
     - Triplet extraction (entities + relationships) works fully without embeddings.
     """
+    global _GRAPH_STORE
     memgraph_url = os.getenv("MEMGRAPH_URI", "bolt://localhost:7687")
     username = os.getenv("MEMGRAPH_USER", "")
     password = os.getenv("MEMGRAPH_PASSWORD", "")
 
-    logger.info("index_manager_memgraph_connect", url=memgraph_url)
-
-    graph_store = MemgraphPropertyGraphStore(
-        username=username,
-        password=password,
-        url=memgraph_url,
-    )
+    if _GRAPH_STORE is None:
+        logger.info("index_manager_memgraph_connect", url=memgraph_url)
+        _GRAPH_STORE = MemgraphPropertyGraphStore(
+            username=username,
+            password=password,
+            url=memgraph_url,
+        )
 
     # We define a custom LLM for property graph extraction
     llm = get_llama_index_llm()
@@ -178,43 +189,38 @@ def get_property_graph_index(documents=None) -> PropertyGraphIndex:
         logger.info("index_manager_graph_create", document_count=len(documents))
         index = PropertyGraphIndex.from_documents(
             documents,
-            property_graph_store=graph_store,
+            property_graph_store=_GRAPH_STORE,
             llm=llm,
-            embed_kg_nodes=False,   # Avoid Memgraph vector index dimension conflicts
+            embed_kg_nodes=False,  # Avoid Memgraph vector index dimension conflicts
         )
     else:
         logger.info("index_manager_graph_load_existing")
         index = PropertyGraphIndex.from_existing(
-            property_graph_store=graph_store,
+            property_graph_store=_GRAPH_STORE,
             llm=llm,
-            embed_kg_nodes=False,   # Avoid Memgraph vector index dimension conflicts
+            embed_kg_nodes=False,  # Avoid Memgraph vector index dimension conflicts
         )
     return index
+
 
 def index_scraped_content(url: str, title: str, text: str):
     """
     Wrapper function to index scraped text and load it into both Vector index and Memgraph.
     """
     logger.info("index_manager_scraped_content_start", url=url, title=title)
-    
+
     # Construct LlamaIndex Document with metadata
-    doc = Document(
-        text=text,
-        metadata={
-            "url": url,
-            "title": title
-        }
-    )
-    
+    doc = Document(text=text, metadata={"url": url, "title": title})
+
     # Update Vector Index
     vector_index = get_vector_index()
     vector_index.insert(doc)
     # Re-persist vector index
     os.makedirs(PERSIST_DIR, exist_ok=True)
     vector_index.storage_context.persist(persist_dir=PERSIST_DIR)
-    
+
     # Update Property Graph Index (Memgraph)
     # GraphIndex does not have a simple .insert() in some LlamaIndex versions, so we re-initialize it with the document.
     get_property_graph_index(documents=[doc])
-    
+
     logger.info("index_manager_scraped_content_success", url=url)

@@ -1,18 +1,285 @@
 {
-  "status": "success",
-  "use_case_id": "16",
+  "agents_used": ["Planner", "Researcher", "Evaluator", "Writer"],
   "result": {
-    "summary": "Financial advisory agents should be deployed with suitability checks, disclosure controls, and transaction-level approval policies.",
-    "recommendations": [
-      "Enforce customer risk profiling",
-      "Enable explainability snapshots",
-      "Apply suspicious activity screening"
-    ],
     "artifacts": [
-      "https://example.org/finance-1"
-    ]
+      {
+        "id": "[1]",
+        "title": "Six Human-Centered Artificial Intelligence Grand Challenges",
+        "url": "https://doi.org/10.1080/10447318.2022.2153320"
+      },
+      {
+        "id": "[2]",
+        "title": "From Practice to Field: A Multilevel Model of Practice-Driven Institutional Change",
+        "url": "https://doi.org/10.5465/amj.2010.0013"
+      },
+      {
+        "id": "[3]",
+        "title": "Super Wicked Problems and Climate Change: Restraining the Present to Liberate the Future",
+        "url": "http://nrs.harvard.edu/urn-3:HUL.InstRepos:12967877"
+      }
+    ],
+    "citation_source_list": [
+      {
+        "id": "[1]",
+        "title": "Six Human-Centered Artificial Intelligence Grand Challenges",
+        "url": "https://doi.org/10.1080/10447318.2022.2153320"
+      },
+      {
+        "id": "[2]",
+        "title": "From Practice to Field: A Multilevel Model of Practice-Driven Institutional Change",
+        "url": "https://doi.org/10.5465/amj.2010.0013"
+      },
+      {
+        "id": "[3]",
+        "title": "Super Wicked Problems and Climate Change: Restraining the Present to Liberate the Future",
+        "url": "http://nrs.harvard.edu/urn-3:HUL.InstRepos:12967877"
+      }
+    ],
+    "insight_synthesis": {
+      "empirical_findings": [
+        "Automated underwriting systems in finance have been shown to recommend higher denial rates for minority racial and ethnic groups, even when designed to be 'color-blind'.",
+        "Metrics for evaluating autonomous agents should include fairness, accuracy, client satisfaction, and the absence of disparate impacts across demographic groups."
+      ],
+      "entities_and_relationships": [
+        "Autonomous financial advisory agents require governance controls (oversight, bias mitigation, transparency, privacy, ethics, evaluation) to ensure responsible deployment.",
+        "Automated underwriting systems → (can cause) → Disparate impacts on minority groups → (necessitates) → Bias mitigation controls.",
+        "Governance frameworks → (should include) → Transparency, accountability, privacy protection, ethical standards, continuous evaluation."
+      ],
+      "executive_summary": "Before deploying autonomous financial advisory agents, robust governance controls are critical to ensure ethical, fair, and responsible outcomes. The literature emphasizes the need for human-centered oversight, active bias mitigation, transparency, privacy protection, adherence to ethical standards, and continuous evaluation. Empirical evidence demonstrates that without such controls, automated systems can perpetuate or exacerbate discrimination, particularly against minority groups. Effective governance frameworks must be tailored to the financial context, balancing innovation with the protection of client interests and societal values.",
+      "key_themes": [
+        "Human-centered oversight and independent governance mechanisms",
+        "Active bias detection and mitigation to prevent discrimination",
+        "Transparency and accountability in algorithmic decision-making",
+        "Privacy protection and compliance with data regulations",
+        "Continuous evaluation and adaptation of governance controls"
+      ]
+    },
+    "paper_shortlist": [
+      {
+        "snippet": "This article develops a model of practice-driven institutional change—or change that originates in the everyday work of individuals but results in a shift in field-level logic. In demonstrating how improvisations at work can generate institutional change, we attend to the earliest moments of change, which extant research has neglected; and we contrast existing accounts that focus on active entrepr",
+        "title": "From Practice to Field: A Multilevel Model of Practice-Driven Institutional Change",
+        "url": "https://doi.org/10.5465/amj.2010.0013"
+      },
+      {
+        "snippet": "Abstract: This article argues that current widespread characterisations of EU governance as multi‐level and networked overlook the emergent architecture of the EU's public rule making. In this architecture, framework goals (such as full employment, social inclusion, ‘good water status’, a unified energy grid) and measures for gauging their achievement are established by joint action of the Member ",
+        "title": "Learning from Difference: The New Architecture of Experimentalist Governance in the EU",
+        "url": "https://doi.org/10.1111/j.1468-0386.2008.00415.x"
+      },
+      {
+        "snippet": "Background: Pollution - unwanted waste released to air, water, and land by human activity - is the largest environmental cause of disease in the world today. It is responsible for an estimated nine million premature deaths per year, enormous economic losses, erosion of human capital, and degradation of ecosystems. Ocean pollution is an important, but insufficiently recognized and inadequately cont",
+        "title": "Human Health and Ocean Pollution",
+        "url": "https://doi.org/10.5334/aogh.2831"
+      },
+      {
+        "snippet": "Trustworthy Artificial Intelligence (AI) is based on seven technical requirements sustained over three main pillars that should be met throughout the system’s entire life cycle: it should be (1) lawful, (2) ethical, and (3) robust, both from a technical and a social perspective. However, attaining truly trustworthy AI concerns a wider vision that comprises the trustworthiness of all processes and ",
+        "title": "Connecting the dots in trustworthy Artificial Intelligence: From AI principles, ethics, and key requirements to responsible AI systems and regulation",
+        "url": "https://doi.org/10.1016/j.inffus.2023.101896"
+      },
+      {
+        "snippet": "Climate change may soon have its \"lawmaking moment\" in the United States.The inherent problem with such lawmaking moments, however, is just that: they are moments.What Congress and the President do with much fanfare can quickly and quietly slip away in the ensuing years.This is famously so for environmental law.Subsequent legislative amendments, limited budgets, appropriations riders, interpretive",
+        "title": "Super Wicked Problems and Climate Change: Restraining the Present to Liberate the Future",
+        "url": "http://nrs.harvard.edu/urn-3:HUL.InstRepos:12967877"
+      },
+      {
+        "snippet": "Transformative artificially intelligent tools, such as ChatGPT, designed to generate sophisticated text indistinguishable from that produced by a human, are applicable across a wide range of contexts. The technology presents opportunities as well as, often ethical and legal, challenges, and has the potential for both positive and negative impacts for organisations, society, and individuals. Offeri",
+        "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+        "url": "https://doi.org/10.1016/j.ijinfomgt.2023.102642"
+      },
+      {
+        "snippet": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labou",
+        "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+        "url": "https://doi.org/10.1111/1748-8583.12524"
+      },
+      {
+        "snippet": "Driven by data proliferation, digital technologies have transformed the marketing landscape. In parallel, significant privacy concerns have shaken consumer-firm relationships, prompting changes in both regulatory interventions and people's own privacy-protective behaviors. With a comprehensive analysis of digital technologies and data strategy informed by structuration theory and privacy literatur",
+        "title": "Digital technologies: tensions in privacy and data",
+        "url": "https://doi.org/10.1007/s11747-022-00845-y"
+      },
+      {
+        "snippet": "Published 2021. Cited 391 times.",
+        "title": "The Lancet and Financial Times Commission on governing health futures 2030: growing up in a digital world",
+        "url": "https://doi.org/10.1016/s0140-6736(21)01824-9"
+      },
+      {
+        "snippet": "A PubMed query run in June 2018 using the keyword 'blockchain' retrieved 40 indexed papers, a reflection of the growing interest in blockchain among the medical and healthcare research and practice communities. Blockchain's foundations of decentralisation, cryptographic security and immutability make it a strong contender in reshaping the healthcare landscape worldwide. Blockchain solutions are cu",
+        "title": "Geospatial blockchain: promises, challenges, and scenarios in health and healthcare",
+        "url": "https://doi.org/10.1186/s12942-018-0144-x"
+      },
+      {
+        "snippet": "While the World Bank safeguard policies and International Finance Corporation Performance Standards specify the requirements to be observed when project-induced displacement and resettlement occurs, these international standards are not always followed. Governments often invoke the power of eminent domain and implement expropriation procedures instead of building support for a public or private pr",
+        "title": "Project-induced displacement and resettlement: from impoverishment risks to an opportunity for development?",
+        "url": "https://doi.org/10.1080/14615517.2017.1278671"
+      },
+      {
+        "snippet": "Key points •The coronavirus (COVID-19) pandemic has taken a grim toll on social care services in England.By 19 June 2020, there had been more than 30,500 excess deaths among care home residents in England, and social care staff have been around twice as likely to die from COVID-19 as other adults.• A complex combination of policies has been introduced to limit the impact of COVID-19 on people and ",
+        "title": "Adult social care and COVID-19: Assessing the policy response in England so far",
+        "url": "https://doi.org/10.37829/hf-2020-p06"
+      },
+      {
+        "snippet": "Abstract European Cohesion Policy is a complex scheme that allocates financial resources to European regions. The implementation of the policy is based on an articulated multi-level governance that involves local and national authorities and the European Commission. Local authorities often face difficulties in using structural funds due to limits in their administrative capacity (supply) and/or in",
+        "title": "Investigating Supply and Demand in European Cohesion Policy: Micro-Foundations of Macro-Behaviours",
+        "url": "https://doi.org/10.1007/s13132-023-01430-6"
+      },
+      {
+        "snippet": "Conducted between September 2017 and April 2018, this analysis of the Zimbabwe beef value chain addressed the questions: What is the contribution of the value chain to economic growth? Is the economic growth generated by the value chain inclusive? Is the value chain socially sustainable? and, Is the value chain environmentally sustainable? The historical background for the Zimbabwe beef value chai",
+        "title": "Beef Value Chain Analysis in Zimbabwe",
+        "url": "http://agritrop.cirad.fr/590657/"
+      },
+      {
+        "snippet": "Published 2017. Cited 4 times.",
+        "title": "Experiences and Lessons Learned from the UniBRAIN Agribusiness Incubation Programme",
+        "url": "https://doi.org/10.13140/rg.2.2.12106.67526"
+      },
+      {
+        "snippet": "Over the past decade, there has been a notable surge in AI-driven research, specifically geared toward enhancing crucial clinical processes and outcomes. The potential of AI-powered decision support systems to streamline clinical workflows, assist in diagnostics, and enable personalized treatment is increasingly evident. Nevertheless, the introduction of these cutting-edge solutions poses substant",
+        "title": "Ethical and regulatory challenges of AI technologies in healthcare: A narrative review",
+        "url": "https://doi.org/10.1016/j.heliyon.2024.e26297"
+      },
+      {
+        "snippet": "Despite major advances in artificial intelligence (AI) research for healthcare, the deployment and adoption of AI technologies remain limited in clinical practice. This paper describes the FUTURE-AI framework, which provides guidance for the development and deployment of trustworthy AI tools in healthcare. The FUTURE-AI Consortium was founded in 2021 and comprises 117 interdisciplinary experts fro",
+        "title": "FUTURE-AI: international consensus guideline for trustworthy and deployable artificial intelligence in healthcare",
+        "url": "https://doi.org/10.1136/bmj-2024-081554"
+      },
+      {
+        "snippet": "Abstract Artificial intelligence (AI) is a promising generation of digital technologies. Recent applications and research suggest that AI can not only influence but also accelerate innovation in organizations. However, as the field is rapidly growing, a common understanding of the underlying theoretical capabilities has become increasingly vague and fraught with ambiguity. In view of the centralit",
+        "title": "Artificial intelligence in innovation management: A review of innovation capabilities and a taxonomy of <scp>AI</scp> applications",
+        "url": "https://doi.org/10.1111/jpim.12698"
+      },
+      {
+        "snippet": "This series of working papers is intended to disseminate the Development Centre's research findings rapidly among specialists in the field concerned. These papers are generally available in the original English or French, with a summary in the other language.",
+        "title": "Harnessing the digital economy for developing countries",
+        "url": "https://doi.org/10.1787/4adffb24-en"
+      },
+      {
+        "snippet": "Advancements in medical science and technology, medicine and public health coupled with increased consciousness about nutrition and environmental and personal hygiene have paved the way for the dramatic increase in life expectancy globally in the past several decades. However, increased life expectancy has given rise to an increasing aging population, thus jeopardizing the socio-economic structure",
+        "title": "Smart Homes for Elderly Healthcare—Recent Advances and Research Challenges",
+        "url": "https://doi.org/10.3390/s17112496"
+      },
+      {
+        "snippet": "As individuals and communities interact in and with an environment that is increasingly virtual they are often vulnerable to the commodification of their digital exhaust. Concepts and behavior that are ambiguous in nature are captured in this environment, quantified, and used to categorize, sort, recommend, or make decisions about people's lives. While many organizations seek to utilize this infor",
+        "title": "Towards a standard for identifying and managing bias in artificial intelligence",
+        "url": "https://doi.org/10.6028/nist.sp.1270"
+      },
+      {
+        "snippet": "Internet of Things (IoT) is an emerging technology that makes people's lives smart by conquering a plethora of diverse application and service areas. In near future, the fifth-generation (5G) wireless networks provide the connectivity for this IoT ecosystem. It has been carefully designed to facilitate the exponential growth in the IoT field. Network slicing is one of the key technologies in the 5",
+        "title": "Survey on Network Slicing for Internet of Things Realization in 5G Networks",
+        "url": "https://doi.org/10.1109/comst.2021.3067807"
+      },
+      {
+        "snippet": "Abstract Bias, unfairness and lack of transparency and accountability in Artificial Intelligence (AI) systems, and the potential for the misuse of predictive models for decision-making have raised concerns about the ethical impact and unintended consequences of new technologies for society across every sector where data-driven innovation is taking place. This paper reviews the landscape of suggest",
+        "title": "Putting AI ethics to work: are the tools fit for purpose?",
+        "url": "https://doi.org/10.1007/s43681-021-00084-x"
+      },
+      {
+        "snippet": "Purpose Following the surge of documents laying out organizations' ethical principles for their use of artificial intelligence (AI), there is a growing demand for translating ethical principles to practice through AI governance (AIG). AIG has emerged as a rapidly growing, yet fragmented, research area. This paper synthesizes the organizational AIG literature by outlining research themes and knowle",
+        "title": "AI governance: themes, knowledge gaps and future agendas",
+        "url": "https://doi.org/10.1108/intr-01-2022-0042"
+      },
+      {
+        "snippet": "Today is the era of the Internet of Things (IoT). The recent advances in hardware and information technology have accelerated the deployment of billions of interconnected, smart and adaptive devices in critical infrastructures like health, transportation, environmental control, and home automation. Transferring data over a network without requiring any kind of human-to-computer or human-to-human i",
+        "title": "A Survey on the Internet of Things (IoT) Forensics: Challenges, Approaches, and Open Issues",
+        "url": "https://doi.org/10.1109/comst.2019.2962586"
+      },
+      {
+        "snippet": "The MSFD Technical Subgroup on Marine Litter was tasked to deliver guidance so that European Member States could initiate programmes for monitoring of Descriptor 10 of the MSFD. The present document provides the recommendations and information needed to commence the monitoring required for marine litter, including methodological protocols and categories of items to be used for the assessment of li",
+        "title": "Guidance on Monitoring of Marine Litter in European Seas",
+        "url": "https://doi.org/10.2788/99475"
+      },
+      {
+        "snippet": "Commission, November 2003. Review of legislation 2002-04 Chapter 4",
+        "title": "Industrial Relations in Europe",
+        "url": "https://doi.org/10.1007/978-1-349-21847-9_13"
+      },
+      {
+        "snippet": "Blockchain is an underlying technology for securing many real-time applications and their data. The automobile is one such sector in which auto-manufacturers are looking forward to accepting the advantages of distributed ledger technology in autonomous vehicles or systems and improving their products, customer satisfaction, and other valuable experiences. This work aims to find the significance of",
+        "title": "Blockchain and Autonomous Vehicles: Recent Advances and Future Directions",
+        "url": "https://doi.org/10.1109/access.2021.3113649"
+      },
+      {
+        "snippet": "This Handbook has been developed in the framework of the ThinkNature project. Its main objective is to gather and promote state-of-the-art knowledge regarding Nature-Based Solutions (NBS), comprising a comprehensive guide to all relevant actors. To this end, each aspect of NBS is investigated, from project development to financing and policy making, and is presented in a concise and comprehensive ",
+        "title": "ThinkNature / Nature-Based Solutions Handbook",
+        "url": "https://doi.org/10.26225/jerv-w202"
+      }
+    ],
+    "paper_summaries": [
+      {
+        "relevance_score": 0.4,
+        "summary": "This article presents a model explaining how institutional change can originate from everyday practices within organizations, rather than from top-down mandates or explicit entrepreneurial efforts. The authors detail mechanisms by which small-scale improvisations and adaptations in daily work can become justified, gain legitimacy, and diffuse across organizations, eventually shifting field-level logics and norms. The model emphasizes the importance of early-stage, practice-driven change and the dynamics that enable or precipitate such shifts. While the article does not address autonomous financial advisory agents or specific governance controls, it provides a theoretical framework for understanding how new practices (such as deploying autonomous agents) might become institutionalized or require governance as they diffuse. It highlights the need for mechanisms to monitor, justify, and legitimize new practices, which could inform the design of governance controls for emerging technologies.",
+        "title": "From Practice to Field: A Multilevel Model of Practice-Driven Institutional Change",
+        "url": "https://doi.org/10.5465/amj.2010.0013"
+      },
+      {
+        "relevance_score": 0.0,
+        "summary": "The resource could not be accessed due to a loading or access issue (\"Just a moment... Enable JavaScript and cookies to continue\"). As such, no substantive content, arguments, or findings relevant to governance controls for autonomous financial advisory agents could be extracted or summarized from this source.",
+        "title": "Learning from Difference: The New Architecture of Experimentalist Governance in the EU",
+        "url": "https://doi.org/10.1111/j.1468-0386.2008.00415.x"
+      },
+      {
+        "relevance_score": 0.0,
+        "summary": "This resource is a comprehensive review of the impacts of ocean pollution on human health and marine ecosystems. It details the sources, types, and effects of pollutants such as plastics, toxic metals (notably mercury), chemicals, and agricultural runoff. The paper highlights the global scale and worsening trend of ocean pollution, its insufficient regulation, and the resulting threats to both human and ecosystem health. It also discusses the exacerbating effects of climate change on pollution impacts. The article aims to inform policymakers and propose intervention priorities for pollution control. However, it does not address governance controls or considerations related to the deployment of autonomous financial advisory agents, nor does it discuss financial technology, AI, or related regulatory frameworks.",
+        "title": "Human Health and Ocean Pollution",
+        "url": "https://doi.org/10.5334/aogh.2831"
+      },
+      {
+        "relevance_score": 0.85,
+        "summary": "This paper provides a comprehensive overview of the landscape of trustworthy AI, mapping the connections between high-level AI principles, ethical frameworks, key requirements (such as transparency, accountability, and robustness), and the practical implementation of responsible AI systems. It discusses the need for governance controls such as clear accountability structures, transparency mechanisms, risk assessment protocols, and compliance with emerging regulations (e.g., the EU AI Act). The paper emphasizes the importance of translating abstract ethical principles into concrete technical and organizational controls, including auditability, human oversight, and continuous monitoring. While not specific to autonomous financial advisory agents, the framework and recommendations are directly applicable, highlighting the necessity of robust governance before deployment in high-stakes domains like finance.",
+        "title": "Connecting the dots in trustworthy Artificial Intelligence: From AI principles, ethics, and key requirements to responsible AI systems and regulation",
+        "url": "https://doi.org/10.1016/j.inffus.2023.101896"
+      },
+      {
+        "relevance_score": 0.3,
+        "summary": "This article by Richard J. Lazarus discusses the concept of 'super wicked problems,' using climate change as the primary example. It explores the unique governance challenges posed by such problems, including the need for long-term policy commitments, the difficulty of restraining present interests for future benefit, and the inadequacy of traditional regulatory approaches. The paper argues for innovative governance controls that can overcome short-termism, self-interest, and institutional inertia. While the focus is on climate change, the analysis of governance mechanisms—such as binding commitments, independent oversight, and mechanisms to prevent policy reversal—offers conceptual parallels to the governance of autonomous systems, including financial advisory agents. However, the article does not address autonomous financial agents directly, nor does it provide specific controls for their deployment.",
+        "title": "Super Wicked Problems and Climate Change: Restraining the Present to Liberate the Future",
+        "url": "http://nrs.harvard.edu/urn-3:HUL.InstRepos:12967877"
+      }
+    ],
+    "recommendations": [
+      "International and cross-border regulatory frameworks for autonomous financial advisory agents",
+      "Stakeholder engagement, client education, and consent mechanisms in AI-driven financial advice",
+      "Technical governance controls: auditability, explainability, real-time monitoring, and data governance for AFAAs",
+      "Legal liability, human oversight, and hybrid advisory models in autonomous financial advice",
+      "Third-party/vendor risk management and industry standards (e.g., ISO, IEEE) for AI in finance",
+      "Post-deployment governance: continuous monitoring, model drift, ongoing validation, and consumer protection/dispute resolution frameworks"
+    ],
+    "research_plan": {
+      "critique": {
+        "gaps": [
+          "Lack of discussion on international regulatory differences and cross-border governance challenges",
+          "No mention of stakeholder engagement, including client education and consent mechanisms",
+          "Omission of technical controls such as auditability, explainability, and real-time monitoring of AFAAs",
+          "No exploration of liability and legal responsibility in case of agent errors or misconduct",
+          "Missing perspectives on the role of human oversight and hybrid advisory models",
+          "No consideration of third-party/vendor risk management when using external AI solutions",
+          "Absence of discussion on continuous improvement and post-deployment governance (e.g., model drift, ongoing validation)",
+          "No reference to industry standards or self-regulatory initiatives (e.g., ISO, IEEE, industry consortia)",
+          "Lack of focus on data governance, including data quality, provenance, and usage limitations",
+          "No mention of consumer protection frameworks or dispute resolution mechanisms"
+        ],
+        "rationale": "The initial plan covers foundational governance concerns and the innovation-versus-oversight debate, but it omits several critical areas. First, it does not address the complexities of international regulation, which is vital for financial services operating across borders. Stakeholder engagement, including how clients are informed and give consent, is missing, as is the need for technical controls like explainability and real-time monitoring. Legal liability in the event of agent errors is not discussed, nor is the importance of human oversight or hybrid models that combine human and AI input. The plan also overlooks third-party risk management, which is crucial when AFAAs are sourced externally. Post-deployment governance, such as monitoring for model drift and ensuring ongoing compliance, is absent. There is no mention of industry standards or self-regulatory efforts, which can shape governance expectations. Data governance, a cornerstone of responsible AI, is not explicitly addressed, nor are consumer protection and dispute resolution mechanisms, both of which are essential for trust and accountability. Addressing these gaps will ensure a more comprehensive and balanced analysis."
+      },
+      "elaborated_query": "A comprehensive governance framework is essential before deploying autonomous financial advisory agents (AFAAs). Key controls should ensure compliance with both domestic and international financial regulations, address cross-border governance challenges, and incorporate industry standards and self-regulatory initiatives. Effective governance must balance innovation with robust oversight, including technical controls such as auditability, explainability, and real-time monitoring, as well as strong data governance (quality, provenance, and usage limitations). Stakeholder engagement is critical, encompassing client education, informed consent, and transparent communication. Legal liability and clear assignment of responsibility in case of agent errors or misconduct must be established, alongside consumer protection and dispute resolution mechanisms. Human oversight and hybrid advisory models should be considered to mitigate risks, and third-party/vendor risk management is necessary when using external AI solutions. Continuous improvement through post-deployment governance, such as monitoring for model drift and ongoing validation, is also vital. The goal is to create a governance structure that protects stakeholders, fosters trust, and enables responsible innovation without unnecessary barriers.",
+      "search_topics": [
+        "International and cross-border regulatory frameworks for autonomous financial advisory agents",
+        "Stakeholder engagement, client education, and consent mechanisms in AI-driven financial advice",
+        "Technical governance controls: auditability, explainability, real-time monitoring, and data governance for AFAAs",
+        "Legal liability, human oversight, and hybrid advisory models in autonomous financial advice",
+        "Third-party/vendor risk management and industry standards (e.g., ISO, IEEE) for AI in finance",
+        "Post-deployment governance: continuous monitoring, model drift, ongoing validation, and consumer protection/dispute resolution frameworks"
+      ]
+    },
+    "research_report": "# Governance Controls Needed Before Deploying Autonomous Financial Advisory Agents\n\n## 1. Introduction\nThe rapid advancement of artificial intelligence (AI) and machine learning technologies has enabled the development of autonomous financial advisory agents—systems capable of providing investment advice, portfolio management, and other financial services with minimal human intervention. While these agents promise efficiency, scalability, and potentially improved access to financial services, their deployment in high-stakes domains raises significant governance challenges. Without robust controls, such systems risk perpetuating bias, undermining transparency, and eroding public trust. This report examines the governance controls necessary to ensure the responsible deployment of autonomous financial advisory agents, drawing on recent literature in AI ethics, institutional change, and regulatory theory.\n\n## 2. Methodology\nThis report synthesizes insights from a targeted review of recent academic literature relevant to AI governance, institutional change, and regulatory frameworks. Key sources include:\n- Reviews of trustworthy AI principles and their translation into practical governance mechanisms [1].\n- Theoretical frameworks on how new practices become institutionalized and the need for monitoring and legitimization [2].\n- Analyses of governance challenges in complex, high-impact domains, with conceptual parallels to autonomous systems [3].\n\nEmpirical findings and thematic syntheses are integrated to identify both the requirements and challenges of governance in the context of autonomous financial advisory agents.\n\n## 3. Key Findings & Empirical Data\n### 3.1. Core Governance Controls\nBased on the literature, the following governance controls are identified as critical prior to deployment:\n\n| Control Area         | Description                                                                                 |\n|---------------------|--------------------------------------------------------------------------------------------|\n| Human Oversight     | Mechanisms for human-in-the-loop decision-making, escalation, and override [1].             |\n| Bias Mitigation     | Active detection and correction of algorithmic bias to prevent discrimination [1].           |\n| Transparency        | Clear documentation of decision logic, data sources, and model limitations [1].              |\n| Accountability      | Defined roles and responsibilities for outcomes, including audit trails [1].                 |\n| Privacy Protection  | Compliance with data protection laws and secure handling of sensitive client data [1].       |\n| Continuous Evaluation | Ongoing monitoring, performance assessment, and adaptation of controls [1].                |\n\n### 3.2. Empirical Evidence\n- **Bias in Automated Systems:** Studies have shown that automated underwriting systems in finance can recommend higher denial rates for minority racial and ethnic groups, even when designed to be 'color-blind'. This underscores the necessity of robust bias mitigation and fairness evaluation prior to deployment [1].\n- **Evaluation Metrics:** Effective governance requires metrics that assess not only accuracy and client satisfaction but also fairness and the absence of disparate impacts across demographic groups [1].\n\n#### Illustrative Example\nFor instance, Bhutta et al. (2021) documented that algorithmic underwriting in the financial sector led to higher denial rates for minority applicants, despite the systems being designed without explicit consideration of race. This real-world evidence highlights the importance of continuous evaluation and bias mitigation mechanisms [1].\n\n### 3.3. Institutionalization and Field-Level Change\nThe process by which new technologies and practices (such as autonomous agents) become institutionalized involves early-stage monitoring, justification, and legitimation. Governance controls must be adaptable to evolving norms and practices as these agents diffuse across the financial sector [2]. For example, organizations may initially improvise governance mechanisms, which are then justified and legitimized as industry standards evolve.\n\n## 4. Discussion\n### 4.1. Favoring Robust Governance Controls\nProponents argue that robust governance controls are essential to:\n- **Protect Consumers:** Prevent harm from biased or opaque decision-making.\n- **Ensure Compliance:** Meet regulatory and ethical standards, such as those emerging in global AI policy frameworks [1].\n- **Build Trust:** Foster public confidence in autonomous financial services.\n- **Enable Adaptation:** Allow for continuous improvement as new risks and challenges emerge [1].\n\n### 4.2. Counterpoints and Challenges\n- **Innovation vs. Regulation:** Excessive or rigid governance controls may stifle innovation and slow the adoption of beneficial technologies. Industry practitioners often express concern that compliance burdens could limit the agility needed to respond to rapidly changing markets.\n- **Institutional Inertia:** As highlighted in institutional change theory, organizations may resist or inadequately implement new controls, especially if they conflict with established practices or incentives [2].\n- **Complexity of Super Wicked Problems:** Governance in high-impact domains often faces short-termism and self-interest, making it difficult to sustain long-term, adaptive controls [3].\n- **Regulatory Uncertainty:** The evolving nature of AI regulation, with varying standards across jurisdictions, creates uncertainty for organizations seeking to deploy autonomous agents. This may indicate a need for harmonized, yet flexible, regulatory approaches.\n\n### 4.3. Synthesis\nThe literature suggests that governance frameworks must strike a balance: they should be robust enough to prevent harm and ensure accountability, yet flexible enough to accommodate innovation and evolving field-level norms. Engagement with regulators, industry stakeholders, and affected communities is critical to designing effective and legitimate governance mechanisms.\n\n## 5. Limitations and Future Research\nThis review is limited by its reliance on published academic literature and may not fully capture the latest industry practices or regulatory developments. Empirical data on the real-world deployment of autonomous financial advisory agents remains limited, and further research is needed to assess the effectiveness of specific governance controls in practice. Future work should incorporate case studies, cross-jurisdictional regulatory analysis, and stakeholder perspectives to deepen understanding of governance challenges and solutions.\n\n## 6. Conclusion\nBefore deploying autonomous financial advisory agents, organizations must implement a comprehensive suite of governance controls encompassing human oversight, bias mitigation, transparency, accountability, privacy protection, and continuous evaluation. These controls are not static; they must evolve as the technology matures and as institutional norms shift. The challenge lies in designing governance frameworks that are both effective and adaptable, ensuring that the benefits of autonomous financial advisory agents are realized without compromising ethical standards or public trust.\n\n## Citations\n",
+    "summary": "# Governance Controls Needed Before Deploying Autonomous Financial Advisory Agents\n\n## 1. Introduction\nThe rapid advancement of artificial intelligence (AI) and machine learning technologies has enabled the development of autonomous financial advisory agents—systems capable of providing investment advice, portfolio management, and other financial services with minimal human intervention. While these agents promise efficiency, scalability, and potentially improved access to financial services, their deployment in high-stakes domains raises significant governance challenges. Without robust controls, such systems risk perpetuating bias, undermining transparency, and eroding public trust. This report examines the governance controls necessary to ensure the responsible deployment of autonomous financial advisory agents, drawing on recent literature in AI ethics, institutional change, and regulatory theory.\n\n## 2. Methodology\nThis report synthesizes insights from a targeted review of recent "
   },
-  "agents_used": ["Planner", "Researcher", "Evaluator"],
-  "trace_id": "run-example-003",
-  "runtime_seconds": 36.5
+  "runtime_seconds": 145.275,
+  "status": "success",
+  "tools_used": [
+    "FactChecker",
+    "VectorSearch",
+    "PageScraper",
+    "GraphRAG",
+    "ArxivSearch",
+    "OpenAlexSearch"
+  ],
+  "trace_id": "run-20260604-091137-b914b230",
+  "use_case_id": "16"
 }

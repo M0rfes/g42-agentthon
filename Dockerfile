@@ -2,7 +2,8 @@ FROM python:3.11-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+    PIP_NO_CACHE_DIR=1 \
+    PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
 # Install build dependencies for Python packages and Playwright.
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -19,13 +20,14 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Install Playwright Chromium browser and its system dependencies.
-RUN playwright install --with-deps chromium
+RUN playwright install --with-deps chromium \
+    && chmod -R 755 /ms-playwright
 
 COPY . .
 
 RUN mkdir -p /app/logs
 
-RUN useradd --no-create-home --shell /bin/bash appuser \
+RUN useradd -m --shell /bin/bash appuser \
     && chown -R appuser:appuser /app
 
 USER appuser

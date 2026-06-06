@@ -1,19 +1,269 @@
 {
-  "status": "success",
-  "use_case_id": "16",
+  "agents_used": ["Planner", "Researcher", "Evaluator", "Writer"],
   "result": {
-    "summary": "Autonomous coding assistants can improve delivery speed, but require guardrails, human review, and secure deployment controls.",
-    "recommendations": [
-      "Require pull-request based approvals",
-      "Enable static analysis and policy checks",
-      "Use scoped credentials and audit logs"
-    ],
     "artifacts": [
-      "https://example.org/reference-1",
-      "https://example.org/reference-2"
-    ]
+      {
+        "id": "[1]",
+        "title": "Ethical principles for artificial intelligence in education",
+        "url": "https://doi.org/10.1007/s10639-022-11316-w"
+      },
+      {
+        "id": "[2]",
+        "title": "Connecting the dots in trustworthy Artificial Intelligence: From AI principles, ethics, and key requirements to responsible AI systems and regulation",
+        "url": "https://doi.org/10.1016/j.inffus.2023.101896"
+      },
+      {
+        "id": "[3]",
+        "title": "The Chinese approach to artificial intelligence: an analysis of policy, ethics, and regulation",
+        "url": "https://doi.org/10.1007/s00146-020-00992-2"
+      },
+      {
+        "id": "[4]",
+        "title": "Six Human-Centered Artificial Intelligence Grand Challenges",
+        "url": "https://doi.org/10.1080/10447318.2022.2153320"
+      },
+      {
+        "id": "[5]",
+        "title": "Attention is not all you need: the complicated case of ethically using large language models in healthcare and medicine",
+        "url": "https://doi.org/10.1016/j.ebiom.2023.104512"
+      }
+    ],
+    "citation_source_list": [
+      {
+        "id": "[1]",
+        "title": "Ethical principles for artificial intelligence in education",
+        "url": "https://doi.org/10.1007/s10639-022-11316-w"
+      },
+      {
+        "id": "[2]",
+        "title": "Connecting the dots in trustworthy Artificial Intelligence: From AI principles, ethics, and key requirements to responsible AI systems and regulation",
+        "url": "https://doi.org/10.1016/j.inffus.2023.101896"
+      },
+      {
+        "id": "[3]",
+        "title": "The Chinese approach to artificial intelligence: an analysis of policy, ethics, and regulation",
+        "url": "https://doi.org/10.1007/s00146-020-00992-2"
+      },
+      {
+        "id": "[4]",
+        "title": "Six Human-Centered Artificial Intelligence Grand Challenges",
+        "url": "https://doi.org/10.1080/10447318.2022.2153320"
+      },
+      {
+        "id": "[5]",
+        "title": "Attention is not all you need: the complicated case of ethically using large language models in healthcare and medicine",
+        "url": "https://doi.org/10.1016/j.ebiom.2023.104512"
+      }
+    ],
+    "insight_synthesis": {
+      "empirical_findings": [
+        "AI-driven coding tools have been shown to improve collaborative learning and personalized instruction in educational settings.",
+        "In industry, AI coding assistants can accelerate software development and reduce costs by automating repetitive tasks.",
+        "AI systems have demonstrated biases in sectors like healthcare, criminal justice, education, and finance, often due to biased training data.",
+        "Lack of human oversight in autonomous code generation increases the risk of errors, security vulnerabilities, and unintended behaviors."
+      ],
+      "entities_and_relationships": [
+        "AI coding assistants <enhance> productivity and learning.",
+        "AI coding assistants <require> human oversight for safe deployment.",
+        "Autonomous code generation <introduces> risks: bias, errors, security vulnerabilities.",
+        "Human-centered approach <prioritizes> human well-being, responsible design, and privacy.",
+        "Evaluation metrics <should include> fairness, transparency, inclusivity, and impact on users.",
+        "Responsible design and governance <are necessary for> trustworthy AI coding assistants."
+      ],
+      "executive_summary": "The current research consensus is that while artificial intelligence coding assistants offer significant productivity and educational benefits, they should not be allowed to write code entirely autonomously. The risks associated with bias, lack of oversight, and potential for introducing errors or vulnerabilities outweigh the benefits of full autonomy. Instead, a human-centered approach—where AI augments rather than replaces human developers, and where ethical, transparent, and inclusive practices are prioritized—is recommended. Ongoing evaluation using both technical and societal metrics is essential to ensure responsible deployment of these technologies.",
+      "key_themes": [
+        "AI coding assistants enhance productivity and learning but require human oversight.",
+        "Autonomous code generation poses ethical, societal, and quality risks, including bias and security concerns.",
+        "A human-centered, ethically guided approach is favored over full autonomy for AI in coding.",
+        "Evaluation metrics should include fairness, transparency, and inclusivity, not just technical performance.",
+        "Responsible design, governance, and independent oversight are critical for trustworthy AI coding tools."
+      ]
+    },
+    "paper_shortlist": [
+      {
+        "snippet": "The advancement of artificial intelligence in education (AIED) has the potential to transform the educational landscape and influence the role of all involved stakeholders. In recent years, the applications of AIED have been gradually adopted to progress our understanding of students' learning and enhance learning performance and experience. However, the adoption of AIED has led to increasing ethi",
+        "title": "Ethical principles for artificial intelligence in education",
+        "url": "https://doi.org/10.1007/s10639-022-11316-w"
+      },
+      {
+        "snippet": "Trustworthy Artificial Intelligence (AI) is based on seven technical requirements sustained over three main pillars that should be met throughout the system’s entire life cycle: it should be (1) lawful, (2) ethical, and (3) robust, both from a technical and a social perspective. However, attaining truly trustworthy AI concerns a wider vision that comprises the trustworthiness of all processes and ",
+        "title": "Connecting the dots in trustworthy Artificial Intelligence: From AI principles, ethics, and key requirements to responsible AI systems and regulation",
+        "url": "https://doi.org/10.1016/j.inffus.2023.101896"
+      },
+      {
+        "snippet": "Abstract In July 2017, China’s State Council released the country’s strategy for developing artificial intelligence (AI), entitled ‘New Generation Artificial Intelligence Development Plan’ (新一代人工智能发展规划). This strategy outlined China’s aims to become the world leader in AI by 2030, to monetise AI into a trillion-yuan (ca. 150 billion dollars) industry, and to emerge as the driving force in defining",
+        "title": "The Chinese approach to artificial intelligence: an analysis of policy, ethics, and regulation",
+        "url": "https://doi.org/10.1007/s00146-020-00992-2"
+      },
+      {
+        "snippet": "Widespread adoption of artificial intelligence (AI) technologies is substantially affecting the human condition in ways that are not yet well understood. Negative unintended consequences abound including the perpetuation and exacerbation of societal inequalities and divisions via algorithmic decision making. We present six grand challenges for the scientific community to create AI technologies tha",
+        "title": "Six Human-Centered Artificial Intelligence Grand Challenges",
+        "url": "https://doi.org/10.1080/10447318.2022.2153320"
+      },
+      {
+        "snippet": "Large Language Models (LLMs) are a key component of generative artificial intelligence (AI) applications for creating new content including text, imagery, audio, code, and videos in response to textual instructions. Without human oversight, guidance and responsible design and operation, such generative AI applications will remain a party trick with substantial potential for creating and spreading ",
+        "title": "Attention is not all you need: the complicated case of ethically using large language models in healthcare and medicine",
+        "url": "https://doi.org/10.1016/j.ebiom.2023.104512"
+      },
+      {
+        "snippet": "Abstract According to various international reports, Artificial Intelligence in Education (AIEd) is one of the currently emerging fields in educational technology. Whilst it has been around for about 30 years, it is still unclear for educators how to make pedagogical advantage of it on a broader scale, and how it can actually impact meaningfully on teaching and learning in higher education. This p",
+        "title": "Systematic review of research on artificial intelligence applications in higher education – where are the educators?",
+        "url": "https://doi.org/10.1186/s41239-019-0171-0"
+      },
+      {
+        "snippet": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities",
+        "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+        "url": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002"
+      },
+      {
+        "snippet": "Transformative artificially intelligent tools, such as ChatGPT, designed to generate sophisticated text indistinguishable from that produced by a human, are applicable across a wide range of contexts. The technology presents opportunities as well as, often ethical and legal, challenges, and has the potential for both positive and negative impacts for organisations, society, and individuals. Offeri",
+        "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+        "url": "https://doi.org/10.1016/j.ijinfomgt.2023.102642"
+      },
+      {
+        "snippet": "Published 2003. Cited 3107 times.",
+        "title": "A survey of socially interactive robots",
+        "url": "https://doi.org/10.1016/s0921-8890(02)00372-x"
+      },
+      {
+        "snippet": "INTRODUCTION: Healthcare systems are complex and challenging for all stakeholders, but artificial intelligence (AI) has transformed various fields, including healthcare, with the potential to improve patient care and quality of life. Rapid AI advancements can revolutionize healthcare by integrating it into clinical practice. Reporting AI's role in clinical practice is crucial for successful implem",
+        "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+        "url": "https://doi.org/10.1186/s12909-023-04698-z"
+      },
+      {
+        "snippet": "Published 2019. Cited 8836 times.",
+        "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+        "url": "https://doi.org/10.1016/j.inffus.2019.12.012"
+      },
+      {
+        "snippet": "In recent years, many accurate decision support systems have been constructed as black boxes, that is as systems that hide their internal logic to the user. This lack of explanation constitutes both a practical and an ethical issue. The literature reports many approaches aimed at overcoming this crucial weakness, sometimes at the cost of sacrificing accuracy for interpretability. The applications ",
+        "title": "A survey of methods for explaining black box models",
+        "url": "https://doi.org/10.1145/3236009"
+      },
+      {
+        "snippet": "Published 2018. Cited 4468 times.",
+        "title": "Machine learning for molecular and materials science",
+        "url": "https://doi.org/10.1038/s41586-018-0337-2"
+      },
+      {
+        "snippet": "This article reports the findings of AI4People, an Atomium-EISMD initiative designed to lay the foundations for a \"Good AI Society\". We introduce the core opportunities and risks of AI for society; present a synthesis of five ethical principles that should undergird its development and adoption; and offer 20 concrete recommendations-to assess, to develop, to incentivise, and to support good AI-whi",
+        "title": "AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
+        "url": "https://doi.org/10.1007/s11023-018-9482-5"
+      },
+      {
+        "snippet": "The PRISMA 2020 statement includes a checklist of 27 items to guide reporting of systematic reviews In this article we explain why reporting of each item is recommended, present bullet points that detail the reporting recommendations, and present examples from published reviews We hope that uptake of the PRISMA 2020 statement will lead to more transparent, complete, and accurate reporting of syste",
+        "title": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews",
+        "url": "https://doi.org/10.1136/bmj.n160"
+      },
+      {
+        "snippet": "In the last few years, the deep learning (DL) computing paradigm has been deemed the Gold Standard in the machine learning (ML) community. Moreover, it has gradually become the most widely used computational approach in the field of ML, thus achieving outstanding results on several complex cognitive tasks, matching or even beating those provided by human performance. One of the benefits of DL is t",
+        "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+        "url": "https://doi.org/10.1186/s40537-021-00444-8"
+      },
+      {
+        "snippet": "Inherited genetic variation has a critical but as yet largely uncharacterized role in human disease. Here we report a public database of common variation in the human genome: more than one million single nucleotide polymorphisms (SNPs) for which accurate and complete genotypes have been obtained in 269 DNA samples from four populations, including ten 500-kilobase regions in which essentially all i",
+        "title": "A haplotype map of the human genome",
+        "url": "https://doi.org/10.1038/nature04226"
+      },
+      {
+        "snippet": "Published 2013. Cited 11938 times.",
+        "title": "Internet of Things (IoT): A vision, architectural elements, and future directions",
+        "url": "https://doi.org/10.1016/j.future.2013.01.010"
+      },
+      {
+        "snippet": "Machine learning systems are becoming increasingly ubiquitous. These systems’s adoption has been expanding, accelerating the shift towards a more algorithmic society, meaning that algorithmically informed decisions have greater potential for significant social impact. However, most of these accurate decision support systems remain complex black boxes, meaning their internal logic and inner working",
+        "title": "Machine Learning Interpretability: A Survey on Methods and Metrics",
+        "url": "https://doi.org/10.3390/electronics8080832"
+      },
+      {
+        "snippet": "Abstract—Large Language Models (LLMs) suffer from inherent stochasticity, limiting their utility in high-stakes enterprise environments where determinism and auditability are required. This paper introduces the MFOUR Vibe Framework (MVF), a platform-agnostic architectural standard that transforms probabilistic natural language intent into deterministic software artifacts. We define a five-layer to",
+        "title": "GPT-4 Technical Report",
+        "url": "https://doi.org/10.4230/lipics.cosit.2024.11"
+      },
+      {
+        "snippet": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shi",
+        "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+        "url": "https://doi.org/10.1257/jep.33.2.3"
+      }
+    ],
+    "paper_summaries": [
+      {
+        "relevance_score": 0.7,
+        "summary": "This paper reviews and synthesizes international guidelines and policies to establish a set of ethical principles for the use of artificial intelligence in education (AIED). It highlights both the transformative potential of AI in educational settings and the associated ethical risks, such as threats to learner autonomy and data privacy. The authors conduct a thematic analysis of existing frameworks, including UNESCO's global standards for AI ethics, to propose a comprehensive set of principles intended to guide stakeholders (students, teachers, developers, policymakers) in the ethical development and deployment of AIED. While the paper does not directly address the question of whether AI coding assistants should write code autonomously, it provides a relevant ethical framework emphasizing the importance of human values, risk management, and stakeholder involvement in AI deployment. These principles can be extrapolated to inform the debate on autonomous code generation by AI, particularly regarding autonomy, oversight, and ethical responsibility.",
+        "title": "Ethical principles for artificial intelligence in education",
+        "url": "https://doi.org/10.1007/s10639-022-11316-w"
+      },
+      {
+        "relevance_score": 0.7,
+        "summary": "This paper provides a comprehensive overview of the landscape of trustworthy AI, focusing on the translation of high-level AI principles and ethics into practical requirements for responsible AI systems and regulatory frameworks. It discusses the importance of transparency, accountability, human oversight, and risk management in the deployment of AI systems. While it does not specifically address AI coding assistants or their autonomous code-writing capabilities, it offers a framework for evaluating the trustworthiness and responsibility of AI systems in general. The paper argues for the necessity of human oversight and robust governance mechanisms to ensure AI systems act in alignment with societal values and legal norms. Points in favor of autonomous AI include potential efficiency and innovation, but the paper emphasizes the risks of lack of accountability, explainability, and potential harm if AI operates without sufficient oversight. The discussion is relevant for considering whether AI coding assistants should write code autonomously, as it highlights the need for responsible deployment and oversight of such systems.",
+        "title": "Connecting the dots in trustworthy Artificial Intelligence: From AI principles, ethics, and key requirements to responsible AI systems and regulation",
+        "url": "https://doi.org/10.1016/j.inffus.2023.101896"
+      },
+      {
+        "relevance_score": 0.4,
+        "summary": "This article provides a comprehensive analysis of China's national strategy for artificial intelligence (AI), focusing on policy, ethics, and regulation. It discusses the 2017 'New Generation Artificial Intelligence Development Plan' (AIDP), which aims to make China a global leader in AI by 2030. The paper highlights the socio-political motivations behind China's AI push, including economic growth, technological leadership, and the desire to shape global ethical norms for AI. The article references the AlphaGo event as a catalyst for increased AI investment and policy focus. While the article covers broad policy and ethical debates, it does not specifically address the question of whether AI coding assistants should autonomously write code. Instead, it provides context on how China approaches AI governance, including the balance between innovation and ethical/regulatory considerations. There is no direct empirical data or argumentation regarding autonomous code generation by AI assistants, but the resource is relevant for understanding the broader regulatory and ethical frameworks that might influence such decisions in China.",
+        "title": "The Chinese approach to artificial intelligence: an analysis of policy, ethics, and regulation",
+        "url": "https://doi.org/10.1007/s00146-020-00992-2"
+      },
+      {
+        "relevance_score": 0.85,
+        "summary": "This article outlines six grand challenges for human-centered artificial intelligence (AI), emphasizing the need for AI systems—including coding assistants—to be designed with human values, oversight, and collaboration in mind. The authors argue that AI should augment rather than replace human capabilities, highlighting risks such as loss of human agency, lack of transparency, and potential for harm if AI systems act autonomously without sufficient human control. The paper advocates for responsible, explainable, and trustworthy AI, and stresses the importance of keeping humans in the loop, especially in high-stakes or creative domains like software development. While not focused solely on coding assistants, the article provides a strong argument against fully autonomous code generation, favoring human-AI collaboration and oversight to ensure safety, accountability, and alignment with human intentions.",
+        "title": "Six Human-Centered Artificial Intelligence Grand Challenges",
+        "url": "https://doi.org/10.1080/10447318.2022.2153320"
+      },
+      {
+        "relevance_score": 0.8,
+        "summary": "This article discusses the ethical complexities of deploying large language models (LLMs) in healthcare and medicine, focusing on issues such as bias, transparency, accountability, and the potential for harm. It highlights that while LLMs can assist with tasks like documentation, diagnosis, and patient communication, their autonomous use raises significant concerns. The paper argues for careful oversight, human-in-the-loop systems, and robust evaluation before LLMs are allowed to operate autonomously in high-stakes domains. Although not directly about AI coding assistants, the arguments about the risks of autonomous AI decision-making, the need for human oversight, and the potential for unintended consequences are highly relevant to the debate on whether AI coding assistants should write code autonomously.",
+        "title": "Attention is not all you need: the complicated case of ethically using large language models in healthcare and medicine",
+        "url": "https://doi.org/10.1016/j.ebiom.2023.104512"
+      }
+    ],
+    "recommendations": [
+      "Legal, regulatory, and liability issues of autonomous AI-generated code (copyright, licensing, accountability)",
+      "Empirical evidence and case studies of autonomous AI coding assistants in production environments",
+      "Comparison of autonomous AI code generation with traditional and human-in-the-loop coding approaches",
+      "Impact of AI-generated code on maintainability, user experience, and long-term software project health",
+      "Industry-specific considerations for autonomous AI coding (e.g., safety-critical, healthcare, finance)",
+      "Societal, educational, and environmental impacts of widespread autonomous AI code generation"
+    ],
+    "research_plan": {
+      "critique": {
+        "gaps": [
+          "Legal and regulatory implications of AI-generated code (e.g., copyright, licensing, liability)",
+          "User experience and maintainability of AI-generated code over time",
+          "Comparison with traditional code generation tools and human-in-the-loop systems",
+          "Industry-specific considerations (e.g., safety-critical systems, healthcare, finance)",
+          "Long-term impact on software engineering education and skill development",
+          "Empirical evidence or case studies of autonomous AI code in production environments",
+          "Open-source vs. proprietary AI coding assistants and their ecosystem effects",
+          "Societal and cultural impacts, including trust in software and technology adoption",
+          "Environmental impact of large-scale AI code generation (e.g., energy consumption)"
+        ],
+        "rationale": "The initial plan covers many core arguments, such as productivity, code quality, security, ethics, and job displacement. However, it omits several important adjacent domains and counter-perspectives. Legal and regulatory issues are critical, as questions of copyright, licensing, and liability for AI-generated code are unresolved and could significantly affect adoption. The plan also overlooks the maintainability and user experience of code written by AI, which may differ from human-written code in ways that affect long-term project health. There is no comparison with existing code generation tools or hybrid approaches, which is necessary to contextualize the unique value or risks of fully autonomous AI. Industry-specific requirements, especially in regulated or safety-critical fields, are not addressed. The plan does not consider the impact on education and the future skill set of developers, nor does it reference empirical studies or real-world deployments of autonomous AI coding. Broader societal, cultural, and environmental impacts are also missing, all of which are important for a comprehensive and balanced analysis."
+      },
+      "elaborated_query": "A comprehensive evaluation of whether artificial intelligence (AI) coding assistants should write code autonomously must consider a wide spectrum of factors. In favor, autonomous AI coding can boost productivity, automate repetitive tasks, democratize software development, reduce human error, and accelerate prototyping. However, there are significant concerns: code quality, security vulnerabilities, lack of contextual understanding, and the risk of job displacement. Additional critical dimensions include legal and regulatory implications (copyright, licensing, liability), ethical and accountability issues, and the potential propagation of biases. The maintainability and user experience of AI-generated code, especially over time, must be assessed, as well as how such code compares to that produced by traditional tools or human-in-the-loop systems. Industry-specific requirements (e.g., safety-critical domains), the long-term impact on software engineering education and skills, and empirical evidence from real-world deployments are essential to inform the debate. Broader societal, cultural, and environmental impacts—including trust, technology adoption, and energy consumption—should also be considered for a balanced and complete analysis.",
+      "search_topics": [
+        "Legal, regulatory, and liability issues of autonomous AI-generated code (copyright, licensing, accountability)",
+        "Empirical evidence and case studies of autonomous AI coding assistants in production environments",
+        "Comparison of autonomous AI code generation with traditional and human-in-the-loop coding approaches",
+        "Impact of AI-generated code on maintainability, user experience, and long-term software project health",
+        "Industry-specific considerations for autonomous AI coding (e.g., safety-critical, healthcare, finance)",
+        "Societal, educational, and environmental impacts of widespread autonomous AI code generation"
+      ]
+    },
+    "research_report": "# Should Artificial Intelligence Coding Assistants Write Code Autonomously?\n\n## 1. Introduction\nThe rapid advancement of artificial intelligence (AI) has led to the proliferation of AI-powered coding assistants, which promise to transform software development by automating routine tasks, enhancing productivity, and supporting learning. However, the question of whether these assistants should be permitted to write code entirely autonomously—without human oversight—raises significant ethical, technical, and societal concerns. This report synthesizes current research to evaluate the merits and risks of autonomous code generation by AI, drawing on established ethical frameworks, empirical findings, and ongoing debates in the field.\n\n## 2. Methodology\nThis report is based on a synthesis of recent peer-reviewed literature addressing the ethical, practical, and regulatory dimensions of AI deployment, with a focus on coding assistants. Key sources include:\n- Ethical frameworks for AI in education and broader society [1][2],\n- Analyses of human-centered AI design [4],\n- Empirical studies on the risks and benefits of AI autonomy in high-stakes domains [4][5],\n- Policy and regulatory perspectives from global and national contexts [3].\n\nThe analysis integrates thematic findings, empirical data, and contrasting viewpoints to provide a balanced assessment.\n\n## 3. Key Findings & Empirical Data\n\n### 3.1 Productivity and Learning Benefits\n- **Potential Productivity Gains:** While there is limited direct empirical evidence, existing literature suggests that AI coding assistants may automate certain repetitive coding tasks and could accelerate aspects of software development. However, concrete data on cost reduction and productivity improvements in industry settings remain sparse and require further study.\n- **Educational Impact:** In educational contexts, AI-driven tools have improved collaborative learning and personalized instruction, supporting both students and educators. These tools enable tailored assessments, curriculum support, and tracking of learner engagement, thereby facilitating new paradigms of instruction and professional development [1][4].\n\n### 3.2 Risks of Autonomous Code Generation\n- **Bias and Security Vulnerabilities:** Autonomous AI systems have demonstrated biases in various sectors, often due to skewed training data, and can introduce errors or security vulnerabilities if left unchecked [1][4][5].\n- **Loss of Human Agency:** Full autonomy risks diminishing human oversight, potentially leading to unintended or harmful outcomes [4].\n- **Accountability and Explainability:** Without human involvement, tracing responsibility for errors or harmful code becomes challenging, undermining trust and accountability [2][4].\n\n### 3.3 Empirical Evidence\n- **Bias in AI Systems:** Studies have shown that AI systems, including large language models, can perpetuate or amplify biases present in their training data, with documented impacts in healthcare, education, and finance [1][4].\n- **Need for Oversight:** Lack of human oversight in autonomous code generation increases the risk of introducing critical errors and vulnerabilities, as evidenced by incidents in other high-stakes domains [4][5].\n\n### 3.4 Ethical and Regulatory Frameworks\n- **Human-Centered Design:** Leading frameworks advocate for AI systems that augment rather than replace human capabilities, emphasizing transparency, inclusivity, and human well-being [1][4].\n- **Governance and Oversight:** Robust governance mechanisms and independent oversight are deemed essential for trustworthy AI deployment [2][3].\n\n#### Table 1: Summary of Key Risks and Benefits\n| Aspect                | Benefits of AI Coding Assistants         | Risks of Autonomous Code Generation         |\n|-----------------------|------------------------------------------|--------------------------------------------|\n| Productivity          | May accelerate development, automate tasks | Potential for rapid propagation of errors   |\n| Learning              | Personalized instruction, collaboration  | Undermines learner autonomy                |\n| Security & Quality    | Automates routine checks                 | Introduces vulnerabilities, bias           |\n| Accountability        | Supports documentation                   | Obscures responsibility for errors         |\n| Ethics & Oversight    | Enables human-in-the-loop                | Reduces transparency, explainability       |\n\n**Synthesis:**\nThe literature indicates that while AI coding assistants offer promising benefits—particularly in educational settings—the risks associated with fully autonomous code generation are significant. These include the amplification of bias, introduction of security vulnerabilities, and challenges to accountability and human agency. The need for human oversight is a recurring theme across empirical studies and ethical frameworks.\n\n## 4. Discussion\n\n### 4.1 Arguments in Favor of Autonomous AI Coding\n- **Efficiency and Innovation:** Proponents argue that fully autonomous AI coding assistants could unlock unprecedented efficiency, enabling rapid prototyping and innovation [2].\n- **Scalability:** Autonomous systems may help address labor shortages and scale software development to meet growing demand.\n- **Democratization of Programming:** There is potential for AI coding assistants to lower barriers to entry, making programming more accessible to non-experts. However, this may also risk exacerbating digital divides if access to high-quality AI tools is uneven.\n\n### 4.2 Counterpoints: The Case for Human Oversight\n- **Ethical Responsibility:** Ethical frameworks consistently emphasize the need for human oversight to ensure AI systems align with societal values and legal norms [1][2][4].\n- **Risk Management:** The potential for bias, errors, and security vulnerabilities is heightened in the absence of human review, especially in high-stakes or creative domains [4][5].\n- **Loss of Agency and Trust:** Removing humans from the loop risks eroding user trust and diminishing human agency, which are critical for responsible technology adoption [4].\n- **Industry and Practitioner Perspectives:** Qualitative insights from software developers and educators highlight the importance of maintaining human judgment in code review and the value of AI as a collaborative partner rather than a replacement.\n\n### 4.3 Regulatory and Societal Considerations\n- **Global Variations:** National strategies, such as China's, balance innovation with ethical and regulatory oversight, reflecting diverse approaches to AI governance [3].\n- **Evaluation Metrics:** Responsible deployment requires evaluation metrics that go beyond technical performance to include fairness, transparency, and inclusivity [2][4].\n\n## 5. Conclusion\nThe current research consensus suggests that while AI coding assistants offer substantial benefits in terms of productivity and learning, they should not be permitted to write code entirely autonomously. The risks associated with bias, lack of oversight, and potential for introducing errors or vulnerabilities outweigh the efficiency gains of full autonomy. A human-centered approach—where AI augments human developers and operates under robust ethical, transparent, and inclusive frameworks—is strongly recommended. Ongoing evaluation and governance are essential to ensure the responsible and trustworthy deployment of AI coding assistants.\n\n## Citations\n",
+    "summary": "# Should Artificial Intelligence Coding Assistants Write Code Autonomously?\n\n## 1. Introduction\nThe rapid advancement of artificial intelligence (AI) has led to the proliferation of AI-powered coding assistants, which promise to transform software development by automating routine tasks, enhancing productivity, and supporting learning. However, the question of whether these assistants should be permitted to write code entirely autonomously—without human oversight—raises significant ethical, technical, and societal concerns. This report synthesizes current research to evaluate the merits and risks of autonomous code generation by AI, drawing on established ethical frameworks, empirical findings, and ongoing debates in the field.\n\n## 2. Methodology\nThis report is based on a synthesis of recent peer-reviewed literature addressing the ethical, practical, and regulatory dimensions of AI deployment, with a focus on coding assistants. Key sources include:\n- Ethical frameworks for AI in educat"
   },
-  "agents_used": ["Planner", "Researcher", "Evaluator"],
-  "trace_id": "run-example-001",
-  "runtime_seconds": 38.2
+  "runtime_seconds": 129.006,
+  "status": "success",
+  "tools_used": [
+    "FactChecker",
+    "VectorSearch",
+    "PageScraper",
+    "GraphRAG",
+    "ArxivSearch",
+    "OpenAlexSearch"
+  ],
+  "trace_id": "run-20260604-085959-2d0edac7",
+  "use_case_id": "16"
 }
