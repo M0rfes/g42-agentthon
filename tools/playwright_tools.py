@@ -75,8 +75,35 @@ def scrape_page(url: str) -> str:
     """
     with track_step("scrape_page", url=url) as metrics:
         logger.info("playwright_scrape_start", url=url)
-        
+
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in ("http", "https") or not parsed.hostname:
+            logger.warning(
+                "playwright_scrape_blocked_url",
+                url=url,
+                reason="invalid_scheme_or_host",
+            )
+            return f"Error scraping {url}: blocked URL scheme/host."
+
         try:
+            import ipaddress
+            import socket
+
+            ip = ipaddress.ip_address(socket.gethostbyname(parsed.hostname))
+            if ip.is_private or ip.is_loopback or ip.is_link_local:
+                logger.warning(
+                    "playwright_scrape_blocked_url",
+                    url=url,
+                    host=parsed.hostname,
+                    reason="private_or_local_ip",
+                )
+                return f"Error scraping {url}: blocked private/local address."
+        except Exception:
+            # If DNS resolution fails, fall through and let Playwright handle the error.
+            pass
+
+        try:
+            with sync_playwright() as p:
             with sync_playwright() as p:
                 browser = p.chromium.launch(headless=True)
                 # Custom user agent to prevent basic scraping blocks
