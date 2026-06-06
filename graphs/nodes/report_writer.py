@@ -23,7 +23,7 @@ _FAKE_URL_PATTERNS = [
     "insert-url",
     "graphrag-context",
     "no-url",
-    "N/A",
+    "n/a",
 ]
 
 
@@ -33,7 +33,6 @@ def _is_valid_citation_url(url: str) -> bool:
         return False
     url_lower = url.lower()
     return not any(pattern in url_lower for pattern in _FAKE_URL_PATTERNS)
-
 
 def _fix_citation_urls(
     citations: List[Dict], paper_summaries: List[Dict], scraped_data: List[Dict]
