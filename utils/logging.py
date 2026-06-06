@@ -19,7 +19,8 @@ def setup_logging():
     )
 
     # Determine environment
-    is_docker = os.getenv("FLASK_ENV") != "development" or os.path.exists("/.dockerenv")
+    flask_env = (os.getenv("FLASK_ENV") or "development").lower()
+    is_docker = os.path.exists("/.dockerenv") or flask_env != "development"
 
     shared_processors = [
         structlog.contextvars.merge_contextvars,
