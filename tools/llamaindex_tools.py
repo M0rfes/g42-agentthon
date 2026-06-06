@@ -50,13 +50,16 @@ def fact_checker(claim: str) -> str:
             graph_response = "No knowledge graph relationships found."
             
         # Check if we have absolutely zero context gathered
-        if not vector_context.strip() or vector_context == "No vector index context available.":
+        has_vector_context = bool(vector_context.strip()) and vector_context != "No vector index context available."
+        has_graph_context = bool(graph_response.strip()) and graph_response != "No knowledge graph relationships found."
+
+        if not has_vector_context and not has_graph_context:
             logger.info("fact_checker_empty_index", claim=claim)
             result = {
                 "verification_status": "UNVERIFIED",
                 "confidence_score": 0.0,
-                "explanation": "No documents have been gathered or indexed in LlamaIndex yet. Please run research queries first to gather context.",
-                "supporting_citations": []
+                "explanation": "No documents have been gathered or indexed yet. Please run research queries first to gather context.",
+                "supporting_citations": [],
             }
             return json.dumps(result, indent=2)
             
