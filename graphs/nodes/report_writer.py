@@ -273,16 +273,11 @@ def report_writer(state: ResearchState) -> ResearchState:
                     }
                 )
 
-                # If a claim is REFUTED, attempt to find a contradiction or resolve it
+                # If a claim is REFUTED, record it and let the refinement step correct/remove it.
+                # Contradiction resolution requires two competing factual claims.
                 if status == "REFUTED":
                     logger.warning("report_writer_refuted_claim_found", claim=claim)
-                    # Look up alternative claim from database to resolve
-                    used_tools.add("ContradictionResolver")
-                    alternative_query = f"alternative facts regarding {claim}"
-
-                    resolve_res_str = resolve_contradiction.invoke(
-                        {"claim_a": claim, "claim_b": f"The claim that: {explanation}"}
-                    )
+                    continue
                     resolve_res = json.loads(resolve_res_str)
 
                     contradictions_resolved.append(
