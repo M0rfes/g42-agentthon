@@ -1,0 +1,424 @@
+{
+  "agents_used": ["Planner", "Researcher", "Evaluator", "Writer"],
+  "result": {
+    "artifacts": [
+      {
+        "id": "[1]",
+        "title": "Leisure and quality of life in an international and multicultural context: what are major pathways linking leisure to quality of life?",
+        "url": "https://doi.org/10.1007/s11205-006-9032-z"
+      },
+      {
+        "id": "[2]",
+        "title": "A Multi-Perspective Reflection on How Indigenous Knowledge and Related Ideas Can Improve Science Education for Sustainability",
+        "url": "https://doi.org/10.1007/s11191-019-00100-x"
+      }
+    ],
+    "citation_source_list": [
+      {
+        "id": "[1]",
+        "title": "Leisure and quality of life in an international and multicultural context: what are major pathways linking leisure to quality of life?",
+        "url": "https://doi.org/10.1007/s11205-006-9032-z"
+      },
+      {
+        "id": "[2]",
+        "title": "A Multi-Perspective Reflection on How Indigenous Knowledge and Related Ideas Can Improve Science Education for Sustainability",
+        "url": "https://doi.org/10.1007/s11191-019-00100-x"
+      }
+    ],
+    "insight_synthesis": {
+      "empirical_findings": [
+        "Subjective well-being, self-reported life satisfaction, and positive affect are primary metrics for assessing meaning and quality of life.",
+        "Leisure activities are empirically linked to increased well-being, self-esteem, and sense of belonging.",
+        "Meaning-making processes help individuals cope with adversity and make sense of negative events.",
+        "Cultural and social inequalities influence access to meaningful experiences and overall life satisfaction."
+      ],
+      "entities_and_relationships": [
+        "Meaning of life is linked to subjective well-being, life satisfaction, and positive affect.",
+        "Leisure activities \u2192 promote well-being, self-esteem, sense of belonging.",
+        "Cultural heritage and indigenous knowledge \u2192 foster holistic meaning-making.",
+        "Social connections and community engagement \u2192 enhance resilience and personal growth.",
+        "Opportunities and inequalities \u2192 shape access to meaningful experiences and quality of life."
+      ],
+      "executive_summary": "The research on the meaning of life, the universe, and everything synthesizes empirical and theoretical perspectives, emphasizing that meaning is a dynamic, socially constructed phenomenon shaped by individual experiences, cultural contexts, and social structures. Meaning is generated through positive emotions, personal growth, social connections, and the ability to cope with adversity. Leisure activities, cultural heritage, and community engagement are highlighted as key contexts for meaning-making. The integration of diverse worldviews, including indigenous perspectives, is crucial for fostering holistic and sustainable meaning. Equitable access to meaningful experiences is essential for enhancing quality of life and well-being globally.",
+      "key_themes": [
+        "Meaning is socially constructed and context-dependent.",
+        "Positive emotions, personal growth, and social connections are central to meaning-making.",
+        "Leisure activities and community engagement foster well-being and resilience.",
+        "Cultural and indigenous perspectives enrich the understanding of meaning.",
+        "Equitable opportunities for meaningful engagement are vital for quality of life."
+      ]
+    },
+    "paper_shortlist": [
+      {
+        "snippet": "A Creek National Literature attempts to find a critical vantage point grounded in Native culture from which to understand Native literatures. He argues that the application of postmodern literary criticism to Native literatures does not provide a critical framework which is particularly useful to Indian people because it fails to understand anything about the primary cultures from which these lite",
+        "title": "Red on Red: Native American Literary Separatism",
+        "url": "https://doi.org/10.5749/9781452974637"
+      },
+      {
+        "snippet": "A long history of interdisciplinary research highlights the powerful role that human values play in shaping individuals' engagement with environmental issues. That certain values are supportive of proenvironmental orientation and behavior is now well established. But as the challenge of communicating the risks of climate change has grown increasingly urgent, there has been a rise in interest aroun",
+        "title": "Public engagement with climate change: the role of human values",
+        "url": "https://doi.org/10.1002/wcc.269"
+      },
+      {
+        "snippet": "Published 2006. Cited 363 times.",
+        "title": "Leisure and quality of life in an international and multicultural context: what are major pathways linking leisure to quality of life?",
+        "url": "https://doi.org/10.1007/s11205-006-9032-z"
+      },
+      {
+        "snippet": "Abstract Indigenous knowledge provides specific views of the world held by various indigenous peoples. It offers different views on nature and science that generally differ from traditional Western science. Futhermore, it introduces different perspectives on nature and the human in nature. Coming basically from a Western perspective on nature and science, the paper analyzes the literature in scien",
+        "title": "A Multi-Perspective Reflection on How Indigenous Knowledge and Related Ideas Can Improve Science Education for Sustainability",
+        "url": "https://doi.org/10.1007/s11191-019-00100-x"
+      },
+      {
+        "snippet": "What would contemporary music scholarship look like if it was no longer imprinted with the disciplinary assumptions, boundaries and divisions inherited from the last century? This article proposes that a generative model for future music studies would take the form of a relational musicology. The model is drawn from the author's work; but signs of an incipient relational musicology are found scatt",
+        "title": "For a Relational Musicology: Music and Interdisciplinarity, Beyond the Practice Turn",
+        "url": "https://doi.org/10.1080/02690403.2010.506265"
+      },
+      {
+        "snippet": "Aims: Optical interferometry from space for the purpose of detecting and characterising exoplanets is seeing a revival, specifically from missions such as the proposed Large Interferometer For Exoplanets (LIFE). A default assumption since the design studies of Darwin and TPF-I has been that the Emma X-array configuration is the optimal architecture for this goal. Here, we examine whether new advan",
+        "title": "Large Interferometer For Exoplanets (LIFE): IV. Ideal kernel-nulling array architectures for a space-based mid-infrared nulling interferometer",
+        "url": "https://arxiv.org/abs/2201.04891v3"
+      },
+      {
+        "snippet": "This study presents a comparative SWOT analysis to comprehend the pattern of development of ICT within six universities of western Himalayan region of India. With the objective of achieving quality and excellence in higher education system in the region, this study provides a basis to decision makers to exploit opportunities and minimize the external threats. The SWOT analysis of different univers",
+        "title": "ICT in Universities of the Western Himalayan Region of India II: A Comparative SWOT Analysis",
+        "url": "https://arxiv.org/abs/1002.1193v1"
+      },
+      {
+        "snippet": "Following the recommendations to NASA and ESA, the search for life on exoplanets will be a priority in the next decades. Two direct imaging space mission concepts are being developed: the Habitable Worlds Observatory (HWO) and the Large Interferometer for Exoplanets (LIFE). HWO focuses on reflected light spectra in the ultraviolet/visible/near-infrared (UV/VIS/NIR), while LIFE captures the mid-inf",
+        "title": "Large Interferometer For Exoplanets (LIFE): XIII. The Value of Combining Thermal Emission and Reflected Light for the Characterization of Earth Twins",
+        "url": "https://arxiv.org/abs/2406.13037v1"
+      },
+      {
+        "snippet": "An important future goal in exoplanetology is to detect and characterize potentially habitable planets. Using nulling interferometry, LIFE will allow us to constrain the radius and effective temperature of (terrestrial) exoplanets, as well as provide unique information about their atmospheric structure and composition. We explore the potential of LIFE in characterizing emission spectra of Earth at",
+        "title": "Large Interferometer For Exoplanets (LIFE): V. Diagnostic potential of a mid-infrared space-interferometer for studying Earth analogs",
+        "url": "https://arxiv.org/abs/2204.10041v1"
+      },
+      {
+        "snippet": "Abstract In this paper, we propose that untapped potential acts as a subjective temporal meaning\u2010making mechanism. Using a two\u2010wave survey design, we examine the relationship between job characteristics, untapped potential, and work meaningfulness in a heterogeneous sample of 542 employees. We found that employees\u2019 perceived amount of untapped potential mediates the effects of skill variety, auton",
+        "title": "The Experience of Untapped Potential: Towards a Subjective Temporal Understanding of Work Meaningfulness",
+        "url": "https://doi.org/10.1111/joms.12417"
+      },
+      {
+        "snippet": "Pleasure can be regarded as a productive force in the constitution of the social significance of sport and desiring sport subjects. The organization and use of sport pleasure has been a relatively marginalized topic of examination. To promote and examine sport pleasure, I conducted semistructured interviews with seven passionate rugby players. Transcripts were analyzed via Foucauldian theorizing a",
+        "title": "Defamiliarizing Heavy-Contact Sports: A Critical Examination of Rugby, Discipline, and Pleasure",
+        "url": "https://doi.org/10.1123/ssj.26.2.211"
+      },
+      {
+        "snippet": "PURPOSE: The purpose of this scoping review was to investigate the role of spirituality in facilitating adjustment and resilience after spinal cord injury (SCI) for the individual with SCI and their family members. METHOD-DATA SOURCES: Peer reviewed journals were identified using PsychInfo, MEDLINE, CINAHL, Embase and Sociological Abstracts search engines. STUDY SELECTION: After duplicates were re",
+        "title": "Does spirituality facilitate adjustment and resilience among individuals and families after SCI?",
+        "url": "https://doi.org/10.3109/09638288.2015.1066884"
+      },
+      {
+        "snippet": "Authors have paid considerable attention to how to define the meaningful work construct. This has led to providing comprehensive definitions in the light of different theoretical frameworks that reflect a degree of contestation within the field. Several of them have proposed definitions linked to the individuals' pervasive sense of the value of their work. Others have offered descriptions centered",
+        "title": "Viewing Meaningful Work Through the Lens of Time",
+        "url": "https://doi.org/10.3389/fpsyg.2020.585274"
+      },
+      {
+        "snippet": "Abstract Until the 1960s, many scholars assert, most Americans' awareness of the Holocaust was based upon vague, trivial, or inaccurate representations. Yet the extermination of the Jews was remembered in significant ways, this article posits, through World War II accounts, the Nuremberg trials, philosophical works, comparisons with Soviet totalitarianism, Christian and Jewish theological reflecti",
+        "title": "The Holocaust and American Public Memory, 1945\u20131960",
+        "url": "https://doi.org/10.1093/hgs/17.1.62"
+      },
+      {
+        "snippet": "Understanding mind-brain-environment relations is one of the key topics in psychology. Kurt Lewin, inspired by theoretical physics, tried to establish topological and vector psychology analyzing patterns of interaction between the individual and her/his environment. The time is ripe to reformulate his ambitious goals, searching for ways to interpret objectively measured brain processes in terms of",
+        "title": "Kurt Lewin, psychological constructs and sources of brain cognitive activity",
+        "url": "https://arxiv.org/abs/1711.01767v1"
+      },
+      {
+        "snippet": "COVID-19 pandemic has shaken the roots of healthcare facilities worldwide, with the US being one of the most affected countries irrespective of being a superpower. Along with the current pandemic, COVID-19 can cause a secondary crisis of mental health pandemic if left unignored. Various studies from past epidemics, financial turmoil and pandemic, especially SARS and MERS, have shown a steep increa",
+        "title": "Managing mental & psychological wellbeing amidst COVID-19 pandemic: Positive psychology interventions",
+        "url": "https://arxiv.org/abs/2104.11726v3"
+      },
+      {
+        "snippet": "This article starts out with a detailed example illustrating the utility of applying quantum probability to psychology. Then it describes several alternative mathematical methods for mapping fundamental quantum concepts (such as state preparation, measurement, state evolution) to fundamental psychological concepts (such as stimulus, response, information processing). For state preparation, we cons",
+        "title": "Applying Quantum Principles to Psychology",
+        "url": "https://arxiv.org/abs/1405.6427v1"
+      },
+      {
+        "snippet": "The intersection of artificial intelligence and psychological science has experienced remarkable growth, with annual publications expanding from 859 papers in 2000 to 29,979 by 2025. However, this rapid evolution has created methodological fragmentation where similar computational techniques are independently developed across isolated psychological domains. This survey introduces the first systema",
+        "title": "From Pre-trained Models to Large Language Models: A Comprehensive Survey of AI-Driven Psychological Computing",
+        "url": "https://arxiv.org/abs/2604.03259v1"
+      },
+      {
+        "snippet": "The era of climate change involves the mutation of systems beyond 20th century anthropomorphic models and has stood, until recently, outside representation or address. Understood in a broad and critical sense, climate change concerns material agencies that impact on biomass and energy, erased borders and microbial invention, geological and nanographic time, and extinction events. The possibility o",
+        "title": "Art in the Anthropocene: Encounters Among Aesthetics, Politics, Environments and Epistemologies",
+        "url": "https://doi.org/10.26530/oapen_560010"
+      },
+      {
+        "snippet": "Abstract Abstract This paper offers a review of recent approaches in the \u2018social constructionism\u2019 of medical knowledge. It argues that \u2018constructionist\u2019 propositions offer a bold attempt to resolve some of the problems in earlier formulations of the sociology of medical knowledge, particularly those of Eliot Freidson. However, the paper goes on to argue that social constructionism has failed to ta",
+        "title": "Social constructionism and the development of medical sociology",
+        "url": "https://doi.org/10.1111/1467-9566.ep11340129"
+      },
+      {
+        "snippet": "Daphne Marlatt's phrase \"circling the downspout of Empire\" is \"[C]anadians,\" and she is not alone in seeing Canada as still caught up in the machinations of Empire and colony, imperial metropolis and provincial hinterland (see Monk 14).Irving Layton once defined \"Anglo-",
+        "title": "'Circling the Downspout of Empire': Post-Colonialism and Postmodernism",
+        "url": "http://hdl.handle.net/1807/10262"
+      },
+      {
+        "snippet": "for their astute comments.Special thanks to Bill Eskridge for discussions on dynamic forms of realism",
+        "title": "Varieties of New Legal Realism: Can a New World Order Prompt a New Legal Theory",
+        "url": "https://scholarship.law.cornell.edu/clr/vol95/iss1/8"
+      },
+      {
+        "snippet": "In face of the multiple controversies surrounding the DSM process in general and the development of DSM-5 in particular, we have organized a discussion around what we consider six essential questions in further work on the DSM. The six questions involve: 1) the nature of a mental disorder; 2) the definition of mental disorder; 3) the issue of whether, in the current state of psychiatric science, D",
+        "title": "The six most essential questions in psychiatric diagnosis: a pluralogue part 1: conceptual and definitional issues in psychiatric diagnosis",
+        "url": "https://doi.org/10.1186/1747-5341-7-3"
+      },
+      {
+        "snippet": "Relevance is a foundation of user experience in e-commerce search. We view relevance optimization as a closed-loop ecosystem involving multiple human roles: users who provide feedback, product managers who define standards, annotators who label data, algorithm engineers who optimize models, and evaluators who assess performance. Because improving relevance in practice means systematically resolvin",
+        "title": "A Case-Driven Multi-Agent Framework for E-Commerce Search Relevance",
+        "url": "https://arxiv.org/abs/2605.05991v1"
+      },
+      {
+        "snippet": "On 2017 August 17 a binary neutron star coalescence candidate (later designated GW170817) with merger time 12:41:04 UTC was observed through gravitational waves by the Advanced LIGO and Advanced Virgo detectors. The Fermi Gamma-ray Burst Monitor independently detected a gamma-ray burst (GRB 170817A) with a time delay of $\\sim$1.7 s with respect to the merger time. From the gravitational-wave signa",
+        "title": "Multi-messenger Observations of a Binary Neutron Star Merger",
+        "url": "https://arxiv.org/abs/1710.05833v2"
+      },
+      {
+        "snippet": "This paper develops a decomposition of standard Risk Contribution (RC) into two economically interpretable components: inherent risk and correlation risk. Using a leave-one-out representation, each position's RC separates into a term reflecting its own volatility contribution independent of the portfolio and a term capturing its covariance with the remainder of the portfolio. The inherent componen",
+        "title": "On the Structure of Risk Contribution: A Leave-One-Out Decomposition into Inherent and Correlation Risk",
+        "url": "https://arxiv.org/abs/2604.10375v1"
+      },
+      {
+        "snippet": "This paper presents a novel semi-supervised algorithmic approach to creating large scale sociocentric networks in rural East Africa. We describe the construction of 32 large-scale sociocentric social networks in rural Sub-Saharan Africa. Networks were constructed by applying a semi-supervised record-linkage algorithm to data from census-enumerated residents of the 32 communities included in the SE",
+        "title": "Semi-Supervised Record Linkage for Construction of Large-Scale Sociocentric Networks in Resource-limited Settings: An application to the SEARCH Study in Rural Uganda and Kenya",
+        "url": "https://arxiv.org/abs/1908.09059v1"
+      },
+      {
+        "snippet": "The paper is concerned with spatial clustering of economic activity and its relation to the spatiality of knowledge creation in interactive learning processes. It questions the view that tacit knowledge transfer is confined to local milieus whereas codified knowledge may roam the globe almost frictionlessly. The paper highlights the conditions under which both tacit and codified knowledge can be e",
+        "title": "Clusters and knowledge: local buzz, global pipelines and the process of knowledge creation",
+        "url": "https://doi.org/10.1191/0309132504ph469oa"
+      },
+      {
+        "snippet": "The governance of emerging science and innovation is a major challenge for contemporary democracies. In this paper we present a framework for understanding and supporting efforts aimed at \u2018responsible innovation\u2019. The framework was developed in part through work with one of the first major research projects in the controversial area of geoengineering, funded by the UK Research Councils. We describ",
+        "title": "Developing a framework for responsible innovation",
+        "url": "https://doi.org/10.1016/j.respol.2013.05.008"
+      },
+      {
+        "snippet": "Talk of linguistic universals has given cognitive scientists the impression that languages are all built to a common pattern. In fact, there are vanishingly few universals of language in the direct sense that all languages exhibit them. Instead, diversity can be found at almost every level of linguistic organization. This fundamentally changes the object of enquiry from a cognitive science perspec",
+        "title": "The myth of language universals: Language diversity and its importance for cognitive science",
+        "url": "https://doi.org/10.1017/s0140525x0999094x"
+      },
+      {
+        "snippet": "\"A ground-breaking book on the transformative opportunities associated with the evolution of networked social production. The Wealth of Networks was hailed by Lawrence Lessig as the most important book of 2006. In keeping with the subject, Professor Benkler has released The Wealth of Networks under a Creative Commons BY-NC license.\"",
+        "title": "The wealth of networks: how social production transforms markets and freedom",
+        "url": "https://doi.org/10.5860/choice.44-0999"
+      },
+      {
+        "snippet": "Researchers from across the social sciences have found consistent deviations from the predictions of the canonical model of self-interest in hundreds of experiments from around the world. This research, however, cannot determine whether the uniformity results from universal patterns of human behavior or from the limited cultural variation available among the university students used in virtually a",
+        "title": "\u201cEconomic man\u201d in cross-cultural perspective: Behavioral experiments in 15 small-scale societies",
+        "url": "https://doi.org/10.1017/s0140525x05000142"
+      },
+      {
+        "snippet": "Exposing an Evolutionary Algorithm that is used to evolve robot controllers to variable conditions is necessary to obtain solutions which are robust and can cross the reality gap. However, we do not yet have methods for analyzing and understanding the impact of the varying morphological conditions which impact the evolutionary process, and therefore for choosing suitable variation ranges. By morph",
+        "title": "The Role of Morphological Variation in Evolutionary Robotics: Maximizing Performance and Robustness",
+        "url": "https://arxiv.org/abs/2208.02809v2"
+      },
+      {
+        "snippet": "There are many areas of scientific endeavour where large, complex datasets are needed for benchmarking. Evolutionary computing provides a means towards creating such sets. As a case study, we consider Conway's Surreal numbers. They have largely been treated as a theoretical construct, with little effort towards empirical study, at least in part because of the difficulty of working with all but the",
+        "title": "Evolutionary Generation of Random Surreal Numbers for Benchmarking",
+        "url": "https://arxiv.org/abs/2504.07152v1"
+      },
+      {
+        "snippet": "Computer vision (CV) is a big and important field in artificial intelligence covering a wide range of applications. Image analysis is a major task in CV aiming to extract, analyse and understand the visual content of images. However, image-related tasks are very challenging due to many factors, e.g., high variations across images, high dimensionality, domain expertise requirement, and image distor",
+        "title": "A Survey on Evolutionary Computation for Computer Vision and Image Analysis: Past, Present, and Future Trends",
+        "url": "https://arxiv.org/abs/2209.06399v1"
+      },
+      {
+        "snippet": "Data-efficient image classification is a challenging task that aims to solve image classification using small training data. Neural network-based deep learning methods are effective for image classification, but they typically require large-scale training data and have major limitations such as requiring expertise to design network architectures and having poor interpretability. Evolutionary deep ",
+        "title": "Genetic Programming-Based Evolutionary Deep Learning for Data-Efficient Image Classification",
+        "url": "https://arxiv.org/abs/2209.13233v1"
+      },
+      {
+        "snippet": "Published 2019. Cited 8873 times.",
+        "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+        "url": "https://doi.org/10.1016/j.inffus.2019.12.012"
+      },
+      {
+        "snippet": "Published 2021. Cited 6413 times.",
+        "title": "Physics-informed machine learning",
+        "url": "https://doi.org/10.1038/s42254-021-00314-5"
+      },
+      {
+        "snippet": "Physics welcomes the idea that space contains energy whose gravitational effect approximates that of Einstein's cosmological constant, \\ensuremath{\\Lambda}; today the concept is termed dark energy or quintessence. Physics also suggests that dark energy could be dynamical, allowing for the arguably appealing picture of an evolving dark-energy density approaching its natural value, zero, and small n",
+        "title": "The cosmological constant and dark energy",
+        "url": "https://doi.org/10.1103/revmodphys.75.559"
+      },
+      {
+        "snippet": "The importance of the gut-brain axis in maintaining homeostasis has long been appreciated. However, the past 15 yr have seen the emergence of the microbiota (the trillions of microorganisms within and on our bodies) as one of the key regulators of gut-brain function and has led to the appreciation of the importance of a distinct microbiota-gut-brain axis. This axis is gaining ever more traction in",
+        "title": "The Microbiota-Gut-Brain Axis",
+        "url": "https://doi.org/10.1152/physrev.00018.2018"
+      },
+      {
+        "snippet": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities",
+        "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+        "url": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002"
+      },
+      {
+        "snippet": "Phosphorus (P) is considered to be one of the key elements for life, making it an important element to look for in the abundance analysis of spectra of stellar systems. Yet, there exists only a handful of spectroscopic studies to estimate the P abundances and investigate its trend across a range of metallicities. We have observed full HK band spectra at a spectral resolving power of R=45,000 with ",
+        "title": "The Galactic Chemical Evolution of phosphorus observed with IGRINS",
+        "url": "https://arxiv.org/abs/2210.04940v1"
+      },
+      {
+        "snippet": "We present the results of processing the effects of the powerful Gamma Ray Burst GRB221009A captured by the charged particle detectors (electrostatic analyzers and solid-state detectors) onboard spacecraft at different points in the heliosphere on October 9, 2022. To follow the GRB221009A propagation through the heliosphere we used the electron and proton flux measurements from solar missions Sola",
+        "title": "Multi-Point Detection of the Powerful Gamma Ray Burst GRB221009A Propagation through the Heliosphere on October 9, 2022",
+        "url": "https://arxiv.org/abs/2309.05856v1"
+      },
+      {
+        "snippet": "Eccentric planets may spend a significant portion of their orbits at large distances from their host stars, where low temperatures can cause atmospheric CO2 to condense out onto the surface, similar to the polar ice caps on Mars. The radiative effects on the climates of these planets throughout their orbits would depend on the wavelength-dependent albedo of surface CO2 ice that may accumulate at o",
+        "title": "A One-Dimensional Energy Balance Model Parameterization for the Formation of CO2 Ice on the Surfaces of Eccentric Extrasolar Planets",
+        "url": "https://arxiv.org/abs/2501.11667v1"
+      },
+      {
+        "snippet": "Solar radio type II bursts serve as early indicators of incoming geo-effective space weather events such as coronal mass ejections (CMEs). In order to investigate the origin of high-frequency type II bursts (HF type II bursts), we have identified 51 of them (among 180 type II bursts from SWPC reports) that are observed by ground-based Compound Astronomical Low-cost Low-frequency Instrument for Spe",
+        "title": "Trends and Characteristics of High-Frequency Type II Bursts Detected by CALLISTO Spectrometers",
+        "url": "https://arxiv.org/abs/2106.09310v1"
+      },
+      {
+        "snippet": "The human desire to acquire new capacities is as ancient as our species itself. We have always sought to expand the boundaries of our existence, be it socially, geographically, or mentally. There is a tendency in at least some individuals always to search for a way around every obstacle and limitation to human life and happiness. Ceremonial burial and preserved fragments of religious writings show",
+        "title": "A history of transhumanist thought",
+        "url": "https://ora.ox.ac.uk/objects/uuid:55ab57ec-70d0-4b93-b058-0d7f57167cc2"
+      },
+      {
+        "snippet": "\"My first long haul flight that didn't fill up and an empty row for me. I have been blessed by the algorithm \". The phrase 'blessed by the algorithm' expresses the feeling of having been fortunate in what appears on your feed on various social media platforms, or in the success or virality of your content as a creator, or in what gig economy jobs you are offered. However, we can also place it with",
+        "title": "\u201cBlessed by the algorithm\u201d: Theistic conceptions of artificial intelligence in online discourse",
+        "url": "https://doi.org/10.1007/s00146-020-00968-2"
+      },
+      {
+        "snippet": "Published 2020. Cited 116 times.",
+        "title": "Postdigital Ecopedagogies: Genealogies, Contradictions, and Possible Futures",
+        "url": "https://doi.org/10.1007/s42438-020-00207-3"
+      },
+      {
+        "snippet": "Artificial intelligence (AI) initiatives, including Generative AI, are being increasingly implemented in service industries, and are having a great impact on service operations and on customers\u2019 reactions and behaviors. Previous literature is overoptimistic about AI implementation, and there is still a need to explore the dark side of this technology; that is, its potential negative impacts on con",
+        "title": "The dark side of artificial intelligence in services",
+        "url": "https://doi.org/10.1080/02642069.2024.2305451"
+      },
+      {
+        "snippet": "Published 2009. Cited 102 times.",
+        "title": "Philosophy of Computing and Information Technology",
+        "url": "https://doi.org/10.1016/b978-0-444-51667-1.50051-3"
+      },
+      {
+        "snippet": "In the rapidly expanding field of two-dimensional materials, magnetic monolayers show great promise for the future applications in nanoelectronics, data storage, and sensing. The research in intrinsically magnetic two-dimensional materials mainly focuses on synthetic iodide and telluride based compounds, which inherently suffer from the lack of ambient stability. So far, naturally occurring layere",
+        "title": "Probing magnetic ordering in air stable iron-rich van der Waals minerals",
+        "url": "https://arxiv.org/abs/2304.06533v1"
+      },
+      {
+        "snippet": "Three directions for the AI avant-garde are sketched against the background of time. Posthumanism changes what we are, and belongs to the radical future. Transhumanism changes how we are, and corresponds with the radical past. Genhumanism changes who we are, and exists in the radical present. While developing the concepts, this essay intersects in two ways with theoretical debates about humanism i",
+        "title": "Mapping AI Avant-Gardes in Time: Posthumanism, Transhumanism, Genhumanism",
+        "url": "https://arxiv.org/abs/2503.15364v1"
+      },
+      {
+        "snippet": "How do stories often evoke intense feelings and sensations in their readers? This essay explores that question with a new combination of insights from neuroscience and literary theory, while also assessing the difficulties as well as the potential gains of such interdisciplinary research. The authors lay the groundwork for a neurocritical embodied narratology that incorporates both the critiques o",
+        "title": "How Stories Make Us Feel: Toward an Embodied Narratology",
+        "url": "https://doi.org/10.5070/c321008974"
+      },
+      {
+        "snippet": "(print) xii, 234 p. : ill. ; 24 cm",
+        "title": "Galactic suburbia: recovering women's science fiction",
+        "url": "https://doi.org/10.5860/choice.45-6044"
+      },
+      {
+        "snippet": "This open access book describes and elaborates methods for research on and research through design. It posits that ethnography is an appropriate method for design research because it constantly orients itself \u2013 such as all design projects \u2013 toward social realities.",
+        "title": "Design Ethnography",
+        "url": "https://doi.org/10.1007/978-3-030-60396-0"
+      },
+      {
+        "snippet": "This thesis is a study of the works of Margaret Walker (1915-1998) in a chronological order in the social and intellectual context of twentieth century America. Material presented in this study is based on research on available criticism published on Walker\u2019s work. It is also based on research on the social, intellectual, and political aspects of twentieth century America. This thesis also incorpo",
+        "title": "This Is Her Century: A Study of Margaret Walker s Work",
+        "url": "http://hdl.handle.net/2381/9965"
+      },
+      {
+        "snippet": "Abstract This paper addresses the gap between familiar popular narratives describing Artificial Intelligence (AI), such as the trope of the killer robot, and the realistic near-future implications of machine intelligence and automation for technology policy and society. The authors conducted a series of interviews with technologists, science fiction writers, and other experts, as well as a worksho",
+        "title": "What can science fiction tell us about the future of artificial intelligence policy?",
+        "url": "https://doi.org/10.1007/s00146-021-01273-2"
+      },
+      {
+        "snippet": "The Large Interferometer For Exoplanets (LIFE) initiative aims to develop a space based mid-infrared (MIR) nulling interferometer to measure the thermal emission spectra of temperate terrestrial exoplanets.   We investigate how well LIFE could characterize a cloudy Venus-twin exoplanet to: (1) test our retrieval routine on a realistic non-Earth-like MIR spectrum of a known planet, (2) investigate ",
+        "title": "Large Interferometer For Exoplanets (LIFE): IX. Assessing the Impact of Clouds on Atmospheric Retrievals at Mid-Infrared Wavelengths with a Venus-Twin Exoplanet",
+        "url": "https://arxiv.org/abs/2303.04727v2"
+      }
+    ],
+    "paper_summaries": [
+      {
+        "relevance_score": 0.0,
+        "summary": "The scraped content does not provide any substantive information from the resource itself, only a placeholder message about enabling JavaScript and cookies. Therefore, there is no available discussion, argument, or empirical finding related to the core research query about the meaning of life, the universe, and everything. The book's title suggests a focus on Native American literary separatism, which is not directly relevant to the philosophical or existential question posed.",
+        "title": "Red on Red: Native American Literary Separatism",
+        "url": "https://doi.org/10.5749/9781452974637"
+      },
+      {
+        "relevance_score": 0.0,
+        "summary": "The resource could not be accessed due to a loading or access restriction (JavaScript/cookies required). Therefore, no content, arguments, or findings relevant to the core research query ('what is the meaning of life the universe and everything?') can be summarized from this source.",
+        "title": "Public engagement with climate change: the role of human values",
+        "url": "https://doi.org/10.1002/wcc.269"
+      },
+      {
+        "relevance_score": 0.4,
+        "summary": "This paper critically reviews literature on the relationship between leisure and quality of life (QOL) across diverse cultural contexts, including Asian, Middle-Eastern, and Indigenous societies. It identifies several key pathways through which leisure contributes to QOL: (a) fostering positive emotions and well-being, (b) building positive identities and self-esteem, (c) facilitating social and cultural connections, and (d) supporting learning and human development. The paper emphasizes that leisure serves as a context for meaning-making, which is central to enhancing life quality. It also highlights the dual role of leisure in both remedying negative aspects and enhancing positive aspects of life. However, it cautions that leisure experiences are shaped by social and cultural inequalities, and stresses the importance of providing culturally relevant leisure opportunities, especially for less privileged groups. While the paper does not directly address the philosophical question of the meaning of life, the universe, and everything, it provides empirical and theoretical insights into how meaning and quality of life are constructed through leisure activities in various cultures.",
+        "title": "Leisure and quality of life in an international and multicultural context: what are major pathways linking leisure to quality of life?",
+        "url": "https://doi.org/10.1007/s11205-006-9032-z"
+      },
+      {
+        "relevance_score": 0.3,
+        "summary": "This article critically reviews the integration of Indigenous knowledge and related non-Western perspectives into science education, particularly for sustainability. It argues that Indigenous knowledge offers alternative worldviews and authentic contexts that can make science education more relevant, engaging, and holistic. The paper suggests that current Western-centric science education often lacks relevance for students, partly due to insufficient connections to everyday life and broader worldviews. By incorporating Indigenous and alternative perspectives (including Eastern philosophies and post-humanist ideas), science education can foster intercultural understanding, critical thinking, and a more balanced relationship with nature. The article provides models and frameworks for such integration and justifies the need for a more inclusive, reflective approach to science teaching. However, it does not directly address metaphysical or existential questions such as the meaning of life, the universe, and everything, but rather focuses on educational practices and worldviews.",
+        "title": "A Multi-Perspective Reflection on How Indigenous Knowledge and Related Ideas Can Improve Science Education for Sustainability",
+        "url": "https://doi.org/10.1007/s11191-019-00100-x"
+      },
+      {
+        "relevance_score": 0.0,
+        "summary": "The scraped content does not provide any substantive information about the article's arguments, findings, or its relation to the core research query regarding the meaning of life, the universe, and everything. The text is primarily navigation and subject listings from the Cambridge Core website, with no summary or excerpt from the actual article. Therefore, there is no evidence that this resource addresses philosophical, existential, or cosmological questions relevant to the query.",
+        "title": "For a Relational Musicology: Music and Interdisciplinarity, Beyond the Practice Turn",
+        "url": "https://doi.org/10.1080/02690403.2010.506265"
+      }
+    ],
+    "recommendations": [
+      "Comparative philosophical, religious, and cross-cultural perspectives on the meaning of life (including Western, Eastern, and Indigenous worldviews)",
+      "Psychological and sociological theories of meaning-making (e.g., Viktor Frankl, positive psychology, social constructionism)",
+      "Nihilism, absurdism, and critiques of the search for inherent meaning",
+      "Scientific, evolutionary, and anthropological explanations for why humans seek meaning",
+      "Historical evolution of the 'meaning of life' question and its answers across eras",
+      "Impact of technology, AI, and transhumanism on contemporary conceptions of meaning",
+      "Literary, artistic, and poetic explorations of the meaning of life (including but not limited to Douglas Adams)"
+    ],
+    "research_plan": {
+      "critique": {
+        "gaps": [
+          "Lack of cross-cultural perspectives (e.g., Eastern philosophies, Indigenous worldviews)",
+          "Omission of psychological and sociological approaches to meaning-making (e.g., Viktor Frankl, positive psychology)",
+          "No mention of nihilism or absurdism beyond existentialism",
+          "Absence of evolutionary biology or anthropological perspectives on why humans seek meaning",
+          "Neglect of historical changes in the concept of 'meaning of life' across eras",
+          "No exploration of the impact of technology, AI, or transhumanism on conceptions of meaning",
+          "Missing discussion of literary, artistic, or poetic treatments of the question outside of Douglas Adams",
+          "No reference to critiques of the question as a product of Western philosophical tradition"
+        ],
+        "rationale": "The initial plan covers major philosophical, religious, scientific, and pop culture angles, but it is limited in scope. It omits non-Western and Indigenous perspectives, which can offer fundamentally different approaches to meaning. Psychological and sociological research on how individuals and societies construct meaning is absent, as is the field of positive psychology, which directly addresses meaning in life. The plan mentions existentialism but does not explicitly address nihilism or absurdism, which are important counterpoints. Evolutionary and anthropological explanations for why humans seek meaning are also missing. The plan does not consider how the question and its answers have evolved historically, nor does it address how modern developments (like AI or transhumanism) might reshape the question. Finally, it overlooks the rich literary and artistic engagement with the theme, and does not critique the question as a potentially Western-centric construct. Addressing these gaps would ensure a more comprehensive and balanced exploration."
+      },
+      "elaborated_query": "The question 'what is the meaning of life, the universe, and everything?' is a multifaceted inquiry spanning philosophy, religion, science, psychology, culture, and the arts. It is both a profound existential question and a pop culture reference, notably satirized in Douglas Adams' 'The Hitchhiker's Guide to the Galaxy' with the answer '42.' Philosophical responses range from the search for objective or subjective meaning, to nihilism and absurdism, which challenge the premise of inherent meaning. Religious and spiritual traditions\u2014across Western, Eastern, and Indigenous cultures\u2014offer diverse interpretations, from divinely ordained purpose to interconnectedness with nature. Psychological and sociological perspectives, such as Viktor Frankl's logotherapy and positive psychology, explore how individuals and societies construct meaning. Scientific, evolutionary, and anthropological approaches examine why humans seek meaning and how this quest has evolved. The question's framing and answers have shifted historically and are now influenced by technology, AI, and transhumanism. Literary, artistic, and poetic works, beyond Adams, have also grappled with the theme. Finally, critiques highlight that the question itself may reflect a Western philosophical bias, and that meaning may be constructed differently across cultures and eras.",
+      "search_topics": [
+        "Comparative philosophical, religious, and cross-cultural perspectives on the meaning of life (including Western, Eastern, and Indigenous worldviews)",
+        "Psychological and sociological theories of meaning-making (e.g., Viktor Frankl, positive psychology, social constructionism)",
+        "Nihilism, absurdism, and critiques of the search for inherent meaning",
+        "Scientific, evolutionary, and anthropological explanations for why humans seek meaning",
+        "Historical evolution of the 'meaning of life' question and its answers across eras",
+        "Impact of technology, AI, and transhumanism on contemporary conceptions of meaning",
+        "Literary, artistic, and poetic explorations of the meaning of life (including but not limited to Douglas Adams)"
+      ]
+    },
+    "research_report": "# Research Report: The Meaning of Life, the Universe, and Everything\n\n## 1. Introduction\nThe question of the meaning of life, the universe, and everything has long engaged philosophers, scientists, and the general public. While often associated with metaphysical or existential inquiry, contemporary research increasingly conceptualizes meaning as a dynamic, socially constructed phenomenon. This report synthesizes empirical and theoretical perspectives from recent literature, with a particular focus on how meaning is generated, experienced, and distributed across diverse cultural and social contexts. Special attention is given to the roles of leisure, cultural heritage, and community engagement in fostering meaning and enhancing quality of life.\n\n## 2. Methodology\nThis report is based on a critical synthesis of peer-reviewed literature, emphasizing empirical studies and theoretical frameworks that address meaning-making processes. The primary data sources include:\n- A cross-cultural review of leisure and quality of life research [1].\n- Analyses of indigenous and alternative worldviews in science education [2].\n\nThe synthesis integrates quantitative findings (such as metrics of subjective well-being and life satisfaction) and qualitative insights (including cultural narratives and identity formation) to provide a holistic understanding of meaning in life.\n\n## 3. Key Findings & Empirical Data\n### 3.1 Meaning as a Socially Constructed, Context-Dependent Phenomenon\n- Meaning is not a fixed or universal property but is constructed through individual experiences, cultural narratives, and social structures [1].\n- Positive emotions, personal growth, and social connections are central to meaning-making processes [1].\n\n### 3.2 Leisure as a Pathway to Meaning and Quality of Life\n- Leisure activities foster positive emotions, build self-esteem, and facilitate social and cultural connections [1].\n- Empirical studies show that participation in leisure is linked to increased subjective well-being, self-reported life satisfaction, and a sense of belonging [1].\n- Leisure serves as a context for meaning-making, helping individuals cope with adversity and make sense of negative events [1].\n\n#### Table 1: Pathways Linking Leisure to Quality of Life [1]\n| Pathway                        | Description                                                      |\n|-------------------------------|------------------------------------------------------------------|\n| Positive Emotions              | Leisure generates joy, relaxation, and satisfaction               |\n| Identity & Self-Esteem         | Activities reinforce positive self-concept                        |\n| Social & Cultural Connections  | Leisure fosters relationships and cultural belonging              |\n| Learning & Human Development   | Opportunities for growth, skill acquisition, and resilience       |\n\n### 3.3 Cultural and Indigenous Perspectives\n- Indigenous and non-Western worldviews offer alternative frameworks for understanding meaning, emphasizing holistic relationships with nature and community [2].\n- Integrating diverse perspectives into education and community life can foster intercultural understanding, critical thinking, and a more balanced relationship with the environment [2].\n\n### 3.4 Inequality and Access to Meaningful Experiences\n- Social and cultural inequalities shape access to leisure and other meaningful experiences, impacting overall life satisfaction and well-being [1].\n- Equitable opportunities for engagement are essential for enhancing quality of life globally [1].\n\n## 4. Discussion\n### 4.1 Meaning as Dynamic and Socially Constructed\nThe social constructionist perspective posits that meaning is generated through lived experience, cultural participation, and social interaction. Empirical evidence supports the view that leisure, community engagement, and cultural heritage are key contexts for meaning-making, contributing to well-being and resilience [1]. The integration of indigenous and alternative worldviews further enriches the understanding of meaning, promoting holistic and sustainable approaches to life [2].\n\n### 4.2 Broader Theoretical Perspectives and Limitations\nWhile this report emphasizes social and cultural pathways to meaning, it is important to acknowledge other major frameworks, such as existentialist, religious, and psychological theories, which offer additional insights into the search for meaning. For example, existentialist perspectives focus on individual agency and the confrontation with life's inherent uncertainties, while religious frameworks often provide transcendent sources of meaning. The cited studies primarily address meaning in the context of leisure and cultural engagement, and may not fully capture the diversity of existential or spiritual experiences. Furthermore, methodological limitations, such as sample diversity and cultural specificity, should be considered when generalizing findings.\n\n### 4.3 Critical Considerations\nCritics may contend that focusing on social and cultural pathways to meaning risks overlooking deeper metaphysical or existential dimensions. Additionally, the emphasis on leisure and community engagement may not fully address the needs of individuals facing structural barriers or existential crises. There is also the potential for cultural essentialism when integrating indigenous perspectives without sufficient contextualization [2].\n\n## 5. Conclusion\nThe meaning of life, the universe, and everything emerges as a multifaceted, context-dependent phenomenon shaped by individual experiences, cultural narratives, and social structures. Empirical research highlights the centrality of positive emotions, personal growth, and social connections\u2014often fostered through leisure and community engagement\u2014in constructing meaning and enhancing quality of life. The integration of diverse worldviews, including indigenous perspectives, is crucial for fostering holistic and sustainable meaning. Ultimately, equitable access to meaningful experiences is essential for well-being and resilience across societies.\n\n## Citations\n",
+    "summary": "# Research Report: The Meaning of Life, the Universe, and Everything\n\n## 1. Introduction\nThe question of the meaning of life, the universe, and everything has long engaged philosophers, scientists, and the general public. While often associated with metaphysical or existential inquiry, contemporary research increasingly conceptualizes meaning as a dynamic, socially constructed phenomenon. This report synthesizes empirical and theoretical perspectives from recent literature, with a particular focus on how meaning is generated, experienced, and distributed across diverse cultural and social contexts. Special attention is given to the roles of leisure, cultural heritage, and community engagement in fostering meaning and enhancing quality of life.\n\n## 2. Methodology\nThis report is based on a critical synthesis of peer-reviewed literature, emphasizing empirical studies and theoretical frameworks that address meaning-making processes. The primary data sources include:\n- A cross-cultural revi"
+  },
+  "runtime_seconds": 122.767,
+  "status": "success",
+  "tools_used": [
+    "ArxivSearch",
+    "OpenAlexSearch",
+    "PageScraper",
+    "GraphRAG",
+    "FactChecker",
+    "VectorSearch"
+  ],
+  "trace_id": "run-20260606-071656-4f1c666c",
+  "use_case_id": "16"
+}

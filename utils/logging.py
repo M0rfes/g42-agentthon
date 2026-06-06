@@ -6,6 +6,7 @@ from contextlib import contextmanager
 import structlog
 import tiktoken
 
+
 def setup_logging():
     """
     Sets up structured logging. Outputs JSON inside Docker/Production
@@ -50,12 +51,29 @@ def setup_logging():
             processor=structlog.dev.ConsoleRenderer(),
         )
 
-    # Configure handler
-    handler = logging.StreamHandler(sys.stdout)
-    handler.setFormatter(formatter)
+    # Configure handlers
+    log_dir = "logs"
+    os.makedirs(log_dir, exist_ok=True)
+
+    # Delete older app logs (excluding memgraph logs)
+    for f in os.listdir(log_dir):
+        if f.endswith(".log") and f != "memgraph.log":
+            try:
+                os.remove(os.path.join(log_dir, f))
+            except OSError:
+                pass
+
+    log_file = os.path.join(log_dir, "latest_run.log")
+
+    stream_handler = logging.StreamHandler(sys.stdout)
+    stream_handler.setFormatter(formatter)
+
+    # mode='w' ensures the file is overwritten on every start
+    file_handler = logging.FileHandler(log_file, mode="w")
+    file_handler.setFormatter(formatter)
 
     root_logger = logging.getLogger()
-    root_logger.handlers = [handler]
+    root_logger.handlers = [stream_handler, file_handler]
     root_logger.setLevel(logging.INFO)
 
     structlog.configure(
@@ -65,9 +83,11 @@ def setup_logging():
         cache_logger_on_first_use=True,
     )
 
+
 # Setup initial logs configuration
 setup_logging()
 logger = structlog.get_logger("deep_research")
+
 
 def count_tokens(text: str, model_name: str = "gpt-4o") -> int:
     """
@@ -82,12 +102,13 @@ def count_tokens(text: str, model_name: str = "gpt-4o") -> int:
         encoding = tiktoken.get_encoding("cl100k_base")
     return len(encoding.encode(str(text)))
 
+
 @contextmanager
 def track_step(step_name: str, **extra_ctx):
     """
     A context manager to track an agent graph step or tool execution.
     Logs step start, step success/failure, execution duration, and token usage.
-    
+
     Usage:
         with track_step("enrich_and_decompose", query=user_query) as metrics:
             # ... do processing ...
@@ -96,10 +117,10 @@ def track_step(step_name: str, **extra_ctx):
     """
     start_time = time.perf_counter()
     logger.info("step_start", step=step_name, **extra_ctx)
-    
+
     # Initialize metrics structure that can be updated inside the block
     metrics = {"input_tokens": 0, "output_tokens": 0}
-    
+
     try:
         yield metrics
         duration = time.perf_counter() - start_time
@@ -110,7 +131,7 @@ def track_step(step_name: str, **extra_ctx):
             input_tokens=metrics["input_tokens"],
             output_tokens=metrics["output_tokens"],
             total_tokens=metrics["input_tokens"] + metrics["output_tokens"],
-            **extra_ctx
+            **extra_ctx,
         )
     except Exception as e:
         duration = time.perf_counter() - start_time
@@ -122,6 +143,6 @@ def track_step(step_name: str, **extra_ctx):
             input_tokens=metrics["input_tokens"],
             output_tokens=metrics["output_tokens"],
             total_tokens=metrics["input_tokens"] + metrics["output_tokens"],
-            **extra_ctx
+            **extra_ctx,
         )
         raise

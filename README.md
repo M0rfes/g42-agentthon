@@ -1,30 +1,37 @@
 # Deep Research Flow Agent 🚀
 
-A containerized, multi-agent Deep Research orchestrator built using **LangGraph**, **LlamaIndex**, **Memgraph (GraphRAG)**, **Flask**, and **Playwright Chromium**. 
+## 1. Problem Statement
+Researchers and analysts often struggle to synthesize information from disparate academic and web sources while maintaining high factual accuracy and avoiding hallucinations. There is a need for an autonomous system that can decompose complex queries, gather diverse evidence, reconcile contradictions, and produce publication-ready reports with verifiable citations.
 
-The agent conducts autonomous query decomposition, parallel Bing searches, live Playwright SPA scraping, vector and property graph ingestion, GraphRAG path lookups, peer-reviewed fact-checking, and final publication-ready report drafting.
+## 2. Use Case ID
+16
 
----
+## 3. Solution Overview
+The Deep Research Flow Agent is a containerized, multi-agent orchestrator that automates the end-to-end research process. It utilizes a linear LangGraph workflow to transform a high-level user query into a comprehensive, fact-checked research report. The system combines traditional semantic search (Vector RAG) with Knowledge Graph traversal (GraphRAG) to provide deep insights and rigorous verification.
 
-## 🛠️ Architecture Overview
+## 4. Agent Architecture
+The system is implemented as a 4-node LangGraph workflow, where each node acts as a specialized agent:
 
-The system runs a **4-node linear LangGraph workflow**:
-1. 🔍 **Enrich & Decompose (Node 1):** Elaborates query viewpoints (points vs counter-points) and decomposes them into precise search terms.
-2. 🌐 **Data Gathering (Node 2):** Performs parallel web searches, scrapes pages concurrently using Playwright Chromium, and compiles individual paper summaries.
-3. 🧠 **Synthesis (Node 3):** Indexes scraped documents into LlamaIndex's Vector Store and extracts entity-relationship triplets into the **Memgraph** Graph Database, synthesizing Vector + GraphRAG insights.
-4. 📝 **Report Writer (Node 4):** Executes a strict self-correction loop (Draft -> Critique -> Fact-Check assertions -> Reconcile contradictions -> Refine) to produce the final citation-grounded report.
+### Agents & Roles
+- **Planner (Node 1 - Enrich & Decompose):** Acts as the research director. It elaborates the user query into multiple viewpoints (points vs. counter-points) and decomposes it into precise search topics.
+- **Retriever (Node 2 - Data Gathering):** Acts as the evidence collector. It performs parallel searches across OpenAlex and arXiv, falling back to Bing web search, and scrapes content using Playwright Chromium.
+- **Synthesizer (Node 3 - Synthesis):** Acts as the knowledge engineer. It indexes scraped content into a dual-store architecture (LlamaIndex Vector Store and Memgraph Property Graph), synthesizing insights from both.
+- **Evaluator (Node 4 - Report Writer):** Acts as the principal scientist and peer reviewer. It executes an iterative loop of drafting, critiquing, fact-checking, and refining the final report.
 
----
+### System Design
+- **Communication:** Agents communicate asynchronously via a shared `ResearchState` object, which carries the query, research plan, scraped data, and synthesized insights.
+- **Decision-Making:** The overall flow is linear, but internal decision-making occurs within nodes using LLM-driven loops (e.g., the Planner's critique-refine loop and the Evaluator's fact-check-refine loop).
+- **Critique & Validation:** The system employs a "Generate-Critique-Verify" pattern. Node 4 specifically uses a `fact_checker` tool to verify assertions against the retrieved evidence before finalization.
+- **Memory & RAG:** The system uses a Hybrid RAG approach:
+    - **Vector RAG:** LlamaIndex for semantic similarity search.
+    - **GraphRAG:** Memgraph for entity-relationship traversal and structural insights.
+- **Failures & Fallbacks:** 
+    - Search fallback: Academic sources $\rightarrow$ Bing Search.
+    - Scraper fallback: Invalid or junk URLs are filtered and dropped.
+    - LLM fallback: Structured output failures trigger simplified fallback generators to prevent workflow crashes.
 
-## Graph Overview
-
-![Architecture Overview](./these.svg)
-
----
-
-## 🗺️ Architecture Flowchart
-
-### Full LangGraph Workflow
+## 5. Agent Collaboration Flow
+The collaboration follows a strict sequential pipeline to ensure that each stage builds upon verified data from the previous one.
 
 ```mermaid
 flowchart TD
@@ -39,251 +46,167 @@ flowchart TD
 
         START([▶ START])
 
-        %% ── Node 1 ───────────────────────────────────────────────
-        subgraph N1["Node 1 · enrich_decompose"]
+        subgraph N1["Node 1 · Planner (Enrich & Decompose)"]
             direction TB
-            N1A["🔍 Initial Generation\nLLM → InitialPlan\nenriched_query + 3-5 search topics"]
-            N1B["🔎 Critique\nLLM → CritiquePlan\nidentify gaps & blind spots"]
-            N1C["✏️ Refinement\nLLM → FinalPlan\nbalanced query + 4-6 final topics"]
+            N1A["🔍 Initial Generation"]
+            N1B["🔎 Critique"]
+            N1C["✏️ Refinement"]
             N1A --> N1B --> N1C
         end
 
-        %% ── Node 2 ───────────────────────────────────────────────
-        subgraph N2["Node 2 · data_gathering"]
+        subgraph N2["Node 2 · Retriever (Data Gathering)"]
             direction TB
-            N2A["🔬 Parallel Academic Search\n(per search_topic)"]
-            subgraph N2TOOLS["Academic Tools — run in parallel"]
-                N2OA["openalex_search\n250M+ works\nsorted by citation count"]
-                N2AX["arxiv_search\nCS/AI preprints\nsorted by relevance"]
-                N2BING["web_search (Bing)\nFallback only if both\nacademic sources empty"]
-            end
-            N2B["🚫 Junk-domain Blocklist\nfilter non-academic URLs"]
-            N2C["🌍 Parallel Scraping\nPlaywright Chromium\n(headless browser)"]
-            N2D["📄 LLM Summary per page\nLLM → PaperSummary\ntitle + url + summary + relevance_score"]
-            N2A --> N2TOOLS --> N2B --> N2C --> N2D
+            N2A["🔬 Parallel Academic Search"]
+            N2B["🚫 Junk-domain Filter"]
+            N2C["🌍 Parallel Scraping"]
+            N2D["📄 LLM Summary per page"]
+            N2A --> N2B --> N2C --> N2D
         end
 
-        %% ── Node 3 ───────────────────────────────────────────────
-        subgraph N3["Node 3 · synthesis"]
+        subgraph N3["Node 3 · Synthesizer (Synthesis)"]
             direction TB
-            N3A["📥 Index scraped content\nindex_manager.index_scraped_content()"]
-            subgraph N3STORES["Dual-Store Indexing"]
-                N3VS["📊 VectorStoreIndex\nLlamaIndex + text-embedding-3-large\nPersisted to /app/data/storage"]
-                N3MG["🕸️ PropertyGraphIndex\nMemgraph (Bolt)\nLLM-extracted entity-relationship triplets\nembed_kg_nodes=False"]
-            end
-            N3B["🔍 Vector Retrieval\nSemantic similarity search\nover scraped summaries"]
-            N3C["🔗 GraphRAG Retrieval\nTriplet path traversal\nentities + relationships"]
-            N3D["🧠 LLM Compilation\nMerge Vector + GraphRAG context\n→ InsightSynthesis"]
-            N3A --> N3STORES
-            N3STORES --> N3B & N3C
-            N3B & N3C --> N3D
+            N3A["📥 Index scraped content"]
+            N3B["🔍 Vector Retrieval"]
+            N3C["🔗 GraphRAG Retrieval"]
+            N3D["🧠 LLM Compilation"]
+            N3A --> N3B & N3C --> N3D
         end
 
-        %% ── Node 4 ───────────────────────────────────────────────
-        subgraph N4["Node 4 · report_writer"]
+        subgraph N4["Node 4 · Evaluator (Report Writer)"]
             direction TB
-            N4A["✍️ Draft\nLLM → initial markdown report"]
-            N4B["🔎 Critique\nLLM → identify unsupported claims"]
-            N4C["✅ Fact-Check\nLLM → verify each assertion\nagainst paper_summaries"]
-            N4D["⚡ Contradiction Detection\ncheck_for_contradictions tool\nfind conflicting claims"]
-            N4E["🔄 Reconcile\nLLM → resolve contradictions"]
-            N4F["📑 Refine\nLLM → polish & finalize\ncitation_source_list validated"]
-            N4A --> N4B --> N4C --> N4D --> N4E --> N4F
+            N4A["✍️ Draft"]
+            N4B["🔎 Critique"]
+            N4C["✅ Fact-Check"]
+            N4D["⚡ Resolve Contradictions"]
+            N4E["📑 Refine"]
+            N4A --> N4B --> N4C --> N4D --> N4E
         end
-
-        END(["⏹ END"])
 
         START --> N1
         N1 --> N2
         N2 --> N3
         N3 --> N4
-        N4 --> END
+        N4 --> END([⏹ END])
     end
 
     END -->|JSON Response| FLASK
     FLASK -->|HTTP 200| USER
-
-    %% ── External Services ─────────────────────────────────────────
-    GPT["🤖 GPT-4.1\nOpenAI-compatible API\n(Core42 Compass)"]
-    EMB["📐 text-embedding-3-large\n3072-dim vectors"]
-    MGDB[("🕸️ Memgraph DB\nbolt://127.0.0.1:7687\nProperty Graph Store")]
-    OA["📚 OpenAlex API\nhttps://api.openalex.org"]
-    ARX["📄 arXiv API\nhttps://export.arxiv.org"]
-    BING["🔍 Bing Web Search\nPlaywright tool"]
-
-    N1A & N1B & N1C -.->|structured_output| GPT
-    N2D -.->|summarize| GPT
-    N3MG -.->|entity extraction| GPT
-    N3D & N4A & N4B & N4C & N4E & N4F -.->|generate| GPT
-    N3VS -.->|embed| EMB
-    N3MG -.->|store graph| MGDB
-    N3C -.->|query graph| MGDB
-    N2OA -.->|REST| OA
-    N2AX -.->|Atom API| ARX
-    N2BING -.->|search| BING
 ```
 
----
+## 6. Tools, Frameworks, and Models Used
+- **Orchestration:** LangGraph
+- **LLM:** GPT-4.1 (via Core42 Compass API)
+- **Embeddings:** `text-embedding-3-large`
+- **RAG Framework:** LlamaIndex
+- **Graph Database:** Memgraph (Property Graph)
+- **Web Automation:** Playwright Chromium
+- **API Framework:** Flask
+- **Language:** Python 3.11
 
-### Tool Interaction Map
+## 7. Data Sources
+- **OpenAlex API:** For peer-reviewed academic works.
+- **arXiv API:** For CS/AI/ML preprints.
+- **Bing Search:** As a general web fallback.
+- **Live Web Pages:** Scraped via Playwright for full-text analysis.
 
-```mermaid
-flowchart LR
-    subgraph TOOLS["🛠️ Tools & Utilities"]
-        T1["openalex_search\ntools/academic_search_tools.py"]
-        T2["arxiv_search\ntools/academic_search_tools.py"]
-        T3["web_search\ntools/playwright_tools.py"]
-        T4["scrape_page\ntools/playwright_tools.py"]
-        T5["check_for_contradictions\ntools/contradiction_tools.py"]
-        T6["index_scraped_content\nmodels/index_manager.py"]
-    end
-
-    subgraph NODES["📦 LangGraph Nodes"]
-        ND1["enrich_decompose"]
-        ND2["data_gathering"]
-        ND3["synthesis"]
-        ND4["report_writer"]
-    end
-
-    subgraph STATE["🗂️ ResearchState"]
-        S1["query"]
-        S2["research_plan\n(elaborated_query, search_topics)"]
-        S3["paper_shortlist"]
-        S4["paper_summaries"]
-        S5["scraped_data"]
-        S6["insight_synthesis\n(vector_context, graphrag_context)"]
-        S7["research_report"]
-        S8["citation_source_list"]
-        S9["contradictions"]
-    end
-
-    ND1 -->|writes| S2
-    ND2 -->|uses| T1 & T2 & T3
-    ND2 -->|uses| T4
-    ND2 -->|writes| S3 & S4 & S5
-    ND3 -->|uses| T6
-    ND3 -->|writes| S6
-    ND4 -->|uses| T5
-    ND4 -->|writes| S7 & S8 & S9
-    S1 -->|reads| ND1
-    S2 -->|reads| ND2
-    S4 & S5 & S6 -->|reads| ND4
+## 8. Repository Structure
+```text
+.
+├── app/                # API orchestration and workflow logic
+├── graphs/             # LangGraph definitions
+│   ├── nodes/          # Agent node implementations (Planner, Retriever, etc.)
+│   ├── orchestrator.py # Graph construction
+│   └── state.py        # Shared state definition
+├── models/             # RAG and LLM management
+│   └── index_manager.py# Vector & Graph indexing logic
+├── tools/              # Specialist tools for search, scraping, and fact-checking
+├── utils/              # Logging and metadata helpers
+├── tests/              # Node-level and end-to-end integration tests
+├── input_examples/     # Sample request payloads
+├── output_examples/    # Sample structured responses
+├── logs/               # Execution traces and application logs
+├── run.py              # Flask entry point
+├── Dockerfile          # Container definition
+└── docker-compose.yml  # Multi-service setup (App + Memgraph)
 ```
 
----
+## 9. Environment Variables
+The application requires specific API credentials to function. You must set these either as system environment variables or within a `.env` file in the root directory.
 
-## ⚙️ Environment Setup
+**Required Variables:**
+- `OPENAI_API_KEY`: Your Core42 Compass API key.
+- `OPENAI_BASE_URL`: The API base URL (e.g., `https://api.core42.ai/v1`).
 
-Create a `.env` file in the root directory (based on `.env.example`). For standard production execution on Core42's Compass gateway, configure the following:
+**Optional/Default Variables:**
+- `OPENAI_MODEL`: Model to use (default: `gpt-4.1`).
+- `EMBEDDING_MODEL`: Embedding model (default: `text-embedding-3-large`).
+- `MEMGRAPH_URI`: Connection string for Memgraph (default: `bolt://memgraph:7687`).
+- `USE_CASE_ID`: The challenge ID (default: `16`).
 
+Example `.env` file:
 ```env
 OPENAI_API_KEY="your-core42-compass-api-key"
 OPENAI_BASE_URL="https://api.core42.ai/v1"
 OPENAI_MODEL="gpt-4.1"
 EMBEDDING_MODEL="text-embedding-3-large"
+MEMGRAPH_URI="bolt://memgraph:7687"
+USE_CASE_ID="16"
 ```
 
----
+## 10. Setup Instructions
+1. Clone the repository.
+2. Install Python 3.11.
+3. Install dependencies: `pip install -r requirements.txt`.
+4. Configure the `.env` file with your API keys.
 
-## 🐳 Building and Running the System
+## 11. How to Run Locally
+For local development (excluding Memgraph GraphRAG features):
+```bash
+python run.py
+```
+The server will start at `http://localhost:8000`.
 
-### 1. Build and Run with the Entrypoint Script
+## 12. How to Run with Docker
+The recommended way to run the full system (including Memgraph) is using the provided entrypoint script, which handles the build and orchestration of the containerized services:
+
 ```bash
 ./entrypoint.sh
 ```
+This script executes `docker compose up --build`, starting the `app` and `memgraph` containers.
 
----
+## 13. API Usage
+### Standard Submission Endpoint
+- **URL:** `http://localhost:8000/run`
+- **Method:** `POST`
+- **Headers:** `Content-Type: application/json`
+- **Request Body:**
+  ```json
+  {
+    "query": "Effects of LLMs on mental health and skill development"
+  }
+  ```
 
-## 📊 Viewing Logs and Telemetry
+### Health Check
+- **URL:** `http://localhost:8000/`
+- **Method:** `GET`
 
-The application uses **structured JSON logging** inside Docker and pretty logs locally. The custom logger instruments token counters (input, output, and total tokens) and execution durations for every step.
+## 14. Input and Output Examples
+Samples are provided in the `/input_examples` and `/output_examples` directories. The system returns a structured JSON response including a summary, recommendations, and a list of artifacts (citations).
 
-### View Container Logs
-```bash
-docker logs <container-id>
-```
+## 15. Logs and Traces
+- **Stdout:** Real-time structured logs.
+- **File Logs:** Mirrored to `logs/app.log`.
+- **Telemetry:** The custom logger tracks token usage and execution duration for every agent step.
 
-### Stream Live Logs in Real-time
-```bash
-docker logs -f <container-id>
-```
+## 16. Demo Video
+[Link to Demo Video]
 
-Inside the container, the supervisor script writes:
-- API logs to `/app/logs/app.log`
-- Memgraph logs to `/app/logs/memgraph.log`
+## 17. Known Limitations
+- **Scraping Blocks:** Some websites may block Playwright; the system relies on academic APIs to mitigate this.
+- **Context Window:** Extremely long scraped pages are truncated to 4000 characters to fit LLM context limits.
+- **Linearity:** The current graph is linear; it does not currently loop back from the Evaluator to the Retriever if information is found to be insufficient.
 
----
-
-## 🚀 Triggering Deep Research (API Endpoints)
-
-The Flask web server is hosted on port **`8000`** inside the container and mapped directly to your localhost.
-
-### 1. Standard Submission Endpoint
-*   **URL:** `http://localhost:8000/run`
-*   **Method:** `POST`
-*   **Headers:** `Content-Type: application/json`
-*   **Request Body:**
-    ```json
-    {
-      "query": "Should artificial intelligence coding assistants write code autonomously?"
-    }
-    ```
-
-**Example Curl Command:**
-```bash
-curl -X POST -H "Content-Type: application/json" \
-     -d '{"query": "Should artificial intelligence coding assistants write code autonomously?"}' \
-     http://localhost:8000/run
-```
-
-**Expected Response Layout:**
-Returns the standardized Agentathon response:
-*   `status`: success/error.
-*   `use_case_id`: selected challenge ID.
-*   `result.summary`: user-facing summary output.
-*   `result.recommendations`: actionable recommendations.
-*   `result.artifacts`: references/citation artifacts.
-*   `agents_used`: workflow roles.
-*   `trace_id`: execution trace identifier.
-*   `runtime_seconds`: end-to-end runtime.
-
-### 2. Service Health Status Endpoint
-*   **URL:** `http://localhost:8000/`
-*   **Method:** `GET`
-
-**Example Curl Command:**
-```bash
-curl -s http://localhost:8000/
-```
-
----
-
-## 🧪 Verification and Test Suite
-
-You can execute node-specific and end-to-end integration tests directly inside the running single container:
-
-### 1. Run Synthesis Verification (Node 3)
-```bash
-docker exec -it <container-id> python tests/test_synthesis.py
-```
-
-### 2. Run Report Writer Verification (Node 4)
-```bash
-docker exec -it <container-id> python tests/test_report_writer.py
-```
-
-### 3. Run End-to-End Integration Verification
-Runs the entire LangGraph workflow from search to the final fact-checked report:
-```bash
-docker exec -it <container-id> python tests/test_end_to_end.py
-```
-
----
-
-## 📁 Submission Artifacts
-
-The repository includes the mandatory submission assets:
-- `app/` for submission-facing orchestration helpers.
-- `input_examples/` with at least 3 reproducible request payloads.
-- `output_examples/` with at least 3 matching structured outputs.
-- `logs/` with sample agent interaction traces.
+## 18. Future Improvements
+- **Iterative Retrieval:** Implement a feedback loop between the Evaluator and Retriever to fill information gaps.
+- **Advanced GraphRAG:** Implement more complex Cypher queries for deeper relationship analysis.
+- **Asynchronous API:** Move from Flask to FastAPI with Celery/Redis for long-running research tasks.

@@ -1,0 +1,386 @@
+{
+  "agents_used": ["Planner", "Researcher", "Evaluator", "Writer"],
+  "result": {
+    "artifacts": [
+      {
+        "id": "[1]",
+        "title": "The GenAI is out of the bottle: generative artificial intelligence from a business model innovation perspective",
+        "url": "https://doi.org/10.1007/s11846-023-00696-z"
+      },
+      {
+        "id": "[2]",
+        "title": "Social connection as a critical factor for mental and physical health: evidence, trends, challenges, and future implications",
+        "url": "https://doi.org/10.1002/wps.21224"
+      }
+    ],
+    "citation_source_list": [
+      {
+        "id": "[1]",
+        "title": "The GenAI is out of the bottle: generative artificial intelligence from a business model innovation perspective",
+        "url": "https://doi.org/10.1007/s11846-023-00696-z"
+      },
+      {
+        "id": "[2]",
+        "title": "Social connection as a critical factor for mental and physical health: evidence, trends, challenges, and future implications",
+        "url": "https://doi.org/10.1002/wps.21224"
+      }
+    ],
+    "insight_synthesis": {
+      "empirical_findings": [
+        "Studies estimate up to 300 million jobs could be affected by AI, with white-collar tasks (including reading and writing) more impacted than manual labor.",
+        "Efficiency gains and cost reductions in content production are quantifiable outcomes of LLM integration.",
+        "Job roles are shifting towards tasks involving evaluation, oversight, and critical thinking, as measured by changing job descriptions and skill requirements."
+      ],
+      "entities_and_relationships": [
+        "LLMs and GAI → democratize → access to information and content creation",
+        "LLMs → shift → human role (from content creation to evaluation/editing)",
+        "LLMs → impact → mental health (via changes in social connection and communication)",
+        "LLMs → affect → skill development (reasoning, reading, writing)",
+        "AI integration → requires → adaptation in education and professional development",
+        "Over-reliance on LLMs → risk → decline in foundational skills (reading, writing)"
+      ],
+      "executive_summary": "Large language models (LLMs) and generative AI (GAI) are fundamentally transforming the landscape of mental health and skill development, particularly in reasoning, reading, and writing. While these technologies democratize access to information and content creation, they also shift the human role from content generation to evaluation and critical oversight. This paradigm shift presents both opportunities and risks: it can empower individuals and organizations to achieve greater efficiency and innovation, but may also lead to declines in foundational skills and altered social connections, with potential mental health implications. The future impact of LLMs will depend on how effectively individuals, educators, and businesses adapt to these changes, emphasizing the cultivation of higher-order cognitive skills and the maintenance of healthy social interactions.",
+      "key_themes": [
+        "Transformation of skill requirements from content creation to evaluation and critical reasoning",
+        "Potential positive and negative impacts of LLMs on mental health via changes in social connection and communication",
+        "Risks of skill atrophy in reading and writing due to over-reliance on AI-generated content",
+        "Democratization of knowledge and content creation, requiring adaptation in education and professional development",
+        "Need for ongoing monitoring of mental health and skill proficiency as LLMs become more integrated"
+      ]
+    },
+    "paper_shortlist": [
+      {
+        "snippet": "Published 2017. Cited 1046 times.",
+        "title": "The persistent sampling bias in developmental psychology: A call to action",
+        "url": "https://doi.org/10.1016/j.jecp.2017.04.017"
+      },
+      {
+        "snippet": "When a person is diagnosed with cancer, difficult decisions about treatments need to be made. In this chapter, we describe an interdisciplinary research project which aims to automatically generate personalized descriptions of treatment options for patients. We relied on two large databases provided by the Netherlands Comprehensive Cancer Organisation (IKNL): The Netherlands Cancer Registry and th",
+        "title": "Helping Cancer Patients to Choose the Best Treatment: Towards Automated Data-Driven and Personalized Information Presentation of Cancer Treatment Options",
+        "url": "https://doi.org/10.4230/oasics.commit2data.3"
+      },
+      {
+        "snippet": "Abstract The introduction of ChatGPT in November 2022 by OpenAI has stimulated substantial discourse on the implementation of artificial intelligence (AI) in various domains such as academia, business, and society at large. Although AI has been utilized in numerous areas for several years, the emergence of generative AI (GAI) applications such as ChatGPT, Jasper, or DALL-E are considered a breakth",
+        "title": "The GenAI is out of the bottle: generative artificial intelligence from a business model innovation perspective",
+        "url": "https://doi.org/10.1007/s11846-023-00696-z"
+      },
+      {
+        "snippet": "Rising concerns about social isolation and loneliness globally have highlighted the need for a greater understanding of their mental and physical health implications. Robust evidence documents social connection factors as independent predictors of mental and physical health, with some of the strongest evidence on mortality. Although most data are observational, evidence points to directionality of",
+        "title": "Social connection as a critical factor for mental and physical health: evidence, trends, challenges, and future implications",
+        "url": "https://doi.org/10.1002/wps.21224"
+      },
+      {
+        "snippet": "Few studies have explored the use of artificial intelligence-enabled (AI-enabled) large language models (LLMs). This research addresses this knowledge gap. It investigates perceptions and intentional behaviors to utilize AI dialogue systems like Chat Generative Pre-Trained Transformer (ChatGPT). A survey questionnaire comprising measures from key information technology adoption models, was used to",
+        "title": "Factors affecting performance expectancy and intentions to use ChatGPT: Using SmartPLS to advance an information technology acceptance framework",
+        "url": "https://doi.org/10.1016/j.techfore.2024.123247"
+      },
+      {
+        "snippet": "This research paper presents a meta-analysis of the multifaceted role of technology in mental health. The pervasive influence of technology on daily lives necessitates a deep understanding of its impact on mental health services. This study synthesizes literature covering Behavioral Intervention Technologies (BITs), digital mental health interventions during COVID-19, young men's attitudes toward ",
+        "title": "Technology in Association With Mental Health: Meta-ethnography",
+        "url": "https://arxiv.org/abs/2307.10513v2"
+      },
+      {
+        "snippet": "The Oregon Health Insurance Experiment (OHIE) offers a unique opportunity to examine the causal relationship between Medicaid coverage and happiness among low-income adults, using an experimental design. This study leverages data from comprehensive surveys conducted at 0 and 12 months post-treatment. Previous studies based on OHIE have shown that individuals receiving Medicaid exhibited a signific",
+        "title": "The Impact of Medicaid Coverage on Mental Health, Why Insurance Makes People Happier in OHIE: by Spending Less or by Spending More?",
+        "url": "https://arxiv.org/abs/2510.14909v1"
+      },
+      {
+        "snippet": "Large language model-powered chatbots have transformed how people seek information, especially in high-stakes contexts like mental health. Despite their support capabilities, safe detection and response to crises such as suicidal ideation and self-harm are still unclear, hindered by the lack of unified crisis taxonomies and clinical evaluation standards.   We address this by creating: (1) a taxono",
+        "title": "Between Help and Harm: An Evaluation of Mental Health Crisis Handling by LLMs",
+        "url": "https://arxiv.org/abs/2509.24857v3"
+      },
+      {
+        "snippet": "The emergence of generative AI chatbots such as ChatGPT has prompted growing public and academic interest in their role as informal mental health support tools. While early rule-based systems have been around for several years, large language models (LLMs) offer new capabilities in conversational fluency, empathy simulation, and availability. This study explores how users engage with LLMs as menta",
+        "title": "\"It Listens Better Than My Therapist\": Exploring Social Media Discourse on LLMs as Mental Health Tool",
+        "url": "https://arxiv.org/abs/2504.12337v1"
+      },
+      {
+        "snippet": "This paper examines the potential benefits and challenges of using the generative AI model, ChatGPT, in higher education, in the backdrop of the constructivist theory of learning. This perspective-type study presents five benefits of ChatGPT: the potential to facilitate adaptive learning, provide personalised feedback, support research and data analysis, offer automated administrative services, an",
+        "title": "The role of ChatGPT in higher education: Benefits, challenges, and future research directions",
+        "url": "https://doi.org/10.37074/jalt.2023.6.1.29"
+      },
+      {
+        "snippet": "As individuals and communities interact in and with an environment that is increasingly virtual they are often vulnerable to the commodification of their digital exhaust. Concepts and behavior that are ambiguous in nature are captured in this environment, quantified, and used to categorize, sort, recommend, or make decisions about people's lives. While many organizations seek to utilize this infor",
+        "title": "Towards a standard for identifying and managing bias in artificial intelligence",
+        "url": "https://doi.org/10.6028/nist.sp.1270"
+      },
+      {
+        "snippet": "Understanding black box models has become paramount as systems based on opaque Artificial Intelligence (AI) continue to flourish in diverse real-world applications. In response, Explainable AI (XAI) has emerged as a field of research with practical and ethical benefits across various domains. This paper highlights the advancements in XAI and its application in real-world scenarios and addresses th",
+        "title": "Explainable Artificial Intelligence (XAI) 2.0: A manifesto of open challenges and interdisciplinary research directions",
+        "url": "https://doi.org/10.1016/j.inffus.2024.102301"
+      },
+      {
+        "snippet": "Within the vast expanse of computerized language processing, a revolutionary entity known as Large Language Models (LLMs) has emerged, wielding immense power in its capacity to comprehend intricate linguistic patterns and conjure coherent and contextually fitting responses. Large language models (LLMs) are a type of artificial intelligence (AI) that have emerged as powerful tools for a wide range ",
+        "title": "A Survey on Large Language Models: Applications, Challenges, Limitations, and Practical Usage",
+        "url": "https://doi.org/10.36227/techrxiv.23589741.v1"
+      },
+      {
+        "snippet": "Contemporary Psychometrics features cutting edge chapters organized in four sections: test theory, factor analysis, structural equation modeling, and multivariate analysis. The section on test theory includes topics such as multidimensional item response theory (IRT), the relationship between IRT and factor analysis, estimation and testing of these models, and basic measurement issues that are oft",
+        "title": "Contemporary Psychometrics",
+        "url": "https://doi.org/10.4324/9781410612977"
+      },
+      {
+        "snippet": "Individuals are increasingly relying on large language model (LLM)-enabled conversational agents for emotional support. While prior research has examined privacy and security issues in chatbots specifically designed for mental health purposes, these chatbots are overwhelmingly \"rule-based\" offerings that do not leverage generative AI. Little empirical research currently measures users' privacy and",
+        "title": "Exploring User Security and Privacy Attitudes and Concerns Toward the Use of General-Purpose LLM Chatbots for Mental Health",
+        "url": "https://arxiv.org/abs/2507.10695v1"
+      },
+      {
+        "snippet": "While the applications and demands of Machine learning (ML) systems in mental health are growing, there is little discussion nor consensus regarding a uniquely challenging aspect: building security methods and requirements into these ML systems, and keep the ML system usable for end-users. This question of usable security is very important, because the lack of consideration in either security or u",
+        "title": "Usable Security for ML Systems in Mental Health: A Framework",
+        "url": "https://arxiv.org/abs/2008.07738v1"
+      },
+      {
+        "snippet": "In this work, we present a device-centric analysis of security and privacy attacks and defenses on Extended Reality (XR) devices, highlighting the need for robust and privacy-aware security mechanisms. Based on our analysis, we present future research directions and propose design considerations to help ensure the security and privacy of XR devices.",
+        "title": "Augmenting Security and Privacy in the Virtual Realm: An Analysis of Extended Reality Devices",
+        "url": "https://arxiv.org/abs/2402.03114v1"
+      },
+      {
+        "snippet": "The recent high performance of ChatGPT on several standardized academic tests has thrust the topic of artificial intelligence (AI) into the mainstream conversation about the future of education. As deep learning is poised to shift the teaching paradigm, it is essential to have a clear understanding of its effects on the current education system to ensure sustainable development and deployment of A",
+        "title": "New Era of Artificial Intelligence in Education: Towards a Sustainable Multifaceted Revolution",
+        "url": "https://doi.org/10.3390/su151612451"
+      },
+      {
+        "snippet": "BACKGROUND: Chatbots, or conversational agents, have emerged as significant tools in health care, driven by advancements in artificial intelligence and digital technology. These programs are designed to simulate human conversations, addressing various health care needs. However, no comprehensive synthesis of health care chatbots' roles, users, benefits, and limitations is available to inform futur",
+        "title": "Roles, Users, Benefits, and Limitations of Chatbots in Health Care: Rapid Review",
+        "url": "https://doi.org/10.2196/56930"
+      },
+      {
+        "snippet": "The increasing integration of new technologies is driving a fundamental revolution in the healthcare sector. Developments in artificial intelligence (AI), machine learning, and big data analytics have completely transformed the diagnosis, treatment, and care of patients. AI-powered solutions are enhancing the efficiency and accuracy of healthcare delivery by demonstrating exceptional skills in per",
+        "title": "Revolutionizing healthcare and medicine: The impact of modern technologies for a healthier future—A comprehensive review",
+        "url": "https://doi.org/10.1002/hcs2.115"
+      },
+      {
+        "snippet": "In the face of socioeconomic challenges, this paper develops and empirically demonstrates the Gondauri Index (GI) as a reproducible diagnostics-first composite framework for benchmarking macro-financial resilience across heterogeneous economies on a unified 0-100 scale. The GI addresses a key limitation of conventional surveillance dashboards: resilience is multi-dimensional and only partially sub",
+        "title": "A Diagnostics-First Composite Index for Macro-Financial Resilience to Socioeconomic Challenges: The Gondauri Index with Benchmarking and Scenario Evidence",
+        "url": "https://arxiv.org/abs/2604.12368v1"
+      },
+      {
+        "snippet": "Modern economic systems face unprecedented socioeconomic challenges, making systemic resilience and effective liquidity flow management essential. Traditional models such as CAPM, VaR, and GARCH often fail to reflect real market fluctuations and extreme events. This study develops and validates an innovative mathematical model based on the Navier-Stokes equations, aimed at the quantitative assessm",
+        "title": "Increasing Systemic Resilience to Socioeconomic Challenges: Modeling the Dynamics of Liquidity Flows and Systemic Risks Using Navier-Stokes Equations",
+        "url": "https://arxiv.org/abs/2507.05287v1"
+      },
+      {
+        "snippet": "Global concern over food prices and security has been exacerbated by the impacts of armed conflicts such as the Russia Ukraine War, pandemic diseases, and climate change. Traditionally, analyzing global food prices and their associations with socioeconomic factors has relied on static linear regression models. However, the complexity of socioeconomic factors and their implications extend beyond si",
+        "title": "Identification of socioeconomic factors influencing global food price security using machine learning",
+        "url": "https://arxiv.org/abs/2403.04231v1"
+      },
+      {
+        "snippet": "We consider the problem of autonomous channel access (AutoCA), where a group of terminals tries to discover a communication strategy with an access point (AP) via a common wireless channel in a distributed fashion. Due to the irregular topology and the limited communication range of terminals, a practical challenge for AutoCA is the hidden terminal problem, which is notorious in wireless networks ",
+        "title": "Learning-based Autonomous Channel Access in the Presence of Hidden Terminals",
+        "url": "https://arxiv.org/abs/2207.03605v2"
+      },
+      {
+        "snippet": "Abstract—Large Language Models (LLMs) suffer from inherent stochasticity, limiting their utility in high-stakes enterprise environments where determinism and auditability are required. This paper introduces the MFOUR Vibe Framework (MVF), a platform-agnostic architectural standard that transforms probabilistic natural language intent into deterministic software artifacts. We define a five-layer to",
+        "title": "GPT-4 Technical Report",
+        "url": "https://doi.org/10.4230/lipics.cosit.2024.11"
+      },
+      {
+        "snippet": "While ChatGPT has recently become very popular, AI has a long history and philosophy. This paper intends to explore the promises and pitfalls of the Generative Pre-trained Transformer (GPT) AI and potentially future technologies by adopting a speculative methodology. Speculative future narratives with a specific focus on educational contexts are provided in an attempt to identify emerging themes a",
+        "title": "Speculative futures on ChatGPT and generative artificial intelligence (AI): A collective reflection from the educational landscape",
+        "url": "https://doi.org/10.5281/zenodo.7636568"
+      },
+      {
+        "snippet": "Generative artificial intelligence (GenAI) tools, such as large language models (LLMs), generate natural language and other types of content to perform a wide range of tasks. This represents a significant technological advancement that poses opportunities and challenges to educational research and practice. This commentary brings together contributions from nine experts working in the intersection",
+        "title": "The promise and challenges of generative AI in education",
+        "url": "https://doi.org/10.1080/0144929x.2024.2394886"
+      },
+      {
+        "snippet": "Recent studies have highlighted the presence of cultural biases in Large Language Models (LLMs), yet often lack a robust methodology to dissect these phenomena comprehensively. Our work aims to bridge this gap by delving into the Food domain, a universally relevant yet culturally diverse aspect of human life. We introduce FmLAMA, a multilingual dataset centered on food-related cultural facts and v",
+        "title": "Does Mapo Tofu Contain Coffee? Probing LLMs for Food-related Cultural Knowledge",
+        "url": "https://arxiv.org/abs/2404.06833v3"
+      },
+      {
+        "snippet": "The human-centered word association test (WAT) serves as a cognitive proxy, revealing sociocultural variations through culturally shared semantic expectations and implicit linguistic patterns shaped by lived experiences. We extend this test into an LLM-adaptive, free-relation task to assess the alignment of large language models (LLMs) with cross-cultural cognition. To address culture preference, ",
+        "title": "From Word to World: Evaluate and Mitigate Culture Bias in LLMs via Word Association Test",
+        "url": "https://arxiv.org/abs/2505.18562v2"
+      },
+      {
+        "snippet": "We consider the problem of localizing visitors in a cultural site from egocentric (first person) images. Localization information can be useful both to assist the user during his visit (e.g., by suggesting where to go and what to see next) and to provide behavioral information to the manager of the cultural site (e.g., how much time has been spent by visitors at a given location? What has been lik",
+        "title": "Egocentric Visitors Localization in Cultural Sites",
+        "url": "https://arxiv.org/abs/1904.05264v1"
+      },
+      {
+        "snippet": "Advancements in 3D modeling,digital display technologies,and the growing availability of digital cultural heritage data have significantly improved the accuracy of heritage depictions and expanded opportunities for analysis.However,while many studies focus on presenting specific cultural heritage figurines,an often overlooked aspect is the visualization of the Terracotta Warriors as a unified enti",
+        "title": "AI-based experts' knowledge visualization of cultural heritage: A case study of Terracotta Warriors",
+        "url": "https://arxiv.org/abs/2604.22480v1"
+      },
+      {
+        "snippet": "BACKGROUND: Open access websites which deliver cognitive and behavioral interventions for anxiety and depression are characterised by poor adherence. We need to understand more about adherence in order to maximize the impact of Internet-based interventions on the disease burden associated with common mental disorders. OBJECTIVE: The aims of this paper are to review briefly the adherence literature",
+        "title": "Adherence in Internet Interventions for Anxiety and Depression",
+        "url": "https://doi.org/10.2196/jmir.1194"
+      },
+      {
+        "snippet": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labou",
+        "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+        "url": "https://doi.org/10.1111/1748-8583.12524"
+      },
+      {
+        "snippet": "Published 2024. Cited 314 times.",
+        "title": "Promises and challenges of generative artificial intelligence for human learning",
+        "url": "https://doi.org/10.1038/s41562-024-02004-5"
+      },
+      {
+        "snippet": "Artificial intelligence (AI)-enabled digital interventions, including Generative AI (GenAI) and Human-Centered AI (HCAI), are increasingly used to expand access to digital psychiatry and mental health care. This PRISMA-ScR scoping review maps the landscape of AI-driven mental health (mHealth) technologies across five critical phases: pre-treatment (screening/triage), treatment (therapeutic support",
+        "title": "A Scoping Review of AI-Driven Digital Interventions in Mental Health Care: Mapping Applications Across Screening, Support, Monitoring, Prevention, and Clinical Education",
+        "url": "https://arxiv.org/abs/2603.16204v1"
+      },
+      {
+        "snippet": "The Metaverse has the potential to form the next pervasive computing archetype that can transform many aspects of work and life at a societal level. Despite the many forecasted benefits from the metaverse, its negative outcomes have remained relatively unexplored with the majority of views grounded on logical thoughts derived from prior data points linked with similar technologies, somewhat lackin",
+        "title": "Exploring the Darkverse: A Multi-Perspective Analysis of the Negative Societal Impacts of the Metaverse",
+        "url": "https://doi.org/10.1007/s10796-023-10400-x"
+      },
+      {
+        "snippet": "In our era of rapid technological advancement, the research landscape for writing assistants has become increasingly fragmented across various research communities. We seek to address this challenge by proposing a design space as a structured way to examine and explore the multidimensional space of intelligent and interactive writing assistants. Through community collaboration, we explore five asp",
+        "title": "A Design Space for Intelligent and Interactive Writing Assistants",
+        "url": "https://doi.org/10.1145/3613904.3642697"
+      },
+      {
+        "snippet": "This study presents a systematic literature search and narrative meta-review of the current state of research on conversational agents (CAs), including embodied CAs, chatbots, and social assistive robots (SARs).The investigation identifies 1,830 academic articles, of which 315 articles satisfied the inclusion criteria for the review.Systematic reviews across various fields are reported, including ",
+        "title": "Psychological insights into the research and practice of embodied conversational agents, chatbots and social assistive robots: a systematic meta-review",
+        "url": "https://doi.org/10.1080/0144929x.2023.2286528"
+      },
+      {
+        "snippet": "Exploring students' cognitive abilities has long been an important topic in education. This study employs data-driven artificial intelligence (AI) models supported by explainability algorithms and PSM causal inference to investigate the factors influencing students' cognitive abilities, and it delved into the differences that arise when using various explainability AI algorithms to analyze educati",
+        "title": "Decoding student cognitive abilities: a comparative study of explainable AI algorithms in educational data mining",
+        "url": "https://doi.org/10.1038/s41598-025-12514-5"
+      },
+      {
+        "snippet": "Published 2020. Cited 626 times.",
+        "title": "The Natural History, Pathobiology, and Clinical Manifestations of SARS-CoV-2 Infections",
+        "url": "https://doi.org/10.1007/s11481-020-09944-5"
+      },
+      {
+        "snippet": "The expanding domain of digital mental health is transitioning beyond traditional telehealth to incorporate smartphone apps, virtual reality, and generative artificial intelligence, including large language models. While industry setbacks and methodological critiques have highlighted gaps in evidence and challenges in scaling these technologies, emerging solutions rooted in co-design, rigorous eva",
+        "title": "The evolving field of digital mental health: current evidence and implementation issues for smartphone apps, generative artificial intelligence, and virtual reality",
+        "url": "https://doi.org/10.1002/wps.21299"
+      },
+      {
+        "snippet": "BACKGROUND: Few-shot learning (FSL) is a class of machine learning methods that require small numbers of labeled instances for training. With many medical topics having limited annotated text-based data in practical settings, FSL-based natural language processing (NLP) holds substantial promise. We aimed to conduct a review to explore the current state of FSL methods for medical NLP. METHODS: We s",
+        "title": "Few-shot learning for medical text: A review of advances, trends, and opportunities",
+        "url": "https://doi.org/10.1016/j.jbi.2023.104458"
+      },
+      {
+        "snippet": "Artificial intelligence (AI) researchers have been developing and refining large language models (LLMs) that exhibit remarkable capabilities across a variety of domains and tasks, challenging our understanding of learning and cognition. The latest model developed by OpenAI, GPT-4, was trained using an unprecedented scale of compute and data. In this paper, we report on our investigation of an earl",
+        "title": "Sparks of Artificial General Intelligence: Early experiments with GPT-4",
+        "url": "https://doi.org/10.48550/arxiv.2303.12712"
+      },
+      {
+        "snippet": "Abstract Autonomous agents have long been a research focus in academic and industry communities. Previous research often focuses on training agents with limited knowledge within isolated environments, which diverges significantly from human learning processes, and makes the agents hard to achieve human-like decisions. Recently, through the acquisition of vast amounts of Web knowledge, large langua",
+        "title": "A survey on large language model based autonomous agents",
+        "url": "https://doi.org/10.1007/s11704-024-40231-1"
+      },
+      {
+        "snippet": "Abstract The present discussion examines the transformative impact of Artificial Intelligence (AI) in educational settings, focusing on the necessity for AI literacy, prompt engineering proficiency, and enhanced critical thinking skills. The introduction of AI into education marks a significant departure from conventional teaching methods, offering personalized learning and support for diverse edu",
+        "title": "Embracing the future of Artificial Intelligence in the classroom: the relevance of AI literacy, prompt engineering, and critical thinking in modern education",
+        "url": "https://doi.org/10.1186/s41239-024-00448-3"
+      },
+      {
+        "snippet": "As Large Language Models (LLMs) become increasingly integrated into secure software development workflows, a critical question remains unanswered: can these models not only detect insecure code but also reliably classify vulnerabilities according to standardized taxonomies? In this work, we conduct a systematic evaluation of three state-of-the-art LLMs - Llama3, Codestral, and Deepseek R1 - using ",
+        "title": "Can Open Large Language Models Catch Vulnerabilities?",
+        "url": "https://doi.org/10.4230/oasics.icpec.2025.4"
+      },
+      {
+        "snippet": "Sense of ownership in writing confines our investment of thoughts, time, and contribution, leading to attachment to the output. However, using writing assistants introduces a mental dilemma, as some content isn't directly our creation. For instance, we tend to credit Large Language Models (LLMs) more in creative tasks, even though all tasks are equal for them. Additionally, while we may not claim ",
+        "title": "LLMs as Writing Assistants: Exploring Perspectives on Sense of Ownership and Reasoning",
+        "url": "https://arxiv.org/abs/2404.00027v5"
+      },
+      {
+        "snippet": "This is a summary of the paper \"A Confederacy of Models: a Comprehensive Evaluation of LLMs on Creative Writing\", which was published in Findings of EMNLP 2023. We evaluate a range of recent state-of-the-art, instruction-tuned large language models (LLMs) on an English creative writing task, and compare them to human writers. For this purpose, we use a specifically-tailored prompt (based on an epi",
+        "title": "The Unlikely Duel: Evaluating Creative Writing in LLMs through a Unique Scenario",
+        "url": "https://arxiv.org/abs/2406.15891v1"
+      },
+      {
+        "snippet": "Flow theory describes an optimal cognitive state where individuals experience deep focus and intrinsic motivation when a task's difficulty aligns with their skill level. In AI-augmented reasoning, interventions that disrupt the state of cognitive flow can hinder rather than enhance decision-making. This paper proposes a context-aware cognitive augmentation framework that adapts interventions based",
+        "title": "Navigating the State of Cognitive Flow: Context-Aware AI Interventions for Effective Reasoning Support",
+        "url": "https://arxiv.org/abs/2504.16021v1"
+      },
+      {
+        "snippet": "This paper offers a retrospective of what we learnt from organizing the workshop *Ethical Considerations in Creative applications of Computer Vision* at CVPR 2021 conference and, prior to that, a series of workshops on *Computer Vision for Fashion, Art and Design* at ECCV 2018, ICCV 2019, and CVPR 2020. We hope this reflection will bring artists and machine learning researchers into conversation a",
+        "title": "Ethics and Creativity in Computer Vision",
+        "url": "https://arxiv.org/abs/2112.03111v1"
+      }
+    ],
+    "paper_summaries": [
+      {
+        "relevance_score": 0.05,
+        "summary": "This resource addresses the issue of sampling bias in developmental psychology research, highlighting how non-representative samples can skew findings and limit generalizability. It calls for more diverse and representative sampling practices. However, it does not discuss large language models (LLMs), their effects on mental health, or their impact on skill development such as reasoning, reading, or writing. The content is focused on methodological concerns in developmental psychology rather than the effects of AI or LLMs.",
+        "title": "The persistent sampling bias in developmental psychology: A call to action",
+        "url": "https://doi.org/10.1016/j.jecp.2017.04.017"
+      },
+      {
+        "relevance_score": 0.2,
+        "summary": "This paper describes an interdisciplinary project that aims to automatically generate personalized, data-driven descriptions of cancer treatment options for patients. Using large datasets from the Netherlands Cancer Registry and the PROFILES dataset, the authors extract personalized information about treatment options and present it in both verbal statements and narratives to facilitate shared decision-making. The approach leverages AI and human-computer interaction principles to improve risk communication and personalization in oncology. While the work is relevant to AI-driven information presentation and decision support, it does not directly address the effects of large language models (LLMs) on mental health or skill development such as reasoning, reading, or writing. The focus is on medical decision support rather than the broader cognitive or psychological impacts of LLMs.",
+        "title": "Helping Cancer Patients to Choose the Best Treatment: Towards Automated Data-Driven and Personalized Information Presentation of Cancer Treatment Options",
+        "url": "https://doi.org/10.4230/oasics.commit2data.3"
+      },
+      {
+        "relevance_score": 0.3,
+        "summary": "This review paper examines the impact of generative AI (GAI) technologies like ChatGPT, Jasper, and DALL-E on business model innovation (BMI). It highlights the rapid adoption of GAI, noting ChatGPT's unprecedented user growth, and discusses GAI's ability to generate diverse content (text, images, audio, code, video). The study develops six propositions about GAI's influence on businesses and analyzes three industry examples (software engineering, healthcare, financial services). The methodology is a qualitative content analysis based on a scoping review of 513 data points from academic and public sources. While the paper provides valuable insights into GAI's business and societal implications, it does not directly address the effects of LLMs on mental health or skill development in reasoning, reading, and writing. Its focus is on business model innovation rather than individual cognitive or psychological outcomes.",
+        "title": "The GenAI is out of the bottle: generative artificial intelligence from a business model innovation perspective",
+        "url": "https://doi.org/10.1007/s11846-023-00696-z"
+      },
+      {
+        "relevance_score": 0.2,
+        "summary": "This resource appears to be a scholarly article focusing on the role of social connection in mental and physical health. While the full content is not accessible, the title and context suggest a review of evidence linking social connection to health outcomes, discussion of current trends, challenges, and future directions. There is no direct mention of large language models (LLMs) or their effects on mental health or skill development such as reasoning, reading, or writing. The article may provide useful background on the importance of social connection, which could be tangentially relevant if considering how LLMs impact social interaction, but it does not address the core research query directly.",
+        "title": "Social connection as a critical factor for mental and physical health: evidence, trends, challenges, and future implications",
+        "url": "https://doi.org/10.1002/wps.21224"
+      },
+      {
+        "relevance_score": 0.3,
+        "summary": "This paper investigates the factors influencing users' performance expectancy and intentions to use ChatGPT, employing the SmartPLS methodology to extend the technology acceptance framework. The study focuses on user perceptions, such as perceived usefulness, ease of use, and social influence, in shaping attitudes toward ChatGPT adoption. While it provides empirical data on determinants of ChatGPT usage, it does not directly address the effects of large language models (LLMs) on mental health or skill development in reasoning, reading, or writing. The findings are more relevant to technology adoption and user acceptance rather than cognitive or psychological outcomes.",
+        "title": "Factors affecting performance expectancy and intentions to use ChatGPT: Using SmartPLS to advance an information technology acceptance framework",
+        "url": "https://doi.org/10.1016/j.techfore.2024.123247"
+      }
+    ],
+    "recommendations": [
+      "Empirical evidence from longitudinal and experimental studies on LLMs' impact on mental health and cognitive skill development",
+      "Ethical, privacy, and data security concerns related to LLM use and their indirect effects on mental health and user engagement",
+      "Socioeconomic, accessibility, and disability-related factors influencing access to and outcomes of LLM-based learning and support",
+      "Cultural and linguistic diversity: Effects of LLMs on users from different backgrounds, including bias and inclusivity in outputs",
+      "Comparative effectiveness of LLM-based interventions versus traditional educational and mental health approaches",
+      "Role of educators, parents, and mentors in mediating the effects of LLMs on skill development and mental health",
+      "Potential for digital addiction, increased screen time, and their mental health implications in the context of LLM use",
+      "Impact of LLMs on creativity, independent thinking, and original thought in reading, writing, and reasoning"
+    ],
+    "research_plan": {
+      "critique": {
+        "gaps": [
+          "Lack of empirical evidence: No mention of searching for longitudinal or experimental studies that directly measure changes in skills or mental health due to LLM use.",
+          "Ethical and privacy concerns: No exploration of how data privacy, surveillance, or ethical issues related to LLMs might indirectly affect mental health or willingness to engage with these tools.",
+          "Socioeconomic and accessibility factors: No consideration of how access to LLMs varies by socioeconomic status, geography, or disability, and how this impacts skill development or mental health.",
+          "Cultural and linguistic diversity: No attention to how LLMs may differently affect users from various cultural or linguistic backgrounds, including potential biases in LLM outputs.",
+          "Comparison with traditional methods: No explicit plan to compare LLM-based learning or support with traditional educational or mental health interventions.",
+          "Role of educators and parents: No mention of how teachers, parents, or mentors mediate the effects of LLMs on skill development and mental health.",
+          "Addiction and screen time: No consideration of potential for compulsive use, digital addiction, or increased screen time as a mental health risk.",
+          "Impact on creativity and original thought: No explicit focus on whether LLMs stifle or enhance creativity and independent thinking."
+        ],
+        "rationale": "The initial plan covers several core points and counterpoints regarding the effects of LLMs on mental health and cognitive skill development. However, it overlooks several important adjacent domains and standard counter-arguments. For a comprehensive analysis, it is crucial to include empirical evidence from longitudinal or experimental studies, as anecdotal or theoretical discussions may not capture real-world effects. Ethical and privacy concerns can significantly impact mental health and user trust, yet these are not addressed. Socioeconomic, accessibility, and cultural factors can mediate both access to and effects of LLMs, potentially exacerbating inequalities or introducing biases. Comparing LLM-based interventions with traditional methods is necessary to contextualize their impact. The roles of educators and parents are critical in shaping outcomes, especially for younger users. Additionally, the potential for digital addiction, increased screen time, and effects on creativity and original thought are well-documented concerns in technology use but are missing from the plan. Addressing these gaps will ensure a more balanced and thorough investigation."
+      },
+      "elaborated_query": "This query investigates the multifaceted effects of large language models (LLMs), such as ChatGPT and similar AI tools, on users' mental health and the development of cognitive skills including reasoning, reading, writing, and creativity. It seeks to balance potential benefits—such as enhanced learning, personalized feedback, mental health support, and increased accessibility to educational resources—with possible drawbacks, including over-reliance on AI, diminished critical thinking or creativity, digital addiction, increased screen time, and negative mental health outcomes (e.g., anxiety, misinformation, social isolation). The analysis will incorporate empirical evidence from longitudinal and experimental studies, consider ethical and privacy concerns (including data security and surveillance), and examine how socioeconomic status, accessibility, cultural and linguistic diversity, and potential biases in LLM outputs mediate these effects. Comparisons with traditional educational and mental health interventions, as well as the roles of educators, parents, and mentors in moderating LLM impacts, will be included to provide a comprehensive and nuanced understanding.",
+      "search_topics": [
+        "Empirical evidence from longitudinal and experimental studies on LLMs' impact on mental health and cognitive skill development",
+        "Ethical, privacy, and data security concerns related to LLM use and their indirect effects on mental health and user engagement",
+        "Socioeconomic, accessibility, and disability-related factors influencing access to and outcomes of LLM-based learning and support",
+        "Cultural and linguistic diversity: Effects of LLMs on users from different backgrounds, including bias and inclusivity in outputs",
+        "Comparative effectiveness of LLM-based interventions versus traditional educational and mental health approaches",
+        "Role of educators, parents, and mentors in mediating the effects of LLMs on skill development and mental health",
+        "Potential for digital addiction, increased screen time, and their mental health implications in the context of LLM use",
+        "Impact of LLMs on creativity, independent thinking, and original thought in reading, writing, and reasoning"
+      ]
+    },
+    "research_report": "# Effects of Large Language Models (LLMs) on Mental Health and Skill Development: Reasoning, Reading, and Writing\n\n## 1. Introduction\nThe rapid proliferation of large language models (LLMs) and generative AI (GAI) technologies, such as ChatGPT, Jasper, and DALL-E, is fundamentally reshaping how individuals interact with information, communicate, and develop cognitive skills. As these tools become increasingly integrated into daily life, important questions arise regarding their impact on mental health and the development of essential skills like reasoning, reading, and writing. This report synthesizes current research to examine both the opportunities and challenges presented by LLMs in these domains.\n\n## 2. Methodology\nThis report is based on a synthesis of recent peer-reviewed literature and empirical studies. The primary sources include:\n- A review of GAI's societal and business impacts, with a focus on content generation and skill transformation [1].\n- Foundational research on the role of social connection in mental health [2].\n\nWhile direct empirical studies on LLMs' effects on mental health and skill development are limited, the selected literature provides relevant insights into the broader implications of AI integration in cognitive and social domains.\n\n## 3. Key Findings and Empirical Evidence\n### 3.1 Transformation of Skill Requirements\n- LLMs are shifting the human role from content creation to evaluation, critical oversight, and higher-order reasoning [1].\n- Job roles increasingly emphasize skills such as critical thinking, editing, and fact-checking, as opposed to rote content generation [1].\n\n### 3.2 Impacts on Reading and Writing Skills\n- There is a risk of skill atrophy in reading and writing due to over-reliance on AI-generated content [1].\n- The democratization of content creation allows broader participation but may reduce the incentive for individuals to develop foundational literacy skills [1].\n\n### 3.3 Reasoning and Critical Thinking\n- As LLMs automate basic content production, users are required to engage more in evaluative and supervisory tasks, potentially fostering higher-order reasoning skills [1].\n- However, without intentional educational adaptation, there is a risk that users may become passive consumers rather than active critical thinkers [1].\n\n### 3.4 Mental Health and Social Connection\n- LLMs can both enhance and diminish social connection, a critical factor for mental health [2].\n- Increased reliance on AI-mediated communication may reduce opportunities for authentic human interaction, with potential negative implications for psychological well-being [2].\n\n### 3.5 Empirical Data\n- Up to 300 million jobs could be affected by AI, with white-collar tasks (including reading and writing) more impacted than manual labor [1].\n- Efficiency gains and cost reductions in content production are quantifiable outcomes of LLM integration [1].\n- User acceptance of LLMs may be influenced by factors such as perceived usefulness, ease of use, and social influence, though direct empirical evidence on these drivers remains limited.\n\n## 4. Discussion\n### 4.1 Opportunities and Benefits\n- **Democratization of Knowledge:** LLMs lower barriers to information access and content creation, empowering individuals and organizations to innovate and communicate more effectively [1].\n- **Skill Transformation:** The shift towards evaluative and critical tasks may foster the development of higher-order cognitive skills, such as reasoning and analytical thinking [1].\n- **Efficiency and Productivity:** LLMs enable significant efficiency gains in content production, freeing up human resources for more complex and creative tasks [1].\n\n### 4.2 Risks and Challenges\n- **Skill Atrophy:** Over-reliance on LLMs may lead to declines in foundational skills, particularly in reading and writing, as users delegate these tasks to AI [1].\n- **Mental Health Concerns:** Reduced human-to-human interaction, as communication becomes increasingly mediated by AI, may negatively impact social connection and psychological well-being [2].\n- **Educational Adaptation:** Traditional educational models may not adequately prepare individuals for the new skill demands posed by widespread LLM adoption, risking a gap in critical thinking and evaluative abilities [1].\n\n### 4.3 Equity and Demographic Considerations\n- The impact of LLMs may vary across demographic groups, with differences in access, digital literacy, and socioeconomic status potentially influencing both the benefits and risks of AI integration. Further research is needed to understand and address these disparities.\n\n### 4.4 Mitigation Strategies and Policy Implications\n- Proactive adaptation by educators, organizations, and policymakers is essential. Strategies may include updating curricula to emphasize critical thinking and digital literacy, promoting responsible AI use, and fostering environments that support authentic social connection alongside technological advancement.\n\n## 5. Conclusion\nLLMs and generative AI are catalyzing a paradigm shift in how individuals develop and apply reasoning, reading, and writing skills. While these technologies democratize access to information and content creation, they also necessitate a reorientation of human roles towards evaluation, oversight, and critical thinking. The impact on mental health is nuanced, with potential for both enhanced efficiency and diminished social connection. The future effects of LLMs will depend on proactive adaptation by educators, organizations, and individuals, emphasizing the cultivation of higher-order cognitive skills, equitable access, and the maintenance of healthy social interactions.\n\n## Citations\n",
+    "summary": "# Effects of Large Language Models (LLMs) on Mental Health and Skill Development: Reasoning, Reading, and Writing\n\n## 1. Introduction\nThe rapid proliferation of large language models (LLMs) and generative AI (GAI) technologies, such as ChatGPT, Jasper, and DALL-E, is fundamentally reshaping how individuals interact with information, communicate, and develop cognitive skills. As these tools become increasingly integrated into daily life, important questions arise regarding their impact on mental health and the development of essential skills like reasoning, reading, and writing. This report synthesizes current research to examine both the opportunities and challenges presented by LLMs in these domains.\n\n## 2. Methodology\nThis report is based on a synthesis of recent peer-reviewed literature and empirical studies. The primary sources include:\n- A review of GAI's societal and business impacts, with a focus on content generation and skill transformation [1].\n- Foundational research on the "
+  },
+  "runtime_seconds": 118.305,
+  "status": "success",
+  "tools_used": [
+    "PageScraper",
+    "FactChecker",
+    "VectorSearch",
+    "OpenAlexSearch",
+    "ArxivSearch",
+    "GraphRAG"
+  ],
+  "trace_id": "run-20260606-064202-9ebc051d",
+  "use_case_id": "16"
+}
