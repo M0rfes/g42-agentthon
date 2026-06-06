@@ -18,47 +18,7 @@ The system runs a **4-node linear LangGraph workflow**:
 
 ## Graph Overview
 
-```
-START
-  │
-  ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Node 1 · enrich_decompose                                  │
-│  Tools : (none — pure LLM reasoning)                        │
-│  Output: enriched_query, search_topics, research_plan       │
-└─────────────────────────────────────────────────────────────┘
-  │
-  ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Node 2 · data_gathering                                    │
-│  Tools : openalex_search   (academic_search_tools.py)       │
-│          arxiv_search      (academic_search_tools.py)       │
-│          web_search        (playwright_tools.py) [fallback] │
-│          scrape_page       (playwright_tools.py)            │
-│  Output: paper_shortlist, paper_summaries, scraped_data     │
-└─────────────────────────────────────────────────────────────┘
-  │
-  ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Node 3 · synthesis                                         │
-│  Tools : index_scraped_content  (index_manager.py)          │
-│          VectorStoreIndex query (index_manager.py)          │
-│          PropertyGraphIndex query — GraphRAG (index_manager)│
-│  Output: insight_synthesis                                  │
-└─────────────────────────────────────────────────────────────┘
-  │
-  ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Node 4 · report_writer                                     │
-│  Tools : fact_checker          (llamaindex_tools.py)        │
-│          resolve_contradiction (contradiction_tools.py)     │
-│            └─ internally uses web_search + scrape_page      │
-│  Output: research_report, citation_source_list              │
-└─────────────────────────────────────────────────────────────┘
-  │
-  ▼
- END
-```
+![Architecture Overview](./these.svg)
 
 ---
 
